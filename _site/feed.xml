@@ -81,6 +81,28 @@
 
 &lt;h4 id=&quot;30분-이상-접속이-안된다면-메일을-확인해보세요&quot;&gt;※30분 이상 접속이 안된다면 메일을 확인해보세요.!&lt;/h4&gt;
 
+&lt;h3 id=&quot;다음과-같은-에러&quot;&gt;다음과 같은 에러&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;na&quot;&gt;The page build failed with the following error&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;A file was included in `contact.md` that is a symlink or does not exist in your `_includes` directory. For more information, see https://help.github.com/articles/page-build-failed-file-is-a-symlink.&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;For information on troubleshooting Jekyll see&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+
+  &lt;span class=&quot;s&quot;&gt;https://help.github.com/articles/troubleshooting-jekyll-builds&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;If you have any questions you can contact us by replying to this email.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;버전을 3.1.6버전으로 내려서 해보세요&lt;a href=&quot;https://rextarx.github.io/jekyll/2017/01/07/Create_Github_page_via_Jekyll/&quot;&gt;REXTARX블로그&lt;/a&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;sudo gem uninstall jekyll&lt;/span&gt;  
+&lt;span class=&quot;s&quot;&gt;sudo gem install jekyll:3.1.6&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;jekyll new . --force&lt;/span&gt;  
+&lt;span class=&quot;s&quot;&gt;jekyll serve&lt;/span&gt;  
+&lt;span class=&quot;s&quot;&gt;git add *&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;git commit -m &quot;Adjust Jekyll&quot;&lt;/span&gt;  
+&lt;span class=&quot;s&quot;&gt;git remote set-url origin https://github.com/rextarx/rextarx.github.io.git&lt;/span&gt;  
+&lt;span class=&quot;s&quot;&gt;git push origin master&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 </description>
 				<pubDate>Mon, 16 Jul 2018 00:00:00 +0900</pubDate>
 				<link>/jekyll/2018/07/16/configuration.html</link>

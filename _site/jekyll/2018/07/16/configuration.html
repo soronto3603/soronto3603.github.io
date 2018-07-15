@@ -210,6 +210,28 @@
 
 <h4 id="30분-이상-접속이-안된다면-메일을-확인해보세요">※30분 이상 접속이 안된다면 메일을 확인해보세요.!</h4>
 
+<h3 id="다음과-같은-에러">다음과 같은 에러</h3>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">The page build failed with the following error</span><span class="pi">:</span>
+
+<span class="s">A file was included in `contact.md` that is a symlink or does not exist in your `_includes` directory. For more information, see https://help.github.com/articles/page-build-failed-file-is-a-symlink.</span>
+
+<span class="na">For information on troubleshooting Jekyll see</span><span class="pi">:</span>
+
+  <span class="s">https://help.github.com/articles/troubleshooting-jekyll-builds</span>
+
+<span class="s">If you have any questions you can contact us by replying to this email.</span></code></pre></figure>
+
+<p>버전을 3.1.6버전으로 내려서 해보세요<a href="https://rextarx.github.io/jekyll/2017/01/07/Create_Github_page_via_Jekyll/">REXTARX블로그</a></p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">sudo gem uninstall jekyll</span>  
+<span class="s">sudo gem install jekyll:3.1.6</span>
+<span class="s">jekyll new . --force</span>  
+<span class="s">jekyll serve</span>  
+<span class="s">git add *</span>
+<span class="s">git commit -m "Adjust Jekyll"</span>  
+<span class="s">git remote set-url origin https://github.com/rextarx/rextarx.github.io.git</span>  
+<span class="s">git push origin master</span></code></pre></figure>
 
 	  </div>
 
