@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Soronto's blog</title>
+		<description>소처럼 코딩하기</description>
+		<link>/</link>
+		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>지킬로 블로그 시작하기</title>
+				<description>&lt;p&gt;지킬을 설치하면 블로깅이 쉽다던데요&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;jekyll-링크&quot;&gt;&lt;a href=&quot;https://jekyllrb-ko.github.io/&quot;&gt;Jekyll 링크&lt;/a&gt;&lt;/h4&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Gem 설치&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Gem은 Ruby패키지 매니저이기 때문에 루비부터 설치 &lt;a href=&quot;https://rubyinstaller.org/downloads/&quot;&gt;Ruby 다운로드&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Windows 명령 프롬프트에서 입력&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;gem install bundler jekyll&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;jekyll new my-awesome-site&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;cd my-awesome-site&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;bundle exec jekyll serve&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# =&amp;gt; 브라우저로 http://localhost:4000 에 접속 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;브라우저에서 &lt;strong&gt;“Welcome to Jekyll”&lt;/strong&gt; 이 출력되면 성공&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;맘에 드는 테마를 찾기 위해 &lt;em&gt;Jekyll Themes&lt;/em&gt;&lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;링크&lt;/a&gt; 를 서핑&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;맘에 드는 테마를 찾았다면 Download&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;알집 형태의 파일을 압축해제 후 &lt;em&gt;my-awesome-site&lt;/em&gt; 디렉토리로 이동&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;cd my-awesome-site&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;bundle install&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 의존성 패키지 설치&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;bundle exec jekyll serve&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# =&amp;gt; 브라우저로 http://localhost:4000 에 접속 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;gitpage에-무료호스팅-해보기&quot;&gt;Gitpage에 무료호스팅 해보기&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;자세한 내용 &lt;a href=&quot;https://pages.github.com/&quot;&gt;https://pages.github.com/&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Github 계정 생성하기 &lt;br /&gt;
+※( 생성시에 &lt;strong&gt;Username&lt;/strong&gt;.github.io 이름으로 맞춰 레포지터리 생성! )&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;git clone https://github.com/Username/Username.github.io&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;자신이 만든 사이트 파일 &lt;strong&gt;전부&lt;/strong&gt;를 git에서 클론한 Username.github.io 디렉터리로 이동&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;git add *&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;git commit -m &quot;initial commit&quot;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;git push&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#※https://Username.github.io/ 접속&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#※상황에 따라서 github 계정 입력을 해야할 수도 있어요!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;30분-이상-접속이-안된다면-메일을-확인해보세요&quot;&gt;※30분 이상 접속이 안된다면 메일을 확인해보세요.!&lt;/h4&gt;
+
+</description>
+				<pubDate>Mon, 16 Jul 2018 00:00:00 +0900</pubDate>
+				<link>/jekyll/2018/07/16/configuration.html</link>
+				<guid isPermaLink="true">/jekyll/2018/07/16/configuration.html</guid>
+			</item>
+		
+	</channel>
+</rss>
