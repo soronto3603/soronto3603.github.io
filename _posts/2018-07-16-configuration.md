@@ -2,7 +2,7 @@
 layout: post
 title: 지킬로 블로그 시작하기
 categories: [Jekyll]
-tags: [Jekyll]
+tags: [Jekyll, 블로그]
 fullview: true
 ---
 지킬을 설치하면 블로깅이 쉽다던데요
