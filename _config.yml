@@ -3,9 +3,9 @@
 # Site wide configuration
 ####################################
 #
-title: Leonids
-email:
-description: A simple and awesome blog theme powered by jekyll.
+title: Soronto's blog
+email: soronto3603@gmail.com
+description: 소처럼 코딩하기
 url: # the base hostname & protocol for your site
 
 
@@ -14,7 +14,7 @@ url: # the base hostname & protocol for your site
 # Jekyll configuration
 ####################################
 #
-timezone:          Europe/Paris
+timezone:          Asia/Seoul
 markdown:          kramdown
 highlighter:       rouge
 excerpt_separator: <!--more-->
@@ -33,15 +33,15 @@ kramdown:
 ####################################
 #
 owner:
-  name: Leonids
+  name: soronto
   avatar: leonids-logo.png
-  job: "A jekyll theme"
-  bio: "A simple and awesome blog theme powered by jekyll."
-  email:
-  disqus-shortname:
+  job: "Programmer"
+  bio: "소처럼 코딩하기"
+  email: soronto3603@gmail.com
+  disqus-shortname: ronto
   twitter: #username
   facebook: #username
-  google:
+  google: soronto3603@gmail.com
     plus: #username
     analytics:
     verify:
