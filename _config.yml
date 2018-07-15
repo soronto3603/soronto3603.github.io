@@ -1,70 +1,50 @@
-#
-###################################
-# Site wide configuration
-####################################
-#
-title: Soronto's blog
-email: soronto3603@gmail.com
-description: 소처럼 코딩하기
-url: https://soronto3603.github.io/
+title: Sleek # your site title
+author: GitHub User
+email: your-email@domain.com # email for form submission, you also have to change it in _js/scripts.js
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://janczizikow.github.io/sleek" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jan_czizikow # replace with your_twitter_username or comment to remove link from footer
+github_username:  janczizikow # replace with your_github_username or comment to remove link from footer
+instagram_username: shanlongjj # replace with your_instagram_username or comment to remove link from footer
+social:
+  name: Your Name
+  links:
+    - https://twitter.com/BenBalter
+    - https://www.facebook.com/ben.balter
+    - https://www.linkedin.com/in/BenBalter
+    - https://plus.google.com/+BenBalter
+    - https://github.com/benbalter
+    - https://keybase.io/benbalter
 
+disqus:
+  shortname: janczizikow # to enable comments replace with your_disqus_shortname
 
-#
-###################################
-# Jekyll configuration
-####################################
-#
-timezone:          Asia/Seoul
-markdown:          kramdown
-highlighter:       rouge
-excerpt_separator: <!--more-->
-permalink:         /articles/:year-:month/:title
+# Build settings
+markdown: kramdown
+highlighter: rouge # or pygments or null
+theme: jekyll-sleek
+exclude:
+  - README.md
+  - node_modules
+  - package.json
+  - package-lock.json
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - npm-debug.log
+  - gulpfile.js
+  - sleek.png
 
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  enable_coderay: false
+include: ['_pages']
+permalink: /:title/
 
-#
-###################################
-# Site Owner configuration
-####################################
-#
-owner:
-  name: soronto
-  avatar: leonids-logo.png
-  job: "Programmer"
-  bio: "소처럼 코딩하기"
-  email:
-  disqus-shortname:
-  twitter: #username
-  facebook: #username
-  google:
-    plus: #username
-    analytics:
-    verify:
-    ad-client:
-    ad-slot:
-  bing-verify:
-  github: #username
-  gitlab: #username
-  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
-  linkedin: #username
-  skype: #username
-  xing: #username
-  instagram: #username
-  lastfm: #username
-  tumblr: #username
-  pinterest: #username
-  foursquare: #username
-  steam: #username
-  dribbble: #username
-  youtube: #username
-  soundcloud: #username
-  weibo: #username
-  flickr: #username
-  500px: #username
-  codepen: #username
-  reddit: #username
+compress_html:
+  clippings: all
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
