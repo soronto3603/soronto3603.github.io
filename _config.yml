@@ -37,11 +37,11 @@ owner:
   avatar: leonids-logo.png
   job: "Programmer"
   bio: "소처럼 코딩하기"
-  email: soronto3603@gmail.com
-  disqus-shortname: ronto
+  email:
+  disqus-shortname:
   twitter: #username
   facebook: #username
-  google: soronto3603@gmail.com
+  google:
     plus: #username
     analytics:
     verify:
