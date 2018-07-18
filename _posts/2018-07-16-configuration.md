@@ -77,7 +77,7 @@ For information on troubleshooting Jekyll see:
 If you have any questions you can contact us by replying to this email.
 {% endhighlight %}
 
-버전을 3.1.6버전으로 내려서 해보세요[REXTARX블로그](https://rextarx.github.io/jekyll/2017/01/07/Create_Github_page_via_Jekyll/)
+버전을 3.1.6버전으로 내려서 해보세요 [REXTARX블로그](https://rextarx.github.io/jekyll/2017/01/07/Create_Github_page_via_Jekyll/)
 
 {% highlight yaml %}
 sudo gem uninstall jekyll  
@@ -89,3 +89,5 @@ git commit -m "Adjust Jekyll"
 git remote set-url origin https://github.com/rextarx/rextarx.github.io.git  
 git push origin master
 {% endhighlight %}
+
+그럼에도 잘 작동을 안하면 .gitignore 파일도 지워보세요!

@@ -7,6 +7,29 @@
 		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>01.Kotlin 안드로이드 앱 만들기 - 설치</title>
+				<description>&lt;h3 id=&quot;android-studio-다운로드-링크&quot;&gt;&lt;a href=&quot;https://developer.android.com/studio/&quot;&gt;android studio 다운로드 링크&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2018-07-17.PNG&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/images/2018-07-17-01.PNG&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/images/2018-07-17-02.PNG&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/images/2018-07-17-03.PNG&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/images/2018-07-17-04.PNG&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/images/2018-07-17-05.PNG&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/images/2018-07-17-06.PNG&quot; alt=&quot;&quot; /&gt;
+Configure -&amp;gt; SDK Manager
+&lt;img src=&quot;/images/2018-07-17-07.PNG&quot; alt=&quot;&quot; /&gt;
+API Level 19를 미니멈 레벨로 많이 쓴다고 합니다;;
+&lt;img src=&quot;/images/2018-07-17-08.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;셋팅-끝-&quot;&gt;셋팅 끝 ~&lt;/h1&gt;
+</description>
+				<pubDate>Tue, 17 Jul 2018 00:00:00 +0900</pubDate>
+				<link>/android/kotlin/2018/07/17/setting-android.html</link>
+				<guid isPermaLink="true">/android/kotlin/2018/07/17/setting-android.html</guid>
+			</item>
+		
+			<item>
 				<title>지킬로 블로그 시작하기</title>
 				<description>&lt;p&gt;지킬을 설치하면 블로깅이 쉽다던데요&lt;/p&gt;
 &lt;ul&gt;
@@ -93,7 +116,7 @@
 
 &lt;span class=&quot;s&quot;&gt;If you have any questions you can contact us by replying to this email.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;버전을 3.1.6버전으로 내려서 해보세요&lt;a href=&quot;https://rextarx.github.io/jekyll/2017/01/07/Create_Github_page_via_Jekyll/&quot;&gt;REXTARX블로그&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;버전을 3.1.6버전으로 내려서 해보세요 &lt;a href=&quot;https://rextarx.github.io/jekyll/2017/01/07/Create_Github_page_via_Jekyll/&quot;&gt;REXTARX블로그&lt;/a&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;sudo gem uninstall jekyll&lt;/span&gt;  
 &lt;span class=&quot;s&quot;&gt;sudo gem install jekyll:3.1.6&lt;/span&gt;
@@ -103,6 +126,8 @@
 &lt;span class=&quot;s&quot;&gt;git commit -m &quot;Adjust Jekyll&quot;&lt;/span&gt;  
 &lt;span class=&quot;s&quot;&gt;git remote set-url origin https://github.com/rextarx/rextarx.github.io.git&lt;/span&gt;  
 &lt;span class=&quot;s&quot;&gt;git push origin master&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;그럼에도 잘 작동을 안하면 .gitignore 파일도 지워보세요!&lt;/p&gt;
 </description>
 				<pubDate>Mon, 16 Jul 2018 00:00:00 +0900</pubDate>
 				<link>/jekyll/2018/07/16/configuration.html</link>
