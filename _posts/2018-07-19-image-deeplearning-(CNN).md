@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 딥러닝 기반 이미지 검색 시스템
-categories: [depplearning,CNN,computer vision]]
+categories: [depplearning,CNN,computer vision]
 tags: [depplearning,CNN,computer vision]
 fullview: true
 ---
