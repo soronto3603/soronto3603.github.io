@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Soronto's blog</title>
+		<description>소처럼 코딩하기</description>
+		<link>/</link>
+		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>02.Kotlin 안드로이드 리사이클러뷰 만들기</title>
+				<description>&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Android Developers Core topics&lt;/code&gt;의 &lt;a href=&quot;https://developer.android.com/guide/topics/ui/layout/recyclerview&quot;&gt;“RecyclerView를 사용하여 목록 만들기”&lt;/a&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerView&lt;/code&gt;는 &lt;code class=&quot;highlighter-rouge&quot;&gt;ListView&lt;/code&gt;보다 고급 버전 입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerView&lt;/code&gt;는 기존의 &lt;code class=&quot;highlighter-rouge&quot;&gt;ListView&lt;/code&gt; 와는 &lt;em&gt;다르게&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewHolder&lt;/code&gt; 패턴을 사용하도록 유도합니다. 
+&lt;code class=&quot;highlighter-rouge&quot;&gt;ViewHolder&lt;/code&gt; 는 &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerView&lt;/code&gt; 에 들어가는 하나의 요소들을 화면에 보이는 것만 데이터 로딩을하며 안드로이드 메모리 관리를 효율적으로 할 수 있게 도와주는 역할을 하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;그 외에도 &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerView&lt;/code&gt; 는 다음의 최적화 작업을 수행합니다&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;뷰홀더의 양 끝에 임시의 뷰 홀더를 생성하여 다음 요소의 디스플레이를 미리 준비해 놓습니다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;스크롤 됬을때 새로운 뷰홀더를 생성하고 이미 스크롤된 뷰홀더는 저장해놓았다가 재사용 합니다. 만약 역방향으로 스크롤 한다면 저장해놓았던 뷰홀더를 재사용합니다. 만약 정방향으로 긴 스크롤을 한다면 사용안하는 뷰홀더를 재사용하여 새로운 데이터를 할당하여 보여줍니다. 뷰 홀더를 지속적으로 만들거나 팽창시킬 필요는 없습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;표시된 항목이 추가되거나 변한다면 &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerView.Adapter.notify...()&lt;/code&gt; 메소드들을 사용하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerView&lt;/code&gt; 내용을 쉽게 수정할 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;1-의존성-라이브러리-설치&quot;&gt;1. 의존성 라이브러리 설치&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; 에 다음의 &lt;code class=&quot;highlighter-rouge&quot;&gt;depedencies&lt;/code&gt; 항목을 추가합니다.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dependencies {
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;2-리사이클러뷰-레이아웃을-생성합니다&quot;&gt;2. 리사이클러뷰 레이아웃을 생성합니다.&lt;/h2&gt;
+&lt;p&gt;원하는 &lt;code class=&quot;highlighter-rouge&quot;&gt;layout&lt;/code&gt;에 &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerView&lt;/code&gt;를 생성합니다.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;android.support.constraint.ConstraintLayout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;xmlns:app=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;xmlns:tools=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/tools&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;tools:context=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;.BookSearchActivity&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;android.support.v7.widget.RecyclerView&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/book_search_recyclerview&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:scrollbars=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;vertical&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:layout_constraintTop_toBottomOf=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/book_search_input_box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/android.support.constraint.ConstraintLayout&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;3-메인-액티비티에-리사이클러-뷰-생성을-합니다&quot;&gt;3. 메인 액티비티에 리사이클러 뷰 생성을 합니다&lt;/h2&gt;
+&lt;p&gt;viewAdapter를 작성하지 않았기 때문에 오류가 보일 수 있습니다~&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class BookSearchActivity : AppCompatActivity() {
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var viewAdapter: RecyclerView.Adapter&amp;lt;*&amp;gt;
+    private lateinit var viewManager: RecyclerView.LayoutManager
+
+    var myDataset=arrayListOf&amp;lt;String&amp;gt;()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_book_search)
+
+        // 데이터 추가!
+        myDataset.add(&quot;123&quot;)
+        myDataset.add(&quot;456&quot;)
+        myDataset.add(&quot;789&quot;)
+        myDataset.add(&quot;3333&quot;)
+
+        viewManager = LinearLayoutManager(this)
+        // 뷰 어댑처 추가
+        viewAdapter = mRecyclerViewAdapter(myDataset)
+
+        // 리사이클러 뷰 생성
+        recyclerView = findViewById&amp;lt;RecyclerView&amp;gt;(R.id.book_search_recyclerview).apply {
+            // 이 곳의 변수셋팅으로 성능향상을 할 수 있습니다.
+            // 내부 내용이 리사이클러뷰의 요소들을 수정하지는 않습니다.
+            setHasFixedSize(true)
+
+            // LinearLayout을 사용하여 viewManager를 셋팅
+            layoutManager = viewManager
+
+            // viewAdapter 셋팅
+            adapter = viewAdapter
+
+        }
+    }
+//    데이터 추가와 데이터 클리어를 테스트 하기위한 함수
+    fun addDataTest(v:View){
+        //데이터 &quot;66666&quot; 을 추가하고 notify함수를 호출하여 리사이클러 뷰를 업데이트 합니다.
+        myDataset.add(&quot;66666&quot;)
+        viewAdapter.notifyDataSetChanged()
+    }
+    fun clearDataTest(v:View){
+        //데이터를 클리어하고 notify함수를 호출하여 리사이클러 뷰를 업데이트 합니다.
+        myDataset.clear()
+        viewAdapter.notifyDataSetChanged()
+    }
+
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;4-리사이클러뷰-어댑터를-생성합니다&quot;&gt;4. 리사이클러뷰 어댑터를 생성합니다&lt;/h2&gt;
+&lt;p&gt;리사이클러뷰 어댑터는 데이터셋을 생성자로 받고 뷰홀더 생성과 뷰홀더를 생성할때 데이터를 어떻게 연결할지 결정합니다&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class mRecyclerViewAdapter(var myDataset: ArrayList&amp;lt;String&amp;gt;) :
+        RecyclerView.Adapter&amp;lt;mRecyclerViewAdapter.ViewHolder&amp;gt;() {
+
+    class ViewHolder(val mViewItem: ConstraintLayout) : RecyclerView.ViewHolder(mViewItem)
+
+    // Create new views 
+    override fun onCreateViewHolder(parent: ViewGroup,
+                                    viewType: Int): mRecyclerViewAdapter.ViewHolder {
+        // 새로운 뷰를 생성합니다.
+        val mViewItem = LayoutInflater.from(parent.context)
+                .inflate(R.layout.book_search_recyclerview_item, parent, false) as ConstraintLayout
+        // 이곳에서 뷰의 스타일을 설정 하세요.
+
+        return ViewHolder(mViewItem)
+    }
+
+    // 생성된 뷰에 데이터를 할당합니다.
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        // 새로 생성된 뷰 == holder == ConstraintView 내부에 접근하여 데이터를 지정
+        holder.mViewItem.search_book_recyclerview_item_text.text = myDataset[position]
+    }
+
+    // 데이터셋의 길이를 리턴합니다. ( 레이아웃 매니저가 호출했을 경우 사용 )
+    override fun getItemCount() = myDataset.size
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+				<pubDate>Tue, 24 Jul 2018 00:00:00 +0900</pubDate>
+				<link>/depplearning/cnn/computer%20vision/2018/07/24/android-recyclerview.html</link>
+				<guid isPermaLink="true">/depplearning/cnn/computer%20vision/2018/07/24/android-recyclerview.html</guid>
+			</item>
+		
+			<item>
+				<title>딥러닝 기반 이미지 검색 시스템</title>
+				<description>&lt;p&gt;본 포스트는 버즈니 남상협 대표님의 세미나를 참고 했습니다!&lt;/p&gt;
+
+&lt;h1 id=&quot;분류--classfication-&quot;&gt;분류 ( Classfication )&lt;/h1&gt;
+
+&lt;p&gt;분류를 하기 위해선 기준이 있어야 합니다!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/2018-07-21-01.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;사과와 오렌지를 어떻게 분류하시나요?&lt;/p&gt;
+
+&lt;p&gt;아마도 우리의 머릿속엔 나름의 &lt;strong&gt;기준&lt;/strong&gt;이 있을 겁니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/2018-07-21-02.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위의 사진보다 훨씬 복잡한 &lt;strong&gt;기준&lt;/strong&gt;을 가지고 있을 것 입니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;특징점--feature-&quot;&gt;특징점 ( Feature )&lt;/h1&gt;
+
+&lt;p&gt;우린 이런 &lt;strong&gt;기준&lt;/strong&gt;이 될만한 요소들을 특징점 == Feature 라고 합니다&lt;/p&gt;
+
+&lt;p&gt;Feature 는 컴퓨터가 이해 할 수 있는 데이터로 설정합니다&lt;/p&gt;
+
+&lt;p&gt;모호하지 않고! 보다 명확하게! 수치로요!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/2018-07-21-03.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;특징점만 정확하게 구한다면 우리는 이미지를 기계가 완벽히 분리할 수 있을 것 입니다!&lt;/p&gt;
+
+&lt;h1 id=&quot;인간이-도출하는-특징점의-한계&quot;&gt;인간이 도출하는 특징점의 한계&lt;/h1&gt;
+
+&lt;p&gt;특징점을 일일이 사람이 구분하는 것은 정말 어려운 일입니다!&lt;/p&gt;
+
+&lt;p&gt;다음의 꽃을 분류하기 위해선&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/2018-07-21-04.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;직접 수백개의 꽃잎을 실측하고 실측한 데이터로 부터 분류 기준을 세웠어야 했습니다&lt;/p&gt;
+
+&lt;p&gt;하지만 현실에서의 모든 객체를 분류한다면 어떨까요?&lt;/p&gt;
+
+&lt;h1 id=&quot;혼자-특징점-찾는-기계--cnn&quot;&gt;혼자 특징점 찾는 기계 : CNN&lt;/h1&gt;
+
+&lt;p&gt;CNN( Convolutional neural network ) 으로 인해 이미지 인식 성능은 놀랍게 변했습니다&lt;/p&gt;
+
+&lt;p&gt;사람이 특이점을 직접 찾지 않으면서도 말이죠!&lt;/p&gt;
+
+&lt;h2 id=&quot;필터&quot;&gt;필터&lt;/h2&gt;
+
+&lt;p&gt;다음은 곡선을 좌표상의 데이터로 표현한 그림 입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/2018-07-21-06.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이것을 필터라고 하겠습니다 필터는 이 모양을 그림으로부터 검출하기 위해서 사용하는데요&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/2018-07-21-07.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;곡선 모양에 곡선 필터를 합성곱 연산을 한다면 필터의 모양을 제외한 나머지 값들은 사라져
+원래 이미지가 얼만큼 곡선을 포함하고 있는지 알 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/2018-07-21-08.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;직선 모양인 쥐의 머리 부분은 필터와 모양이 맞지 않아 합성곱연산이 0이 됩니다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/2018-07-21-09.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;실제 필터는 Red, Green, Blue 필터와 다양한 모양 필터로 이루어져 있으며&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/2018-07-21-10.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;다양한 필터를 통과한 데이터는 또다시 필터를 통과 합니다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/2018-07-21-11.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;점점 필터는 단순한 모양에서 복잡한 모양으로 바뀌며 마지막 필터를 통과하며 대상 이미지는&lt;/p&gt;
+
+&lt;p&gt;객체가 인식되어 태깅 됩니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;더-많고-복잡한-내용이-있지만-아직-부족한-점이-많아-더욱-보충해서-올릴께용&quot;&gt;더 많고 복잡한 내용이 있지만 아직 부족한 점이 많아 더욱 보충해서 올릴께용&lt;/h2&gt;
+</description>
+				<pubDate>Thu, 19 Jul 2018 00:00:00 +0900</pubDate>
+				<link>/depplearning/cnn/computer%20vision/2018/07/19/image-deeplearning-(CNN).html</link>
+				<guid isPermaLink="true">/depplearning/cnn/computer%20vision/2018/07/19/image-deeplearning-(CNN).html</guid>
+			</item>
+		
+			<item>
+				<title>01.Kotlin 안드로이드 앱 만들기 - 설치</title>
+				<description>&lt;h3 id=&quot;android-studio-다운로드-링크&quot;&gt;&lt;a href=&quot;https://developer.android.com/studio/&quot;&gt;android studio 다운로드 링크&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2018-07-17.PNG&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/images/2018-07-17-01.PNG&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/images/2018-07-17-02.PNG&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/images/2018-07-17-03.PNG&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/images/2018-07-17-04.PNG&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/images/2018-07-17-05.PNG&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/images/2018-07-17-06.PNG&quot; alt=&quot;&quot; /&gt;
+Configure -&amp;gt; SDK Manager
+&lt;img src=&quot;/images/2018-07-17-07.PNG&quot; alt=&quot;&quot; /&gt;
+API Level 19를 미니멈 레벨로 많이 쓴다고 합니다;;
+&lt;img src=&quot;/images/2018-07-17-08.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;셋팅-끝-&quot;&gt;셋팅 끝 ~&lt;/h1&gt;
+</description>
+				<pubDate>Tue, 17 Jul 2018 00:00:00 +0900</pubDate>
+				<link>/android/kotlin/2018/07/17/setting-android.html</link>
+				<guid isPermaLink="true">/android/kotlin/2018/07/17/setting-android.html</guid>
+			</item>
+		
+			<item>
+				<title>지킬로 블로그 시작하기</title>
+				<description>&lt;p&gt;지킬을 설치하면 블로깅이 쉽다던데요&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;jekyll-링크&quot;&gt;&lt;a href=&quot;https://jekyllrb-ko.github.io/&quot;&gt;Jekyll 링크&lt;/a&gt;&lt;/h4&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Gem 설치&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Gem은 Ruby패키지 매니저이기 때문에 루비부터 설치 &lt;a href=&quot;https://rubyinstaller.org/downloads/&quot;&gt;Ruby 다운로드&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Windows 명령 프롬프트에서 입력&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;gem install bundler jekyll&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;jekyll new my-awesome-site&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;cd my-awesome-site&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;bundle exec jekyll serve&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# =&amp;gt; 브라우저로 http://localhost:4000 에 접속 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;브라우저에서 &lt;strong&gt;“Welcome to Jekyll”&lt;/strong&gt; 이 출력되면 성공&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;맘에 드는 테마를 찾기 위해 &lt;em&gt;Jekyll Themes&lt;/em&gt;&lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;링크&lt;/a&gt; 를 서핑&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;맘에 드는 테마를 찾았다면 Download&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;알집 형태의 파일을 압축해제 후 &lt;em&gt;my-awesome-site&lt;/em&gt; 디렉토리로 이동&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;cd my-awesome-site&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;bundle install&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 의존성 패키지 설치&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;bundle exec jekyll serve&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# =&amp;gt; 브라우저로 http://localhost:4000 에 접속 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;gitpage에-무료호스팅-해보기&quot;&gt;Gitpage에 무료호스팅 해보기&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;자세한 내용 &lt;a href=&quot;https://pages.github.com/&quot;&gt;https://pages.github.com/&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Github 계정 생성하기 &lt;br /&gt;
+※( 생성시에 &lt;strong&gt;Username&lt;/strong&gt;.github.io 이름으로 맞춰 레포지터리 생성! )&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;git clone https://github.com/Username/Username.github.io&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;자신이 만든 사이트 파일 &lt;strong&gt;전부&lt;/strong&gt;를 git에서 클론한 Username.github.io 디렉터리로 이동&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;git add *&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;git commit -m &quot;initial commit&quot;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;git push&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#※https://Username.github.io/ 접속&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#※상황에 따라서 github 계정 입력을 해야할 수도 있어요!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;30분-이상-접속이-안된다면-메일을-확인해보세요&quot;&gt;※30분 이상 접속이 안된다면 메일을 확인해보세요.!&lt;/h4&gt;
+
+&lt;h3 id=&quot;다음과-같은-에러&quot;&gt;다음과 같은 에러&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;na&quot;&gt;The page build failed with the following error&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;A file was included in `contact.md` that is a symlink or does not exist in your `_includes` directory. For more information, see https://help.github.com/articles/page-build-failed-file-is-a-symlink.&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;For information on troubleshooting Jekyll see&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+
+  &lt;span class=&quot;s&quot;&gt;https://help.github.com/articles/troubleshooting-jekyll-builds&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;If you have any questions you can contact us by replying to this email.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;버전을 3.1.6버전으로 내려서 해보세요 &lt;a href=&quot;https://rextarx.github.io/jekyll/2017/01/07/Create_Github_page_via_Jekyll/&quot;&gt;REXTARX블로그&lt;/a&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;sudo gem uninstall jekyll&lt;/span&gt;  
+&lt;span class=&quot;s&quot;&gt;sudo gem install jekyll:3.1.6&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;jekyll new . --force&lt;/span&gt;  
+&lt;span class=&quot;s&quot;&gt;jekyll serve&lt;/span&gt;  
+&lt;span class=&quot;s&quot;&gt;git add *&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;git commit -m &quot;Adjust Jekyll&quot;&lt;/span&gt;  
+&lt;span class=&quot;s&quot;&gt;git remote set-url origin https://github.com/rextarx/rextarx.github.io.git&lt;/span&gt;  
+&lt;span class=&quot;s&quot;&gt;git push origin master&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;그럼에도 잘 작동을 안하면 .gitignore 파일도 지워보세요!&lt;/p&gt;
+</description>
+				<pubDate>Mon, 16 Jul 2018 00:00:00 +0900</pubDate>
+				<link>/jekyll/2018/07/16/configuration.html</link>
+				<guid isPermaLink="true">/jekyll/2018/07/16/configuration.html</guid>
+			</item>
+		
+	</channel>
+</rss>
