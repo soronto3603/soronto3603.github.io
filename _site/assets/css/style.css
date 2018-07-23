@@ -1,5 +1,7 @@
-@import url(//fonts.googleapis.com/css?family=Ubuntu:500&subset=latin,latin-ext);
-
+@font-face{
+	font-family:"Jeju Gothic";
+	src:url(ttf/JejuGothic.ttf) format('truetype');
+}
 body{
 	color: #2c3e50;
 }
@@ -37,7 +39,7 @@ a.nav-link i{
 a.nav-link:hover { color: #777; }
 
 #bio {
-	font-family: "Courier New", Courier, monospace;
+	font-family: 'Jeju Gothic', serif;
 	font-size: 11px;
 	margin: 0 auto;
 	margin-bottom: 10px;
@@ -115,22 +117,22 @@ article.home div a, article.home pre a { color: #2c3e50; }
 article.home div a:hover, article.home pre a:hover { color: #2c3e50; text-decoration: none; }
 article img { max-width: 100%; }
 
-h1,h2,h3,h4,h5,h6 { font-family: 'Ubuntu', sans-serif; }
+h1,h2,h3,h4,h5,h6 { font-family: 'Jeju Gothic', serif; }
 article.home h1,
 article.home h2,
 article.home h3,
 article.home h4,
 article.home h5,
 article.home h6 {
-	font-family: 'Ubuntu', sans-serif;
-	color: #f2756a;
+	font-family: 'Jeju Gothic', serif;;
+	/* color: #f2756a; */
 }
 
 article.home h1 a,
 article.home h2 a,
 article.home h3 a,
 article.home h4 a {
-	color: #f2756a;
+	/* color: #f2756a; */
 }
 article.home h1 a:hover,
 article.home h2 a:hover,

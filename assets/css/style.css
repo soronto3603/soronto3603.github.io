@@ -1,6 +1,7 @@
-@import url(//fonts.googleapis.com/css?family=Ubuntu:500&subset=latin,latin-ext);
-@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
-
+@font-face{
+	font-family:"Jeju Gothic";
+	src:url(ttf/JejuGothic.ttf) format('truetype');
+}
 body{
 	color: #2c3e50;
 }
