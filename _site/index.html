@@ -133,152 +133,138 @@
   <span class="post-date">
     
     July
-    17th,
+    24th,
     
     2018
   </span>
 
   <h2>
-    <a href="/android/kotlin/2018/07/17/setting-android.html">01.Kotlin 안드로이드 앱 만들기 - 설치</a>
+    <a href="/depplearning/cnn/computer%20vision/2018/07/24/android-recyclerview.html">02.Kotlin 안드로이드 리사이클러뷰 만들기</a>
   </h2>
 
   <div>
     
-    <h3 id="android-studio-다운로드-링크"><a href="https://developer.android.com/studio/">android studio 다운로드 링크</a></h3>
+    <p><code class="highlighter-rouge">Android Developers Core topics</code>의 <a href="https://developer.android.com/guide/topics/ui/layout/recyclerview">“RecyclerView를 사용하여 목록 만들기”</a>
+<code class="highlighter-rouge">RecyclerView</code>는 <code class="highlighter-rouge">ListView</code>보다 고급 버전 입니다.</p>
 
-<p><img src="/images/2018-07-17.PNG" alt="" />
-<img src="/images/2018-07-17-01.PNG" alt="" />
-<img src="/images/2018-07-17-02.PNG" alt="" />
-<img src="/images/2018-07-17-03.PNG" alt="" />
-<img src="/images/2018-07-17-04.PNG" alt="" />
-<img src="/images/2018-07-17-05.PNG" alt="" />
-<img src="/images/2018-07-17-06.PNG" alt="" />
-Configure -&gt; SDK Manager
-<img src="/images/2018-07-17-07.PNG" alt="" />
-API Level 19를 미니멈 레벨로 많이 쓴다고 합니다;;
-<img src="/images/2018-07-17-08.PNG" alt="" /></p>
+<p><code class="highlighter-rouge">RecyclerView</code>는 기존의 <code class="highlighter-rouge">ListView</code> 와는 <em>다르게</em> <code class="highlighter-rouge">ViewHolder</code> 패턴을 사용하도록 유도합니다. 
+<code class="highlighter-rouge">ViewHolder</code> 는 <code class="highlighter-rouge">RecyclerView</code> 에 들어가는 하나의 요소들을 화면에 보이는 것만 데이터 로딩을하며 안드로이드 메모리 관리를 효율적으로 할 수 있게 도와주는 역할을 하고 있습니다.</p>
 
-<h1 id="셋팅-끝-">셋팅 끝 ~</h1>
-
-    
-  </div>
-
-</article>
-
-
-<article class="home">
-
-  <span class="post-date">
-    
-    July
-    16th,
-    
-    2018
-  </span>
-
-  <h2>
-    <a href="/jekyll/2018/07/16/configuration.html">지킬로 블로그 시작하기</a>
-  </h2>
-
-  <div>
-    
-    <p>지킬을 설치하면 블로깅이 쉽다던데요</p>
+<p>그 외에도 <code class="highlighter-rouge">RecyclerView</code> 는 다음의 최적화 작업을 수행합니다</p>
 <ul>
+  <li>뷰홀더의 양 끝에 임시의 뷰 홀더를 생성하여 다음 요소의 디스플레이를 미리 준비해 놓습니다.</li>
   <li>
-    <h4 id="jekyll-링크"><a href="https://jekyllrb-ko.github.io/">Jekyll 링크</a></h4>
+    <p>스크롤 됬을때 새로운 뷰홀더를 생성하고 이미 스크롤된 뷰홀더는 저장해놓았다가 재사용 합니다. 만약 역방향으로 스크롤 한다면 저장해놓았던 뷰홀더를 재사용합니다. 만약 정방향으로 긴 스크롤을 한다면 사용안하는 뷰홀더를 재사용하여 새로운 데이터를 할당하여 보여줍니다. 뷰 홀더를 지속적으로 만들거나 팽창시킬 필요는 없습니다.</p>
   </li>
-  <li>
-    <p>Gem 설치</p>
-
-    <ul>
-      <li>Gem은 Ruby패키지 매니저이기 때문에 루비부터 설치 <a href="https://rubyinstaller.org/downloads/">Ruby 다운로드</a></li>
-    </ul>
-  </li>
-  <li>Windows 명령 프롬프트에서 입력</li>
+  <li>표시된 항목이 추가되거나 변한다면 <code class="highlighter-rouge">RecyclerView.Adapter.notify...()</code> 메소드들을 사용하여 <code class="highlighter-rouge">RecyclerView</code> 내용을 쉽게 수정할 수 있습니다.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">gem install bundler jekyll</span>
+<h2 id="1-의존성-라이브러리-설치">1. 의존성 라이브러리 설치</h2>
+<p><code class="highlighter-rouge">build.gradle</code> 에 다음의 <code class="highlighter-rouge">depedencies</code> 항목을 추가합니다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dependencies {
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+}
+</code></pre></div></div>
 
-<span class="s">jekyll new my-awesome-site</span>
+<h2 id="2-리사이클러뷰-레이아웃을-생성합니다">2. 리사이클러뷰 레이아웃을 생성합니다.</h2>
+<p>원하는 <code class="highlighter-rouge">layout</code>에 <code class="highlighter-rouge">RecyclerView</code>를 생성합니다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;android.support.constraint.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">tools:context=</span><span class="s">".BookSearchActivity"</span><span class="nt">&gt;</span>
 
-<span class="s">cd my-awesome-site</span>
+    <span class="nt">&lt;android.support.v7.widget.RecyclerView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/book_search_recyclerview"</span>
+        <span class="na">android:scrollbars=</span><span class="s">"vertical"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">"@+id/book_search_input_box"</span><span class="nt">/&gt;</span>
 
-<span class="s">bundle exec jekyll serve</span>
+<span class="nt">&lt;/android.support.constraint.ConstraintLayout&gt;</span>
+</code></pre></div></div>
+<h2 id="3-메인-액티비티에-리사이클러-뷰-생성을-합니다">3. 메인 액티비티에 리사이클러 뷰 생성을 합니다</h2>
+<p>viewAdapter를 작성하지 않았기 때문에 오류가 보일 수 있습니다~</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class BookSearchActivity : AppCompatActivity() {
 
-<span class="c1"># =&gt; 브라우저로 http://localhost:4000 에 접속 </span></code></pre></figure>
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var viewAdapter: RecyclerView.Adapter&lt;*&gt;
+    private lateinit var viewManager: RecyclerView.LayoutManager
 
-<ul>
-  <li>
-    <p>브라우저에서 <strong>“Welcome to Jekyll”</strong> 이 출력되면 성공</p>
-  </li>
-  <li>
-    <p>맘에 드는 테마를 찾기 위해 <em>Jekyll Themes</em><a href="http://jekyllthemes.org/">링크</a> 를 서핑</p>
-  </li>
-  <li>
-    <p>맘에 드는 테마를 찾았다면 Download</p>
-  </li>
-  <li>
-    <p>알집 형태의 파일을 압축해제 후 <em>my-awesome-site</em> 디렉토리로 이동</p>
-  </li>
-</ul>
+    var myDataset=arrayListOf&lt;String&gt;()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_book_search)
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">cd my-awesome-site</span>
+        // 데이터 추가!
+        myDataset.add("123")
+        myDataset.add("456")
+        myDataset.add("789")
+        myDataset.add("3333")
 
-<span class="s">bundle install</span> <span class="c1"># 의존성 패키지 설치</span>
+        viewManager = LinearLayoutManager(this)
+        // 뷰 어댑처 추가
+        viewAdapter = mRecyclerViewAdapter(myDataset)
 
-<span class="s">bundle exec jekyll serve</span>
+        // 리사이클러 뷰 생성
+        recyclerView = findViewById&lt;RecyclerView&gt;(R.id.book_search_recyclerview).apply {
+            // 이 곳의 변수셋팅으로 성능향상을 할 수 있습니다.
+            // 내부 내용이 리사이클러뷰의 요소들을 수정하지는 않습니다.
+            setHasFixedSize(true)
 
-<span class="c1"># =&gt; 브라우저로 http://localhost:4000 에 접속 </span></code></pre></figure>
+            // LinearLayout을 사용하여 viewManager를 셋팅
+            layoutManager = viewManager
 
-<h1 id="gitpage에-무료호스팅-해보기">Gitpage에 무료호스팅 해보기</h1>
-<ul>
-  <li>
-    <p>자세한 내용 <a href="https://pages.github.com/">https://pages.github.com/</a></p>
-  </li>
-  <li>
-    <p>Github 계정 생성하기 <br />
-※( 생성시에 <strong>Username</strong>.github.io 이름으로 맞춰 레포지터리 생성! )</p>
-  </li>
-</ul>
+            // viewAdapter 셋팅
+            adapter = viewAdapter
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">git clone https://github.com/Username/Username.github.io</span></code></pre></figure>
+        }
+    }
+//    데이터 추가와 데이터 클리어를 테스트 하기위한 함수
+    fun addDataTest(v:View){
+        //데이터 "66666" 을 추가하고 notify함수를 호출하여 리사이클러 뷰를 업데이트 합니다.
+        myDataset.add("66666")
+        viewAdapter.notifyDataSetChanged()
+    }
+    fun clearDataTest(v:View){
+        //데이터를 클리어하고 notify함수를 호출하여 리사이클러 뷰를 업데이트 합니다.
+        myDataset.clear()
+        viewAdapter.notifyDataSetChanged()
+    }
 
-<ul>
-  <li>자신이 만든 사이트 파일 <strong>전부</strong>를 git에서 클론한 Username.github.io 디렉터리로 이동</li>
-</ul>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">git add *</span>
-<span class="s">git commit -m "initial commit"</span>
-<span class="s">git push</span>
-<span class="c1">#※https://Username.github.io/ 접속</span>
-<span class="c1">#※상황에 따라서 github 계정 입력을 해야할 수도 있어요!</span></code></pre></figure>
+}
+</code></pre></div></div>
+<h2 id="4-리사이클러뷰-어댑터를-생성합니다">4. 리사이클러뷰 어댑터를 생성합니다</h2>
+<p>리사이클러뷰 어댑터는 데이터셋을 생성자로 받고 뷰홀더 생성과 뷰홀더를 생성할때 데이터를 어떻게 연결할지 결정합니다</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class mRecyclerViewAdapter(var myDataset: ArrayList&lt;String&gt;) :
+        RecyclerView.Adapter&lt;mRecyclerViewAdapter.ViewHolder&gt;() {
 
-<h4 id="30분-이상-접속이-안된다면-메일을-확인해보세요">※30분 이상 접속이 안된다면 메일을 확인해보세요.!</h4>
+    class ViewHolder(val mViewItem: ConstraintLayout) : RecyclerView.ViewHolder(mViewItem)
 
-<h3 id="다음과-같은-에러">다음과 같은 에러</h3>
+    // Create new views 
+    override fun onCreateViewHolder(parent: ViewGroup,
+                                    viewType: Int): mRecyclerViewAdapter.ViewHolder {
+        // 새로운 뷰를 생성합니다.
+        val mViewItem = LayoutInflater.from(parent.context)
+                .inflate(R.layout.book_search_recyclerview_item, parent, false) as ConstraintLayout
+        // 이곳에서 뷰의 스타일을 설정 하세요.
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">The page build failed with the following error</span><span class="pi">:</span>
+        return ViewHolder(mViewItem)
+    }
 
-<span class="s">A file was included in `contact.md` that is a symlink or does not exist in your `_includes` directory. For more information, see https://help.github.com/articles/page-build-failed-file-is-a-symlink.</span>
+    // 생성된 뷰에 데이터를 할당합니다.
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        // 새로 생성된 뷰 == holder == ConstraintView 내부에 접근하여 데이터를 지정
+        holder.mViewItem.search_book_recyclerview_item_text.text = myDataset[position]
+    }
 
-<span class="na">For information on troubleshooting Jekyll see</span><span class="pi">:</span>
-
-  <span class="s">https://help.github.com/articles/troubleshooting-jekyll-builds</span>
-
-<span class="s">If you have any questions you can contact us by replying to this email.</span></code></pre></figure>
-
-<p>버전을 3.1.6버전으로 내려서 해보세요 <a href="https://rextarx.github.io/jekyll/2017/01/07/Create_Github_page_via_Jekyll/">REXTARX블로그</a></p>
-
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">sudo gem uninstall jekyll</span>  
-<span class="s">sudo gem install jekyll:3.1.6</span>
-<span class="s">jekyll new . --force</span>  
-<span class="s">jekyll serve</span>  
-<span class="s">git add *</span>
-<span class="s">git commit -m "Adjust Jekyll"</span>  
-<span class="s">git remote set-url origin https://github.com/rextarx/rextarx.github.io.git</span>  
-<span class="s">git push origin master</span></code></pre></figure>
-
-<p>그럼에도 잘 작동을 안하면 .gitignore 파일도 지워보세요!</p>
+    // 데이터셋의 길이를 리턴합니다. ( 레이아웃 매니저가 호출했을 경우 사용 )
+    override fun getItemCount() = myDataset.size
+}
+</code></pre></div></div>
 
     
   </div>
@@ -296,12 +282,12 @@ API Level 19를 미니멈 레벨로 많이 쓴다고 합니다;;
   
   
   <li>
-    <span class="page_number">Page: 1 of 1</span>
+    <span class="page_number">Page: 1 of 4</span>
   </li>
 
   
-  <li class="next disabled">
-    <a>Older &rarr;</a>        
+  <li class="next">
+    <a href="/page2">Older &rarr;</a>
   </li>
   
 
