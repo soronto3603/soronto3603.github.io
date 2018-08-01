@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 03.Kotlin 액티비티와 프레그먼트 뷰 - 쉬어가며.. 처음에 알았었으면 좋았을걸..
+title: 03.Kotlin 뷰 종류 이것저것.. - 쉬어가며.. 처음에 알았었으면 좋았을걸..
 categories: [Android,Kotlin]
 tags: [Android,Kotlin]
 fullview: true
