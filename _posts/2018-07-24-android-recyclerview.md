@@ -48,7 +48,7 @@ dependencies {
 ```
 ## 3. 메인 액티비티에 리사이클러 뷰 생성을 합니다
 viewAdapter를 작성하지 않았기 때문에 오류가 보일 수 있습니다~
-```
+```kotlin
 class BookSearchActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
@@ -101,7 +101,7 @@ class BookSearchActivity : AppCompatActivity() {
 ```
 ## 4. 리사이클러뷰 어댑터를 생성합니다
 리사이클러뷰 어댑터는 데이터셋을 생성자로 받고 뷰홀더 생성과 뷰홀더를 생성할때 데이터를 어떻게 연결할지 결정합니다
-```
+```kotlin
 class mRecyclerViewAdapter(var myDataset: ArrayList<String>) :
         RecyclerView.Adapter<mRecyclerViewAdapter.ViewHolder>() {
 
