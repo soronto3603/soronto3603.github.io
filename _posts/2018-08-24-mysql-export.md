@@ -10,12 +10,12 @@ fullview: true
 
 ## Export
 ```
-mysql -hhost_name -uuser_name -ppassword database_name table_name > write_the_name_you_want.sql
+mysqldump -u[user] -p[pw] [dbname] > [filename].sql
 ```
 
 ## Import
 ```
-mysql -hhost_name -uuser_name -ppassword database_name < write_the_name_you_want.sql
+mysql -u[user] -p[pw] [dbname] < [filename].sql
 ```
 
 즐코하세요
