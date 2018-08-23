@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Go 우분투 16.04.4 LTS ( Ubuntu ) 에 설치하기
-categories: [go,algorithm]
-tags: [go,algorithm]
+categories: [go,ubuntu]
+tags: [go,ubuntu]
 fullview: true
 ---
 
