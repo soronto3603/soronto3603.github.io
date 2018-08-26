@@ -17,4 +17,5 @@ fullview: true
 453명
 ```
 
-[공유 링](https://shopping.naver.com/play/stores/100152818/news/2000589546)
+[공유 링크 바로가기](https://shopping.naver.com/play/stores/100152818/news/2000589546)
+
