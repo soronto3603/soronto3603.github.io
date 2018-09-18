@@ -1,8 +1,8 @@
 ---
 layout: post
 title: [WEB]HTML+CSS+Javascript 1. 내 마음대로 위치 이동하기 display:block && display:inline-block
-categories: [css]
-tags: [css]
+categories: [html,css,mysql]
+tags: [html,css,mysql]
 fullview: true
 ---
 아마도 HTML+CSS를 배우면서 내가 원하는 장소에 원하는 객체를 위치시키지 못할때

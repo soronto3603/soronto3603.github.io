@@ -1,8 +1,8 @@
 ---
 layout: post
 title: [WEB]HTML+CSS+Javascript Div 만들고 드래그 앤 드랍으로 위치 바꾸기
-categories: [mysql,ubuntu]
-tags: [mysql,ubuntu]
+categories: [html,css,mysql]
+tags: [html,css,mysql]
 fullview: true
 ---
 
