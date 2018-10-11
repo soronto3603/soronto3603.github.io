@@ -1,12 +1,10 @@
 ---
 layout: post
-title: 01.Kotlin 안드로이드 앱 만들기 - 설치
-categories: [Android,Kotlin]
-tags: [Android,Kotlin]
-fullview: true
+title:  "01.Kotlin 안드로이드 앱 만들기 - 설치"
+date:   2018-07-17 16:17:39 +0900
+categories: Android Kotlin
 ---
-
-### [android studio 다운로드 링크](https://developer.android.com/studio/) 
+### [android studio 다운로드 링크](https://developer.android.com/studio/)
 
 ![](/images/2018-07-17.PNG)
 ![](/images/2018-07-17-01.PNG)

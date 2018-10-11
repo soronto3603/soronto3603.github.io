@@ -1,11 +1,9 @@
 ---
 layout: post
-title: 딥러닝 기반 이미지 검색 시스템
-categories: [depplearning,CNN,computer vision]
-tags: [depplearning,CNN,computer vision]
-fullview: true
+title:  "딥러닝 기반 이미지 검색 시스템"
+date:   2018-07-19 16:17:39 +0900
+categories: depplearning CNN computer vision
 ---
-
 본 포스트는 버즈니 남상협 대표님의 세미나를 참고 했습니다!
 
 # 분류 ( Classfication )

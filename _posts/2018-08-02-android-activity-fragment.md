@@ -1,11 +1,9 @@
 ---
 layout: post
-title: 03.Kotlin 뷰 종류 이것저것.. - 쉬어가며.. 처음에 알았었으면 좋았을걸..
-categories: [Android,Kotlin]
-tags: [Android,Kotlin]
-fullview: true
+title:  "03.Kotlin 뷰 종류 이것저것.. - 쉬어가며.. 처음에 알았었으면 좋았을걸.."
+date:   2018-08-02 16:17:39 +0900
+categories: Android Kotlin
 ---
-
 안드로이드 개발을 처음 시작하며 알 수 없는 용어들이 난무하는 이 바닥에서..
 
 어쨌든 무언가 보여줄 수 있는 어플리케이션을 완성해가는 과정에서..
@@ -44,4 +42,3 @@ fullview: true
 
 
 아마 처음부터 알았더라면 헤매지 않고 삽질하지 안았을 것들..
-

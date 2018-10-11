@@ -1,11 +1,9 @@
 ---
 layout: post
-title: Go 우분투 16.04.4 LTS ( Ubuntu ) 에 설치하기
-categories: [go,ubuntu]
-tags: [go,ubuntu]
-fullview: true
+title:  "Go 우분투 16.04.4 LTS ( Ubuntu ) 에 설치하기"
+date:   2018-08-24 16:17:39 +0900
+categories: go ubuntu
 ---
-
 ## apt-get 패키지 관리자 업데이트 하기
 ```
 sudo apt-get update

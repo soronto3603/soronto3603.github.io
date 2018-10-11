@@ -1,16 +1,15 @@
 ---
 layout: post
-title: 지킬로 블로그 시작하기
-categories: [Jekyll]
-tags: [Jekyll, 블로그]
-fullview: true
+title:  "지킬로 블로그 시작하기"
+date:   2018-07-16 16:17:39 +0900
+categories: jekyll
 ---
 지킬을 설치하면 블로깅이 쉽다던데요
 - #### [Jekyll 링크](https://jekyllrb-ko.github.io/)
 
 - Gem 설치
-    
-    - Gem은 Ruby패키지 매니저이기 때문에 루비부터 설치 [Ruby 다운로드](https://rubyinstaller.org/downloads/) 
+
+    - Gem은 Ruby패키지 매니저이기 때문에 루비부터 설치 [Ruby 다운로드](https://rubyinstaller.org/downloads/)
 
 
 - Windows 명령 프롬프트에서 입력
@@ -23,7 +22,7 @@ cd my-awesome-site
 
 bundle exec jekyll serve
 
-# => 브라우저로 http://localhost:4000 에 접속 
+# => 브라우저로 http://localhost:4000 에 접속
 {% endhighlight %}
 - 브라우저에서 **"Welcome to Jekyll"** 이 출력되면 성공
 
@@ -41,7 +40,7 @@ bundle install # 의존성 패키지 설치
 
 bundle exec jekyll serve
 
-# => 브라우저로 http://localhost:4000 에 접속 
+# => 브라우저로 http://localhost:4000 에 접속
 {% endhighlight %}
 
 # Gitpage에 무료호스팅 해보기

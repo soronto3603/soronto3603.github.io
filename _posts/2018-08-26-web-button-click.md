@@ -1,11 +1,9 @@
 ---
 layout: post
-title: [WEB]HTML+CSS+Javascript Div 만들고 드래그 앤 드랍으로 위치 바꾸기
-categories: [html,css,mysql]
-tags: [html,css,mysql]
-fullview: true
+title:  "[WEB]HTML+CSS+Javascript Div 만들고 드래그 앤 드랍으로 위치 바꾸기"
+date:   2018-08-26 16:17:39 +0900
+categories: html css mysql
 ---
-
 ## 마우스 위치 가져오기
 
 ```javascript

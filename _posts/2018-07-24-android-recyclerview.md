@@ -1,15 +1,13 @@
 ---
 layout: post
-title: 02.Kotlin 안드로이드 리사이클러뷰 만들기
-categories: [depplearning,CNN,computer vision]
-tags: [depplearning,CNN,computer vision]
-fullview: true
+title:  "02.Kotlin 안드로이드 리사이클러뷰 만들기"
+date:   2018-07-24 16:17:39 +0900
+categories: android
 ---
-
 `Android Developers Core topics`의 ["RecyclerView를 사용하여 목록 만들기"](https://developer.android.com/guide/topics/ui/layout/recyclerview)
 `RecyclerView`는 `ListView`보다 고급 버전 입니다.
 
-`RecyclerView`는 기존의 `ListView` 와는 *다르게* `ViewHolder` 패턴을 사용하도록 유도합니다. 
+`RecyclerView`는 기존의 `ListView` 와는 *다르게* `ViewHolder` 패턴을 사용하도록 유도합니다.
 `ViewHolder` 는 `RecyclerView` 에 들어가는 하나의 요소들을 화면에 보이는 것만 데이터 로딩을하며 안드로이드 메모리 관리를 효율적으로 할 수 있게 도와주는 역할을 하고 있습니다.
 
 그 외에도 `RecyclerView` 는 다음의 최적화 작업을 수행합니다
@@ -107,7 +105,7 @@ class mRecyclerViewAdapter(var myDataset: ArrayList<String>) :
 
     class ViewHolder(val mViewItem: ConstraintLayout) : RecyclerView.ViewHolder(mViewItem)
 
-    // Create new views 
+    // Create new views
     override fun onCreateViewHolder(parent: ViewGroup,
                                     viewType: Int): mRecyclerViewAdapter.ViewHolder {
         // 새로운 뷰를 생성합니다.

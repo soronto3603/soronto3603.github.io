@@ -1,11 +1,9 @@
 ---
 layout: post
-title: Mysql(mariadb) 우분투 16.04.4 LTS ( Ubuntu ) 에 설치하기
-categories: [mysql,ubuntu]
-tags: [mysql,ubuntu]
-fullview: true
+title:  "Mysql(mariadb) 우분투 16.04.4 LTS ( Ubuntu ) 에 설치하기"
+date:   2018-08-24 16:17:39 +0900
+categories: mysql ubuntu
 ---
-
 Mysql 하고 Mariadb하고 뭐가 다른지는 잘모르겠습니다 긁적..
 
 사용하는데 문제가 없어서 잘 쓰고 있습니다.
