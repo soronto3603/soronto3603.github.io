@@ -4,6 +4,18 @@ title:  "[WEB]HTML+CSS+Javascript 3. 애니메이션이 들어간 체크박스 �
 date:   2018-10-11 17:40:00 +0900
 categories: html css mysql
 ---
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-6674782401318634"
+     data-ad-slot="1424643683"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 # 체크 이미지 구하기
 체크 표시를 어떻게 구하셔도 상관 없지만 저는 `Favicon` 으로 했습니다.
 {% highlight html %}
