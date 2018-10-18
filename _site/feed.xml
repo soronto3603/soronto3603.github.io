@@ -1,4 +1,157 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-11T16:31:15+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">[WEB]HTML+CSS+Javascript 1. 내 마음대로 위치 이동하기 display:block &amp;amp;&amp;amp; display:inline-block</title><link href="http://localhost:4000/html/css/mysql/2018/09/19/css-trick-position.html" rel="alternate" type="text/html" title="[WEB]HTML+CSS+Javascript 1. 내 마음대로 위치 이동하기 display:block &amp;&amp; display:inline-block" /><published>2018-09-19T16:17:39+09:00</published><updated>2018-09-19T16:17:39+09:00</updated><id>http://localhost:4000/html/css/mysql/2018/09/19/css-trick-position</id><content type="html" xml:base="http://localhost:4000/html/css/mysql/2018/09/19/css-trick-position.html">&lt;p&gt;아마도 HTML+CSS를 배우면서 내가 원하는 장소에 원하는 객체를 위치시키지 못할때&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-18T15:13:06+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">난 개발자다!</title><subtitle></subtitle><entry><title type="html">[WEB]HTML+CSS+Javascript 4. 블로그 기본 틀 만들기 with 화면전환 효과</title><link href="http://localhost:4000/html/css/mysql/2018/10/18/page-transition.html" rel="alternate" type="text/html" title="[WEB]HTML+CSS+Javascript 4. 블로그 기본 틀 만들기 with 화면전환 효과" /><published>2018-10-18T05:28:00+09:00</published><updated>2018-10-18T05:28:00+09:00</updated><id>http://localhost:4000/html/css/mysql/2018/10/18/page-transition</id><content type="html" xml:base="http://localhost:4000/html/css/mysql/2018/10/18/page-transition.html">&lt;h1 id=&quot;1-네비게이션-바-만들기&quot;&gt;1. 네비게이션 바 만들기&lt;/h1&gt;
+&lt;p&gt;간단하게 네비게이션 바를 만들어줍니다.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tab&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Main&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Message&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Profile&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Config&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;nl&quot;&gt;-webkit-transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.25s&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ease-in-out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;-moz-transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.25s&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ease-in-out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;-o-transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.25s&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ease-in-out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.25s&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ease-in-out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;.tab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin-top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;.item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;24%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inline-block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;#424242&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;26px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;text-align&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;.item&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:hover&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;#424242&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;#ffffff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;위의 코드로 기본 틀을 다졌다면&lt;/p&gt;
+
+&lt;p&gt;네비게이터 클릭시 컨텐츠 변경을 위한 온클릭 이벤트를 달아줍시다.&lt;/p&gt;
+
+&lt;h1 id=&quot;네비게이터에-온클릭-이벤트-달기&quot;&gt;네비게이터에 온클릭 이벤트 달기!&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&quot;language-HTML&quot;&gt;&amp;lt;div class=&quot;tab&quot;&amp;gt;
+  &amp;lt;div class=&quot;item&quot; onclick=&quot;openTab('main')&quot; &amp;gt;Main&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&quot;item&quot; onclick=&quot;openTab('message')&quot; &amp;gt;Message&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&quot;item&quot; onclick=&quot;openTab('profile')&quot;&amp;gt;Profile&amp;lt;/div&amp;gt;
+  &amp;lt;div class=&quot;item&quot; onclick=&quot;openTab('config')&quot;&amp;gt;Config&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;div id=&quot;main&quot; class=&quot;pagecontent&quot;&amp;gt;
+  a
+&amp;lt;/div&amp;gt;
+&amp;lt;div id=&quot;message&quot; class=&quot;pagecontent&quot;&amp;gt;
+  b
+&amp;lt;/div&amp;gt;
+  &amp;lt;div id=&quot;profile&quot; class=&quot;pagecontent&quot;&amp;gt;
+    c
+&amp;lt;/div&amp;gt;
+&amp;lt;div id=&quot;config&quot; class=&quot;pagecontent&quot;&amp;gt;
+  d
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pages&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;main&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;profile&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;config&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;openTab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tabname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;none&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tabname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;block&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onload&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;openTab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;main&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;여기까지 완료가 되셨다면! 각 네비게이터를 클릭시 각 내용을 변경 합니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;간단한-애니메이션을-적용해-봅시다&quot;&gt;간단한 애니메이션을 적용해 봅시다.&lt;/h1&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pages&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;main&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;profile&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;config&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;openTab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tabname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;none&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//여기가 포인트&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tabname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;100%&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tabname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;block&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tabname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;0%&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;},&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onload&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;openTab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;main&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;애니메이션의 핵심은 &lt;code class=&quot;highlighter-rouge&quot;&gt;display:none&lt;/code&gt; 상태에서 우측으로 화면만큼 이동하여 0.01초 뒤 다시 원위치로
+복귀 합니다. 여기서 애니메이션이 들어가는 이유는 &lt;code class=&quot;highlighter-rouge&quot;&gt;transition:.25 ease-in-out&lt;/code&gt; css 를
+적용했기 때문 입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CodePen&lt;/code&gt; 에서 본 프로젝트를 만날 수 있습니다. 어찌된 영문인지.. 애니메이션이 안보이던군요..
+아마 웹 렌더링 엔진문제이지 않을까 생각합니다.&lt;/p&gt;
+&lt;p data-height=&quot;265&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;zmWOEG&quot; data-default-tab=&quot;html,result&quot; data-user=&quot;soronto3603&quot; data-pen-title=&quot;Blog Form Animation&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;https://codepen.io/soronto3603/pen/zmWOEG/&quot;&gt;Blog Form Animation&lt;/a&gt; by soronto (&lt;a href=&quot;https://codepen.io/soronto3603&quot;&gt;@soronto3603&lt;/a&gt;) on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async=&quot;&quot; src=&quot;https://static.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;</content><author><name></name></author><summary type="html">1. 네비게이션 바 만들기 간단하게 네비게이션 바를 만들어줍니다.</summary></entry><entry><title type="html">[WEB]HTML+CSS+Javascript 3. 애니메이션이 들어간 체크박스 만들기!</title><link href="http://localhost:4000/html/css/mysql/2018/10/11/Lets-Make-A-JavaScript-Calculator.html" rel="alternate" type="text/html" title="[WEB]HTML+CSS+Javascript 3. 애니메이션이 들어간 체크박스 만들기!" /><published>2018-10-11T17:40:00+09:00</published><updated>2018-10-11T17:40:00+09:00</updated><id>http://localhost:4000/html/css/mysql/2018/10/11/Lets-Make-A-JavaScript-Calculator</id><content type="html" xml:base="http://localhost:4000/html/css/mysql/2018/10/11/Lets-Make-A-JavaScript-Calculator.html">&lt;script async=&quot;&quot; src=&quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;ins class=&quot;adsbygoogle&quot; style=&quot;display:block; text-align:center;&quot; data-ad-layout=&quot;in-article&quot; data-ad-format=&quot;fluid&quot; data-ad-client=&quot;ca-pub-6674782401318634&quot; data-ad-slot=&quot;1424643683&quot;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;체크-이미지-구하기&quot;&gt;체크 이미지 구하기&lt;/h1&gt;
+&lt;p&gt;체크 표시를 어떻게 구하셔도 상관 없지만 저는 &lt;code class=&quot;highlighter-rouge&quot;&gt;Favicon&lt;/code&gt; 으로 했습니다.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://use.fontawesome.com/releases/v5.3.1/css/all.css&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;integrity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;crossorigin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;anonymous&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;헤더에 추가해주세요.&lt;/p&gt;
+
+&lt;h1 id=&quot;체크-박스-css로-표현하기&quot;&gt;체크 박스 CSS로 표현하기&lt;/h1&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;outter-red&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ab('a')&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fas fa-check&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;outter-red&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ab('b')&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fas fa-check&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;outter-red&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ab('c')&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fas fa-check&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;outter-red&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ab('d')&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fas fa-check&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.outter-red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-webkit-transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.25s&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ease-in-out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-moz-transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.25s&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ease-in-out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-o-transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.25s&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ease-in-out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.25s&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ease-in-out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inline-block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#F5624D&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#ffffff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;체크-박스-클릭시-효과-넣어주기&quot;&gt;체크 박스 클릭시 효과 넣어주기&lt;/h1&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;ab&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;if(document.getElementById(id).style.backgroundColor==&quot;rgb(231,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;231,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;231)&quot;){&lt;/span&gt;
+      &lt;span class=&quot;err&quot;&gt;document.getElementById(id).style.backgroundColor=&quot;#F5624D&quot;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;err&quot;&gt;document.getElementById(id).style.backgroundColor=&quot;#e7e7e7&quot;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p data-height=&quot;265&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;EdXKyp&quot; data-default-tab=&quot;html,result&quot; data-user=&quot;soronto3603&quot; data-pen-title=&quot;checkbox animation&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;https://codepen.io/soronto3603/pen/EdXKyp/&quot;&gt;checkbox animation&lt;/a&gt; by soronto (&lt;a href=&quot;https://codepen.io/soronto3603&quot;&gt;@soronto3603&lt;/a&gt;) on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async=&quot;&quot; src=&quot;https://static.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;</content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">[WEB]HTML+CSS+Javascript 1. 내 마음대로 위치 이동하기 display:block &amp;amp;&amp;amp; display:inline-block</title><link href="http://localhost:4000/html/css/mysql/2018/09/19/css-trick-position.html" rel="alternate" type="text/html" title="[WEB]HTML+CSS+Javascript 1. 내 마음대로 위치 이동하기 display:block &amp;&amp; display:inline-block" /><published>2018-09-19T16:17:39+09:00</published><updated>2018-09-19T16:17:39+09:00</updated><id>http://localhost:4000/html/css/mysql/2018/09/19/css-trick-position</id><content type="html" xml:base="http://localhost:4000/html/css/mysql/2018/09/19/css-trick-position.html">&lt;p&gt;아마도 HTML+CSS를 배우면서 내가 원하는 장소에 원하는 객체를 위치시키지 못할때&lt;/p&gt;
 
 &lt;p&gt;무력함을 느낍니다…&lt;/p&gt;
 
@@ -550,95 +703,4 @@ Go 언어로 문제를 풀었습니다…&lt;/p&gt;
     &lt;span class=&quot;c1&quot;&gt;// 데이터셋의 길이를 리턴합니다. ( 레이아웃 매니저가 호출했을 경우 사용 )&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getItemCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myDataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">Android Developers Core topics의 “RecyclerView를 사용하여 목록 만들기” RecyclerView는 ListView보다 고급 버전 입니다.</summary></entry><entry><title type="html">딥러닝 기반 이미지 검색 시스템</title><link href="http://localhost:4000/depplearning/cnn/computer/vision/2018/07/19/image-deeplearning-(CNN).html" rel="alternate" type="text/html" title="딥러닝 기반 이미지 검색 시스템" /><published>2018-07-19T16:17:39+09:00</published><updated>2018-07-19T16:17:39+09:00</updated><id>http://localhost:4000/depplearning/cnn/computer/vision/2018/07/19/image-deeplearning-(CNN)</id><content type="html" xml:base="http://localhost:4000/depplearning/cnn/computer/vision/2018/07/19/image-deeplearning-(CNN).html">&lt;p&gt;본 포스트는 버즈니 남상협 대표님의 세미나를 참고 했습니다!&lt;/p&gt;
-
-&lt;h1 id=&quot;분류--classfication-&quot;&gt;분류 ( Classfication )&lt;/h1&gt;
-
-&lt;p&gt;분류를 하기 위해선 기준이 있어야 합니다!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;images/2018-07-21-01.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;사과와 오렌지를 어떻게 분류하시나요?&lt;/p&gt;
-
-&lt;p&gt;아마도 우리의 머릿속엔 나름의 &lt;strong&gt;기준&lt;/strong&gt;이 있을 겁니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;images/2018-07-21-02.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;위의 사진보다 훨씬 복잡한 &lt;strong&gt;기준&lt;/strong&gt;을 가지고 있을 것 입니다.&lt;/p&gt;
-
-&lt;h1 id=&quot;특징점--feature-&quot;&gt;특징점 ( Feature )&lt;/h1&gt;
-
-&lt;p&gt;우린 이런 &lt;strong&gt;기준&lt;/strong&gt;이 될만한 요소들을 특징점 == Feature 라고 합니다&lt;/p&gt;
-
-&lt;p&gt;Feature 는 컴퓨터가 이해 할 수 있는 데이터로 설정합니다&lt;/p&gt;
-
-&lt;p&gt;모호하지 않고! 보다 명확하게! 수치로요!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;images/2018-07-21-03.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;특징점만 정확하게 구한다면 우리는 이미지를 기계가 완벽히 분리할 수 있을 것 입니다!&lt;/p&gt;
-
-&lt;h1 id=&quot;인간이-도출하는-특징점의-한계&quot;&gt;인간이 도출하는 특징점의 한계&lt;/h1&gt;
-
-&lt;p&gt;특징점을 일일이 사람이 구분하는 것은 정말 어려운 일입니다!&lt;/p&gt;
-
-&lt;p&gt;다음의 꽃을 분류하기 위해선&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;images/2018-07-21-04.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;직접 수백개의 꽃잎을 실측하고 실측한 데이터로 부터 분류 기준을 세웠어야 했습니다&lt;/p&gt;
-
-&lt;p&gt;하지만 현실에서의 모든 객체를 분류한다면 어떨까요?&lt;/p&gt;
-
-&lt;h1 id=&quot;혼자-특징점-찾는-기계--cnn&quot;&gt;혼자 특징점 찾는 기계 : CNN&lt;/h1&gt;
-
-&lt;p&gt;CNN( Convolutional neural network ) 으로 인해 이미지 인식 성능은 놀랍게 변했습니다&lt;/p&gt;
-
-&lt;p&gt;사람이 특이점을 직접 찾지 않으면서도 말이죠!&lt;/p&gt;
-
-&lt;h2 id=&quot;필터&quot;&gt;필터&lt;/h2&gt;
-
-&lt;p&gt;다음은 곡선을 좌표상의 데이터로 표현한 그림 입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;images/2018-07-21-06.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이것을 필터라고 하겠습니다 필터는 이 모양을 그림으로부터 검출하기 위해서 사용하는데요&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;images/2018-07-21-07.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;곡선 모양에 곡선 필터를 합성곱 연산을 한다면 필터의 모양을 제외한 나머지 값들은 사라져
-원래 이미지가 얼만큼 곡선을 포함하고 있는지 알 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;images/2018-07-21-08.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;직선 모양인 쥐의 머리 부분은 필터와 모양이 맞지 않아 합성곱연산이 0이 됩니다&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;images/2018-07-21-09.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;실제 필터는 Red, Green, Blue 필터와 다양한 모양 필터로 이루어져 있으며&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;images/2018-07-21-10.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;다양한 필터를 통과한 데이터는 또다시 필터를 통과 합니다&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;images/2018-07-21-11.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;점점 필터는 단순한 모양에서 복잡한 모양으로 바뀌며 마지막 필터를 통과하며 대상 이미지는&lt;/p&gt;
-
-&lt;p&gt;객체가 인식되어 태깅 됩니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;더-많고-복잡한-내용이-있지만-아직-부족한-점이-많아-더욱-보충해서-올릴께용&quot;&gt;더 많고 복잡한 내용이 있지만 아직 부족한 점이 많아 더욱 보충해서 올릴께용&lt;/h2&gt;</content><author><name></name></author><summary type="html">본 포스트는 버즈니 남상협 대표님의 세미나를 참고 했습니다!</summary></entry><entry><title type="html">01.Kotlin 안드로이드 앱 만들기 - 설치</title><link href="http://localhost:4000/android/kotlin/2018/07/17/setting-android.html" rel="alternate" type="text/html" title="01.Kotlin 안드로이드 앱 만들기 - 설치" /><published>2018-07-17T16:17:39+09:00</published><updated>2018-07-17T16:17:39+09:00</updated><id>http://localhost:4000/android/kotlin/2018/07/17/setting-android</id><content type="html" xml:base="http://localhost:4000/android/kotlin/2018/07/17/setting-android.html">&lt;h3 id=&quot;android-studio-다운로드-링크&quot;&gt;&lt;a href=&quot;https://developer.android.com/studio/&quot;&gt;android studio 다운로드 링크&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/2018-07-17.PNG&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/images/2018-07-17-01.PNG&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/images/2018-07-17-02.PNG&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/images/2018-07-17-03.PNG&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/images/2018-07-17-04.PNG&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/images/2018-07-17-05.PNG&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/images/2018-07-17-06.PNG&quot; alt=&quot;&quot; /&gt;
-Configure -&amp;gt; SDK Manager
-&lt;img src=&quot;/images/2018-07-17-07.PNG&quot; alt=&quot;&quot; /&gt;
-API Level 19를 미니멈 레벨로 많이 쓴다고 합니다;;
-&lt;img src=&quot;/images/2018-07-17-08.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;셋팅-끝-&quot;&gt;셋팅 끝 ~&lt;/h1&gt;</content><author><name></name></author><summary type="html">android studio 다운로드 링크</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">Android Developers Core topics의 “RecyclerView를 사용하여 목록 만들기” RecyclerView는 ListView보다 고급 버전 입니다.</summary></entry></feed>
