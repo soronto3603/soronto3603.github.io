@@ -5,6 +5,7 @@
 layout: home
 ---
 <!-- Global site tag (gtag.js) - Google Analytics -->
+<meta name="naver-site-verification" content="f0064cd1f752f443bf83c23700d91197bd0fc192"/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128520475-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
