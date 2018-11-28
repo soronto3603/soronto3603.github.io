@@ -1,0 +1,70 @@
+<!DOCTYPE html> <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--> <!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8"><![endif]--> <!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9"><![endif]--> <!--[if gt IE 8]><!--> <html class="no-js"><!--<![endif]--> <head> <meta charset="UTF-8"> <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"> <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"> <title>[WEB]HTML+CSS+Javascript Div 만들고 드래그 앤 드랍으로 위치 바꾸기 &#8211; Soronto's Blog</title> <meta name="description" content="Moon is a minimal, one column jekyll theme for your blog."> <meta name="keywords" content=""> <!-- Twitter Cards --> <meta name="twitter:card" content="summary"> <meta name="twitter:image" content="https://soronto3603.github.io//assets/img/logo.png"> <meta name="twitter:title" content="[WEB]HTML+CSS+Javascript Div 만들고 드래그 앤 드랍으로 위치 바꾸기"> <meta name="twitter:description" content="마우스 위치 가져오기"> <meta name="twitter:site" content="@username"> <meta name="twitter:creator" content="@username"> <!-- Open Graph --> <meta property="og:locale" content="en_US"> <meta property="og:type" content="article"> <meta property="og:title" content="[WEB]HTML+CSS+Javascript Div 만들고 드래그 앤 드랍으로 위치 바꾸기"> <meta property="og:description" content="마우스 위치 가져오기"> <meta property="og:url" content="https://soronto3603.github.io//web-button-click/"> <meta property="og:site_name" content="Soronto's Blog"> <meta property="og:image" content="https://soronto3603.github.io//assets/img/logo.png"> <link rel="canonical" href="https://soronto3603.github.io//web-button-click/"> <link href="https://soronto3603.github.io//feed.xml" type="application/atom+xml" rel="alternate" title="Soronto's Blog Feed"> <!-- Handheld --> <meta name="HandheldFriendly" content="True"> <meta name="MobileOptimized" content="320"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- CSS --> <link rel="stylesheet" href="https://soronto3603.github.io//assets/css/main.css"> <!-- JS --> <script src="https://soronto3603.github.io//assets/js/modernizr-3.3.1.custom.min.js"></script> <!-- Favicons --> <link rel="apple-touch-icon" href="https://soronto3603.github.io//assets/img/favicons/apple-icon-precomposed.png"> <link rel="apple-touch-icon" sizes="72x72" href="https://soronto3603.github.io//assets/img/favicons/apple-icon-72x72.png"> <link rel="apple-touch-icon" sizes="114x114" href="https://soronto3603.github.io//assets/img/favicons/apple-icon-114x114.png"> <link rel="apple-touch-icon" sizes="144x144" href="https://soronto3603.github.io//assets/img/favicons/apple-icon-144x144.png"> <link rel="shortcut icon" type="image/png" href="https://soronto3603.github.io//favicon.png" /> <link rel="shortcut icon" href="https://soronto3603.github.io//favicon.ico" /> <!-- Background Image --> <style type="text/css">body {background-image:url(https://soronto3603.github.io//assets/img/placeholder-big.jpg); background-repeat: no-repeat; background-size: cover; }</style> <!-- Post Feature Image --> </head> <body> <nav id="dl-menu" class="dl-menuwrapper" role="navigation"> <button class="dl-trigger">Open Menu</button> <ul class="dl-menu"> <li><a href="https://soronto3603.github.io//">Home</a></li> <li> <a href="#">About</a> <ul class="dl-submenu"> <li> <img src="https://soronto3603.github.io//assets/img/logo.png" alt="Soronto's Blog photo" class="author-photo"> <h4>Soronto's Blog</h4> <p>Moon is a minimal, one column jekyll theme for your blog.</p> </li> <li><a href="https://soronto3603.github.io//about/"><span class="btn btn-inverse">Learn More</span></a></li> <li> <a href="http://twitter.com/username" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a> </li> <li> <a href="http://facebook.com/username" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-facebook-square"></i> Facebook</a> </li> <li> <a href="http://instagram.com/username" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-instagram"></i> Instagram</a> </li> <li> <a href="http://github.com/username" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-github"></i> Github</a> </li> <li> <a href="http://steamcommunity.com/id/username" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-steam-square"></i> Steam</a> </li> </ul><!-- /.dl-submenu --> </li> <li> <a href="#">Posts</a> <ul class="dl-submenu"> <li><a href="https://soronto3603.github.io//posts/">All Posts</a></li> <li><a href="https://soronto3603.github.io//tags/">All Tags</a></li> </ul> </li> <li><a href="https://soronto3603.github.io//projects/" >Projects</a></li> </ul><!-- /.dl-menu --> </nav><!-- /.dl-menuwrapper --> <!-- Header --> <header class="header" role="banner"> <div class="wrapper animated fadeIn"> <div class="content"> <div class="post-title "> <h1>[WEB]HTML+CSS+Javascript Div 만들고 드래그 앤 드랍으로 위치 바꾸기</h1> <h4>26 Aug 2018</h4> <p class="reading-time"> <i class="fa fa-clock-o"></i> Reading time ~1 minute </p><!-- /.entry-reading-time --> <a class="btn zoombtn" href="https://soronto3603.github.io//posts/"> <i class="fa fa-chevron-left"></i> </a> </div> <h2 id="마우스-위치-가져오기">마우스 위치 가져오기</h2> <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//mouse x y position</span>
+<span class="kd">var</span> <span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">;</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">onload</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">mousemove</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+    <span class="nx">x</span><span class="o">=</span><span class="nx">e</span><span class="p">.</span><span class="nx">pageX</span><span class="p">;</span>
+    <span class="nx">y</span><span class="o">=</span><span class="nx">e</span><span class="p">.</span><span class="nx">pageY</span><span class="p">;</span>
+    <span class="c1">// console.log(x+":"+y);</span>
+
+    <span class="c1">//mouse position checking</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">item</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">){</span>
+      <span class="nx">item</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"top"</span><span class="p">,</span><span class="nx">y</span><span class="p">);</span>
+      <span class="nx">item</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"left"</span><span class="p">,</span><span class="nx">x</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div> <h2 id="클릭시-이벤트-발생-시키기">클릭시 이벤트 발생 시키기</h2> <p>id 값을 넣었을때 해당 id 값으로 마우스 클릭 이벤트를 등록해주는 녀석입니다.</p> <p><code class="highlighter-rouge">click</code> 이벤트를 발생시키면 안되요!</p> <p>길게 눌러서 옮기는 효과를 주려면</p> <p><code class="highlighter-rouge">mousedown</code> 과 <code class="highlighter-rouge">mouseup</code> 을 동시에 사용해야합니다.</p><pre><code class="language-Javascript">//selected box
+var item=null;
+//append event to target
+function append_event(id){
+  $(id).mousedown((e)=&gt;{
+    item=$(id);
+  });
+  $(id).mouseup((e)=&gt;{
+    item=null;
+  });
+}
+</code></pre><h2 id="박스를-생성하고-id-를-등록하기">박스를 생성하고 ID 를 등록하기</h2><pre><code class="language-Javascript">//create div box
+//박스 생성시 id 중복 불가
+function add_box(id){
+  $("body").append("&lt;div id="+id+" class=item&gt;&lt;/div&gt;")
+  append_event("#"+id);
+}
+</code></pre><p>짜잔 완성</p> <h2 id="전체-코드">전체 코드</h2> <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//mouse x y position</span>
+<span class="kd">var</span> <span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">;</span>
+<span class="c1">//selected box</span>
+<span class="kd">var</span> <span class="nx">item</span><span class="o">=</span><span class="kc">null</span><span class="p">;</span>
+
+<span class="c1">//create div box</span>
+<span class="c1">//박스 생성시 id 중복 불가</span>
+<span class="kd">function</span> <span class="nx">add_box</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"body"</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">"&lt;div id="</span><span class="o">+</span><span class="nx">id</span><span class="o">+</span><span class="s2">" class=item&gt;&lt;/div&gt;"</span><span class="p">)</span>
+  <span class="nx">append_event</span><span class="p">(</span><span class="s2">"#"</span><span class="o">+</span><span class="nx">id</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//append event to target</span>
+<span class="kd">function</span> <span class="nx">append_event</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+  <span class="nx">$</span><span class="p">(</span><span class="nx">id</span><span class="p">).</span><span class="nx">mousedown</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+    <span class="nx">item</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="nx">$</span><span class="p">(</span><span class="nx">id</span><span class="p">).</span><span class="nx">mouseup</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+    <span class="nx">item</span><span class="o">=</span><span class="kc">null</span><span class="p">;</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">onload</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">mousemove</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+    <span class="nx">x</span><span class="o">=</span><span class="nx">e</span><span class="p">.</span><span class="nx">pageX</span><span class="p">;</span>
+    <span class="nx">y</span><span class="o">=</span><span class="nx">e</span><span class="p">.</span><span class="nx">pageY</span><span class="p">;</span>
+    <span class="c1">// console.log(x+":"+y);</span>
+
+    <span class="c1">//mouse position checking</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">item</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">){</span>
+      <span class="nx">item</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"top"</span><span class="p">,</span><span class="nx">y</span><span class="p">);</span>
+      <span class="nx">item</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"left"</span><span class="p">,</span><span class="nx">x</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+</code></pre></div> <div class="entry-meta"> <br> <hr> <span class="entry-tags"></span> <span class="social-share"> <a href="https://www.facebook.com/sharer/sharer.php?u=https://soronto3603.github.io//web-button-click/" title="Share on Facebook" class="tag"> <span class="term"><i class="fa fa-facebook-square"></i> Share</span> </a> <a href="https://twitter.com/intent/tweet?text=https://soronto3603.github.io//web-button-click/" title="Share on Twitter" class="tag"> <span class="term"><i class="fa fa-twitter-square"></i> Tweet</span> </a> <a href="https://plus.google.com/share?url=https://soronto3603.github.io//web-button-click/" title="Share on Google+" class="tag"> <span class="term"><i class="fa fa-google-plus-square"></i> +1</span> </a> </span> <div style="clear:both"></div> </div> </div> </div> </header> <!-- JS --> <script src="https://soronto3603.github.io//assets/js/jquery-1.12.0.min.js"></script> <script src="https://soronto3603.github.io//assets/js/jquery.dlmenu.min.js"></script> <script src="https://soronto3603.github.io//assets/js/jquery.goup.min.js"></script> <script src="https://soronto3603.github.io//assets/js/jquery.magnific-popup.min.js"></script> <script src="https://soronto3603.github.io//assets/js/jquery.fitvid.min.js"></script> <script src="https://soronto3603.github.io//assets/js/scripts.js"></script> <script type="text/javascript"> var disqus_shortname = 'taylantatli'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); (function () { var s = document.createElement('script'); s.async = true; s.type = 'text/javascript'; s.src = '//' + disqus_shortname + '.disqus.com/count.js'; (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s); }()); </script> <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> <!-- MathJax --> <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> </body> </html>
