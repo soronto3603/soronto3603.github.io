@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="마우스 위치 가져오기//mouse x y positionvar x,y;window.onload=()=&gt;{  $(window).mousemove((e)=&gt;{    x=e.pageX;    y=e.pageY;    // console.log(x+":"+y);    //mou...">
+  <meta name="keywords" content="blog and jekyll">
+  <meta name="author" content="[WEB]HTML+CSS+Javascript Div 만들고 드래그 앤 드랍으로 위치 바꾸기 | Soronto&#39;s blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="[WEB]HTML+CSS+Javascript Div 만들고 드래그 앤 드랍으로 위치 바꾸기 | Soronto&#39;s blog">
+  <meta name="twitter:description" content="마우스 위치 가져오기//mouse x y positionvar x,y;window.onload=()=&amp;gt;{  $(window).mousemove((e)=&amp;gt;{    x=e.pageX;    y=e.pageY;    // console.log(x+&quot;:&quot;+y);    //mou...">
+  
+    <meta property="twitter:image" content="/img/leonids-logo.png">
+  
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="/articles/2018-08/web-button-click">
+  <meta property="og:title" content="[WEB]HTML+CSS+Javascript Div 만들고 드래그 앤 드랍으로 위치 바꾸기 | Soronto&#39;s blog">
+  <meta property="og:description" content="마우스 위치 가져오기//mouse x y positionvar x,y;window.onload=()=&amp;gt;{  $(window).mousemove((e)=&amp;gt;{    x=e.pageX;    y=e.pageY;    // console.log(x+&quot;:&quot;+y);    //mou...">
+  
+    <meta property="og:image" content="/img/leonids-logo.png">
+  
+  <title>[WEB]HTML+CSS+Javascript Div 만들고 드래그 앤 드랍으로 위치 바꾸기 | Soronto's blog</title>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <link rel="canonical" href="/articles/2018-08/web-button-click">
+  <link rel="alternate" type="application/rss+xml" title="Soronto&#39;s blog" href="/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="/favicon.png">
+</head>
+
+
+<body>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130016746-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-130016746-1');
+</script>
+
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <a href="/">
+    <img src="/img/leonids-logo.png" alt="" class="avatar">
+  </a>
+  
+  <a href="/" class="author_name">Soronto</a>
+  <span class="author_job">Programmer</span>
+  <span class="author_bio mbm">A simple and awesome blog theme powered by jekyll.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="/">home</a>
+      </li>
+       
+      <li class="nav-item">
+        <a href="/archive/">Archive</a>
+      </li>
+          
+      <li class="nav-item">
+        <a href="/categories/">Categories</a>
+      </li>
+            
+      <li class="nav-item">
+        <a href="/resume/">Resume</a>
+      </li>
+        
+      <li class="nav-item">
+        <a href="/tags/">Tags</a>
+      </li>
+         
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="[WEB]HTML+CSS+Javascript Div 만들고 드래그 앤 드랍으로 위치 바꾸기">[WEB]HTML+CSS+Javascript Div 만들고 드래그 앤 드랍으로 위치 바꾸기</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        26 AUG 2018
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    2 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <h2 id="마우스-위치-가져오기">마우스 위치 가져오기</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//mouse x y position</span>
+<span class="kd">var</span> <span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">;</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">onload</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">mousemove</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+    <span class="nx">x</span><span class="o">=</span><span class="nx">e</span><span class="p">.</span><span class="nx">pageX</span><span class="p">;</span>
+    <span class="nx">y</span><span class="o">=</span><span class="nx">e</span><span class="p">.</span><span class="nx">pageY</span><span class="p">;</span>
+    <span class="c1">// console.log(x+":"+y);</span>
+
+    <span class="c1">//mouse position checking</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">item</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">){</span>
+      <span class="nx">item</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"top"</span><span class="p">,</span><span class="nx">y</span><span class="p">);</span>
+      <span class="nx">item</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"left"</span><span class="p">,</span><span class="nx">x</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="클릭시-이벤트-발생-시키기">클릭시 이벤트 발생 시키기</h2>
+<p>id 값을 넣었을때 해당 id 값으로 마우스 클릭 이벤트를 등록해주는 녀석입니다.</p>
+
+<p><code class="highlighter-rouge">click</code> 이벤트를 발생시키면 안되요!</p>
+
+<p>길게 눌러서 옮기는 효과를 주려면</p>
+
+<p><code class="highlighter-rouge">mousedown</code> 과 <code class="highlighter-rouge">mouseup</code> 을 동시에 사용해야합니다.</p>
+
+<pre><code class="language-Javascript">//selected box
+var item=null;
+//append event to target
+function append_event(id){
+  $(id).mousedown((e)=&gt;{
+    item=$(id);
+  });
+  $(id).mouseup((e)=&gt;{
+    item=null;
+  });
+}
+</code></pre>
+
+<h2 id="박스를-생성하고-id-를-등록하기">박스를 생성하고 ID 를 등록하기</h2>
+<pre><code class="language-Javascript">//create div box
+//박스 생성시 id 중복 불가
+function add_box(id){
+  $("body").append("&lt;div id="+id+" class=item&gt;&lt;/div&gt;")
+  append_event("#"+id);
+}
+</code></pre>
+<p>짜잔 완성</p>
+
+<h2 id="전체-코드">전체 코드</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//mouse x y position</span>
+<span class="kd">var</span> <span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">;</span>
+<span class="c1">//selected box</span>
+<span class="kd">var</span> <span class="nx">item</span><span class="o">=</span><span class="kc">null</span><span class="p">;</span>
+
+<span class="c1">//create div box</span>
+<span class="c1">//박스 생성시 id 중복 불가</span>
+<span class="kd">function</span> <span class="nx">add_box</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"body"</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">"&lt;div id="</span><span class="o">+</span><span class="nx">id</span><span class="o">+</span><span class="s2">" class=item&gt;&lt;/div&gt;"</span><span class="p">)</span>
+  <span class="nx">append_event</span><span class="p">(</span><span class="s2">"#"</span><span class="o">+</span><span class="nx">id</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//append event to target</span>
+<span class="kd">function</span> <span class="nx">append_event</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+  <span class="nx">$</span><span class="p">(</span><span class="nx">id</span><span class="p">).</span><span class="nx">mousedown</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+    <span class="nx">item</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="nx">$</span><span class="p">(</span><span class="nx">id</span><span class="p">).</span><span class="nx">mouseup</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+    <span class="nx">item</span><span class="o">=</span><span class="kc">null</span><span class="p">;</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">onload</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">mousemove</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+    <span class="nx">x</span><span class="o">=</span><span class="nx">e</span><span class="p">.</span><span class="nx">pageX</span><span class="p">;</span>
+    <span class="nx">y</span><span class="o">=</span><span class="nx">e</span><span class="p">.</span><span class="nx">pageY</span><span class="p">;</span>
+    <span class="c1">// console.log(x+":"+y);</span>
+
+    <span class="c1">//mouse position checking</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">item</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">){</span>
+      <span class="nx">item</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"top"</span><span class="p">,</span><span class="nx">y</span><span class="p">);</span>
+      <span class="nx">item</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"left"</span><span class="p">,</span><span class="nx">x</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/articles/2018-08/web-button-click" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/articles/2018-08/web-button-click" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/articles/2018-08/web-button-click" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=/articles/2018-08/web-button-click" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=/articles/2018-08/web-button-click" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2018 Soronto. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+</body>
+</html>
