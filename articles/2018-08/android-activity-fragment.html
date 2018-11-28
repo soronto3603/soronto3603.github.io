@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="안드로이드 개발을 처음 시작하며 알 수 없는 용어들이 난무하는 이 바닥에서..어쨌든 무언가 보여줄 수 있는 어플리케이션을 완성해가는 과정에서..이런 것을 보여주기 위해선 이런 뷰를 써야한다.!! 라는 것을 처음부터 알았더라면..좋았었을걸 하는 생각이 들었습니다~1. Recycler...">
+  <meta name="keywords" content="blog and jekyll">
+  <meta name="author" content="03.Kotlin 뷰 종류 이것저것.. - 쉬어가며.. 처음에 알았었으면 좋았을걸.. | Soronto&#39;s blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="03.Kotlin 뷰 종류 이것저것.. - 쉬어가며.. 처음에 알았었으면 좋았을걸.. | Soronto&#39;s blog">
+  <meta name="twitter:description" content="안드로이드 개발을 처음 시작하며 알 수 없는 용어들이 난무하는 이 바닥에서..어쨌든 무언가 보여줄 수 있는 어플리케이션을 완성해가는 과정에서..이런 것을 보여주기 위해선 이런 뷰를 써야한다.!! 라는 것을 처음부터 알았더라면..좋았었을걸 하는 생각이 들었습니다~1. Recycler...">
+  
+    <meta property="twitter:image" content="/img/leonids-logo.png">
+  
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="/articles/2018-08/android-activity-fragment">
+  <meta property="og:title" content="03.Kotlin 뷰 종류 이것저것.. - 쉬어가며.. 처음에 알았었으면 좋았을걸.. | Soronto&#39;s blog">
+  <meta property="og:description" content="안드로이드 개발을 처음 시작하며 알 수 없는 용어들이 난무하는 이 바닥에서..어쨌든 무언가 보여줄 수 있는 어플리케이션을 완성해가는 과정에서..이런 것을 보여주기 위해선 이런 뷰를 써야한다.!! 라는 것을 처음부터 알았더라면..좋았었을걸 하는 생각이 들었습니다~1. Recycler...">
+  
+    <meta property="og:image" content="/img/leonids-logo.png">
+  
+  <title>03.Kotlin 뷰 종류 이것저것.. - 쉬어가며.. 처음에 알았었으면 좋았을걸.. | Soronto's blog</title>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <link rel="canonical" href="/articles/2018-08/android-activity-fragment">
+  <link rel="alternate" type="application/rss+xml" title="Soronto&#39;s blog" href="/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="/favicon.png">
+</head>
+
+
+<body>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130016746-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-130016746-1');
+</script>
+
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <a href="/">
+    <img src="/img/leonids-logo.png" alt="" class="avatar">
+  </a>
+  
+  <a href="/" class="author_name">Soronto</a>
+  <span class="author_job">Programmer</span>
+  <span class="author_bio mbm">A simple and awesome blog theme powered by jekyll.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="/">home</a>
+      </li>
+       
+      <li class="nav-item">
+        <a href="/archive/">Archive</a>
+      </li>
+          
+      <li class="nav-item">
+        <a href="/categories/">Categories</a>
+      </li>
+            
+      <li class="nav-item">
+        <a href="/resume/">Resume</a>
+      </li>
+        
+      <li class="nav-item">
+        <a href="/tags/">Tags</a>
+      </li>
+         
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="03.Kotlin 뷰 종류 이것저것.. - 쉬어가며.. 처음에 알았었으면 좋았을걸..">03.Kotlin 뷰 종류 이것저것.. - 쉬어가며.. 처음에 알았었으면 좋았을걸..</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        2 AUG 2018
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    1 min read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>안드로이드 개발을 처음 시작하며 알 수 없는 용어들이 난무하는 이 바닥에서..</p>
+
+<p>어쨌든 무언가 보여줄 수 있는 어플리케이션을 완성해가는 과정에서..</p>
+
+<p>이런 것을 보여주기 위해선 이런 뷰를 써야한다.!! 라는 것을 처음부터 알았더라면..</p>
+
+<p>좋았었을걸 하는 생각이 들었습니다~</p>
+
+<h3 id="1-recyclerview">1. RecyclerView</h3>
+
+<p><img src="https://i.stack.imgur.com/xYtxz.gif" alt="" /></p>
+
+<p>저렇게 데이터를 세로로 나열해서 보여주는 뷰를 검색하다 보면 <code class="highlighter-rouge">ListView</code> 와 마주할 때가 있습니다.</p>
+
+<p><code class="highlighter-rouge">ListView</code> 는 RecyclerView의 조상님 버젼이니! 바로 RecyclerView를 알아봅시다!</p>
+
+<h3 id="2-viewpager">2. ViewPager</h3>
+
+<p><img src="https://i.stack.imgur.com/fMETf.gif" alt="" /></p>
+
+<p>데이터를 가로로 스와이프 애니메이션 동작까지!! 하고 싶다면 <code class="highlighter-rouge">ViewPager</code> 를 알아 봅시다.!</p>
+
+<h3 id="3-navigatorbar">3. NavigatorBar</h3>
+
+<p><img src="https://blog.iamsuleiman.com/wp-content/uploads/2016/03/bottom_navigation_notification_badge_dismiss.gif" alt="" /></p>
+
+<p>주로 앱화면의 가장 상단이나 하단에 위치해 있으며 앱 내용을 전환하고 싶다면 <code class="highlighter-rouge">NavigatorBar</code> 를 알아 봅시다.</p>
+<h4 id="navigator-bar-tutorialhttpsbloggrafixartistcombottom-navigation-bar-android-tutorial">[Navigator-bar-tutorial]](https://blog.grafixartist.com/bottom-navigation-bar-android-tutorial/)</h4>
+
+<h3 id="4-drawablelayout">4. DrawableLayout</h3>
+
+<p><img src="http://i.imgur.com/F7ODH3g.png" alt="" /></p>
+
+<p>주록 좌측에서 새로 나오는 메뉴을 만들고 싶다면 <code class="highlighter-rouge">DrawableLayout</code> 을 알아 봅시다!</p>
+
+<p>아마 처음부터 알았더라면 헤매지 않고 삽질하지 안았을 것들..</p>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/articles/2018-08/android-activity-fragment" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/articles/2018-08/android-activity-fragment" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/articles/2018-08/android-activity-fragment" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=/articles/2018-08/android-activity-fragment" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=/articles/2018-08/android-activity-fragment" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2018 Soronto. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+</body>
+</html>

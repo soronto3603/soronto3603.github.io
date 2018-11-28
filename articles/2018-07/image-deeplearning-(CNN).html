@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="본 포스트는 버즈니 남상협 대표님의 세미나를 참고 했습니다!분류 ( Classfication )분류를 하기 위해선 기준이 있어야 합니다!사과와 오렌지를 어떻게 분류하시나요?아마도 우리의 머릿속엔 나름의 기준이 있을 겁니다.위의 사진보다 훨씬 복잡한 기준을 가지고 있을 것 입니다.특...">
+  <meta name="keywords" content="blog and jekyll">
+  <meta name="author" content="딥러닝 기반 이미지 검색 시스템 | Soronto&#39;s blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="딥러닝 기반 이미지 검색 시스템 | Soronto&#39;s blog">
+  <meta name="twitter:description" content="본 포스트는 버즈니 남상협 대표님의 세미나를 참고 했습니다!분류 ( Classfication )분류를 하기 위해선 기준이 있어야 합니다!사과와 오렌지를 어떻게 분류하시나요?아마도 우리의 머릿속엔 나름의 기준이 있을 겁니다.위의 사진보다 훨씬 복잡한 기준을 가지고 있을 것 입니다.특...">
+  
+    <meta property="twitter:image" content="/img/leonids-logo.png">
+  
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="/articles/2018-07/image-deeplearning-(CNN)">
+  <meta property="og:title" content="딥러닝 기반 이미지 검색 시스템 | Soronto&#39;s blog">
+  <meta property="og:description" content="본 포스트는 버즈니 남상협 대표님의 세미나를 참고 했습니다!분류 ( Classfication )분류를 하기 위해선 기준이 있어야 합니다!사과와 오렌지를 어떻게 분류하시나요?아마도 우리의 머릿속엔 나름의 기준이 있을 겁니다.위의 사진보다 훨씬 복잡한 기준을 가지고 있을 것 입니다.특...">
+  
+    <meta property="og:image" content="/img/leonids-logo.png">
+  
+  <title>딥러닝 기반 이미지 검색 시스템 | Soronto's blog</title>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <link rel="canonical" href="/articles/2018-07/image-deeplearning-(CNN)">
+  <link rel="alternate" type="application/rss+xml" title="Soronto&#39;s blog" href="/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="/favicon.png">
+</head>
+
+
+<body>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130016746-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-130016746-1');
+</script>
+
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <a href="/">
+    <img src="/img/leonids-logo.png" alt="" class="avatar">
+  </a>
+  
+  <a href="/" class="author_name">Soronto</a>
+  <span class="author_job">Programmer</span>
+  <span class="author_bio mbm">A simple and awesome blog theme powered by jekyll.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="/">home</a>
+      </li>
+       
+      <li class="nav-item">
+        <a href="/archive/">Archive</a>
+      </li>
+          
+      <li class="nav-item">
+        <a href="/categories/">Categories</a>
+      </li>
+            
+      <li class="nav-item">
+        <a href="/resume/">Resume</a>
+      </li>
+        
+      <li class="nav-item">
+        <a href="/tags/">Tags</a>
+      </li>
+         
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="딥러닝 기반 이미지 검색 시스템">딥러닝 기반 이미지 검색 시스템</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        19 JUL 2018
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    1 min read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>본 포스트는 버즈니 남상협 대표님의 세미나를 참고 했습니다!</p>
+
+<h1 id="분류--classfication-">분류 ( Classfication )</h1>
+
+<p>분류를 하기 위해선 기준이 있어야 합니다!</p>
+
+<p><img src="images/2018-07-21-01.PNG" alt="" /></p>
+
+<p>사과와 오렌지를 어떻게 분류하시나요?</p>
+
+<p>아마도 우리의 머릿속엔 나름의 <strong>기준</strong>이 있을 겁니다.</p>
+
+<p><img src="images/2018-07-21-02.PNG" alt="" /></p>
+
+<p>위의 사진보다 훨씬 복잡한 <strong>기준</strong>을 가지고 있을 것 입니다.</p>
+
+<h1 id="특징점--feature-">특징점 ( Feature )</h1>
+
+<p>우린 이런 <strong>기준</strong>이 될만한 요소들을 특징점 == Feature 라고 합니다</p>
+
+<p>Feature 는 컴퓨터가 이해 할 수 있는 데이터로 설정합니다</p>
+
+<p>모호하지 않고! 보다 명확하게! 수치로요!</p>
+
+<p><img src="images/2018-07-21-03.PNG" alt="" /></p>
+
+<p>특징점만 정확하게 구한다면 우리는 이미지를 기계가 완벽히 분리할 수 있을 것 입니다!</p>
+
+<h1 id="인간이-도출하는-특징점의-한계">인간이 도출하는 특징점의 한계</h1>
+
+<p>특징점을 일일이 사람이 구분하는 것은 정말 어려운 일입니다!</p>
+
+<p>다음의 꽃을 분류하기 위해선</p>
+
+<p><img src="images/2018-07-21-04.PNG" alt="" /></p>
+
+<p>직접 수백개의 꽃잎을 실측하고 실측한 데이터로 부터 분류 기준을 세웠어야 했습니다</p>
+
+<p>하지만 현실에서의 모든 객체를 분류한다면 어떨까요?</p>
+
+<h1 id="혼자-특징점-찾는-기계--cnn">혼자 특징점 찾는 기계 : CNN</h1>
+
+<p>CNN( Convolutional neural network ) 으로 인해 이미지 인식 성능은 놀랍게 변했습니다</p>
+
+<p>사람이 특이점을 직접 찾지 않으면서도 말이죠!</p>
+
+<h2 id="필터">필터</h2>
+
+<p>다음은 곡선을 좌표상의 데이터로 표현한 그림 입니다.</p>
+
+<p><img src="images/2018-07-21-06.PNG" alt="" /></p>
+
+<p>이것을 필터라고 하겠습니다 필터는 이 모양을 그림으로부터 검출하기 위해서 사용하는데요</p>
+
+<p><img src="images/2018-07-21-07.PNG" alt="" /></p>
+
+<p>곡선 모양에 곡선 필터를 합성곱 연산을 한다면 필터의 모양을 제외한 나머지 값들은 사라져
+원래 이미지가 얼만큼 곡선을 포함하고 있는지 알 수 있습니다.</p>
+
+<p><img src="images/2018-07-21-08.PNG" alt="" /></p>
+
+<p>직선 모양인 쥐의 머리 부분은 필터와 모양이 맞지 않아 합성곱연산이 0이 됩니다</p>
+
+<p><img src="images/2018-07-21-09.PNG" alt="" /></p>
+
+<p>실제 필터는 Red, Green, Blue 필터와 다양한 모양 필터로 이루어져 있으며</p>
+
+<p><img src="images/2018-07-21-10.PNG" alt="" /></p>
+
+<p>다양한 필터를 통과한 데이터는 또다시 필터를 통과 합니다</p>
+
+<p><img src="images/2018-07-21-11.PNG" alt="" /></p>
+
+<p>점점 필터는 단순한 모양에서 복잡한 모양으로 바뀌며 마지막 필터를 통과하며 대상 이미지는</p>
+
+<p>객체가 인식되어 태깅 됩니다.</p>
+
+<h2 id="더-많고-복잡한-내용이-있지만-아직-부족한-점이-많아-더욱-보충해서-올릴께용">더 많고 복잡한 내용이 있지만 아직 부족한 점이 많아 더욱 보충해서 올릴께용</h2>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/articles/2018-07/image-deeplearning-(CNN)" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/articles/2018-07/image-deeplearning-(CNN)" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/articles/2018-07/image-deeplearning-(CNN)" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=/articles/2018-07/image-deeplearning-(CNN)" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=/articles/2018-07/image-deeplearning-(CNN)" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2018 Soronto. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+</body>
+</html>
