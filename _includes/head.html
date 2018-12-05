@@ -56,6 +56,7 @@
     {% unless feature contains 'http://' or feature contains 'https://' %}{% capture feature %}{{ site.url }}/{{ feature }}{% endcapture %}{% endunless %}
     <style type="text/css">.feature {background-image:url({{ feature }});}</style>
     {% endif %}
+    <!-- Soronto's google analytics -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130016746-1"></script>
     <script>
@@ -64,4 +65,12 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-130016746-1');
+    </script>
+    <!-- Soronto's google adsense -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-6674782401318634",
+            enable_page_level_ads: true
+        });
     </script>
