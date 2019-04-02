@@ -139,11 +139,19 @@
                 border-radius: 20px;
                 height: 80px;
                 border:3px solid white;  
-            ">Start survey</button>
+            " onclick="survey()">Start survey</button>
           </div>
         </div>
       </div>
     </div>  
+    <script>
+        urllist=["https://www.naver.com","https://www.google.com","https://youtube.com"];
+        const rand = urllist[Math.floor(Math.random() * urllist.length)];
+
+        const survey = ()=>{
+            window.open(rand);
+        }
+    </script>
 
     <!-- <div class="site-block-1">
       <div class="container">
