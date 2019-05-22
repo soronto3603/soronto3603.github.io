@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        
+        <style>
+            body{ margin:32px; }
+            .card{
+                width:100%;
+                height:100%;
+                border-radius:25px;
+
+                text-align:center;
+                line-height:100%;
+
+                /* background-color:#009688; */
+                /* color:white; */
+            }
+            .card-text{
+                position:relative;
+                top:calc( 50% - 42px );
+                
+                font-size:42px;
+            }
+            .buffered-margin{
+                width:100%;
+                height:32px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id=container class=container>
+            <!-- <div class="card">
+                <div class=card-text>민들레 국수</div>
+            </div>
+            <div class="buffered-margin"></div>
+            <div class="card">
+                <div class=card-text>민들레 국수</div>
+            </div> -->
+        </div>
+        <script>
+            const gen_card = (name,color,background,isfirst) => {
+                let html;
+                if( isfirst == true ){
+                    html =  `
+                    <div class="buffered-margin"></div>
+                    <div class="card" style="color:${color};background-color:${background};">
+                    <div class=card-text >${name}</div>
+                          </div>`;
+                } else{
+                    html =  `
+                    <div class="card" style="color:${color};background-color:${background};">
+                    <div class=card-text >${name}</div>
+                          </div>`;
+                }
+                return html;
+            }
+            const menu = [
+                { 
+                    name:"민들레 국수", 
+                    color:"#ffffff",
+                    background:"#ffc107"
+                },
+                { 
+                    name:"사천성", 
+                    color:"#ffffff",
+                    background:"#f44336"
+                },
+                { 
+                    name:"산쪼메", 
+                    color:"#ffffff",
+                    background:"#795548"
+                },
+                { 
+                    name:"롯데리아", 
+                    color:"#ffffff",
+                    background:"#ff5722"
+                },
+                { 
+                    name:"본죽", 
+                    color:"#ffffff",
+                    background:"#4CAF50"
+                },
+            ];
+            
+            const container = document.getElementById("container");
+            var isfirst = false;
+            for(var i=0;i<5;i++){
+                if( i == 0 ) isfirst = false;
+                else isfirst = true;
+                container.innerHTML += gen_card( menu[i].name, menu[i].color,menu[i].background,isfirst);
+            }
+        </script>
+    </body>
+</html>
