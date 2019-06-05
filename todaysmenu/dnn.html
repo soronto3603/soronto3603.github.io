@@ -311,7 +311,7 @@ font-family: 'Gaegu', cursive; */
   <div id=cover class=cover>
     <div id=cover-title class=cover-title style="opacity:0;top:17%;">
         Today's Menu<br>
-        Random
+        DNN
     </div>
 
     <div id=cover-input class=cover-input style="">
@@ -590,28 +590,27 @@ font-family: 'Gaegu', cursive; */
         $("#cover").animate({
           top: window.outerHeight * -1 + "px"
         },1000,()=>{
-          let min = 0;
-          let max = menu.length;
+        //   let min = 0;
+        //   let max = menu.length;
           
-          // var config = {
-          //     trainingSet : data,
-          //     categoryAttr : 'name',
-          //     ignoredAttributes : []
-          //   };
-          // var decisionTree = new dt.DecisionTree(config);
-          // console.log({feel:feelCount,weather:weatherCount,gender:genderCount,date:dateCount});
-          // var decisionTreePrediction = decisionTree.predict({feel:feelCount,weather:weatherCount,gender:genderCount,date:dateCount});
-          // alert(decisionTreePrediction);
-          // document.getElementById('tree').innerHTML = treeToHtml(decisionTree.root);
-          // for(var i=0;i<menu.length;i++){
-          //   if(menu[i].name == decisionTreePrediction){
-          //     anim_random_slide( i );
-          //   }
+        //   var config = {
+        //       trainingSet : data,
+        //       categoryAttr : 'name',
+        //       ignoredAttributes : []
+        //     };
+        //   var decisionTree = new dt.DecisionTree(config);
+        //   console.log({feel:feelCount,weather:weatherCount,gender:genderCount,date:dateCount});
+        //   var decisionTreePrediction = decisionTree.predict({feel:feelCount,weather:weatherCount,gender:genderCount,date:dateCount});
+        //   alert(decisionTreePrediction);
+        //   document.getElementById('tree').innerHTML = treeToHtml(decisionTree.root);
+        //   for(var i=0;i<menu.length;i++){
+        //     if(menu[i].name == decisionTreePrediction){
+        //       anim_random_slide( i );
+        //     }
               
-          // }
-          var va = Math.floor(Math.random() * (max - min)) + min;
-          alert ( menu[va].name);
-          anim_random_slide( va );
+        //   }
+        alert("롯데리아")
+          anim_random_slide( 3 );
         });
       }
     

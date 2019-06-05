@@ -1,0 +1,283 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="css/index.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Nanum+Gothic+Coding|Nanum+Myeongjo|Cute+Font|Song+Myung|East+Sea+Dokdo|Cinzel|Great+Vibes|ZCOOL+KuaiLe|Dancing+Script|Gaegu|Lobster|Ubuntu|Pacifico&display=swap" rel="stylesheet">
+        <style>
+            a{text-decoration: none;
+            color:hotpink
+            } 
+            body{text-align: center;}
+            
+            .start{
+                top:90%;
+                position: absolute;
+                height:50px;
+                width:50%;
+                border:3px solid hotpink;
+                margin:auto;
+                border-radius:15px;
+            }
+            .restart{
+                background-color:none;
+                border:none;
+               
+                position: relative;
+                height:100%;
+                width:100%;
+                font-size:20px;
+                border-radius:15px;
+            }
+            @import url("https://fonts.googleapis.com/css?family=Lato:400,700,900");
+
+            * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            }
+
+            body {
+            min-height: 100vh;
+            background: linear-gradient(#fae6e1, #f3dfd8);
+            font-family: "Lato", sans-serif;
+            /* center in the viewport */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+            /* create the outline of a phone screen with a noticeable shadow */
+            main {
+                margin:auto;
+                position:relative;
+                border-radius: 30px;
+                width: 300px;
+                min-height: 550px;
+                background: #fff;
+                color: #2c2f62;
+                margin: 1rem 0;
+                padding: 2rem 2rem 1.25rem;
+                box-shadow: 0 2px 10px -8px hsla(0, 0%, 0%, 0.4);
+            }
+
+            /* in the introducing div display the heading and buttons side by side */
+            .header {
+            display: flex;
+            align-items: center;
+            /* noticeable whitespace atop the div to give space for the small notch */
+            margin-top: 1rem;
+            position: relative;
+            }
+            div.header:before {
+            position: absolute;
+            content: "";
+            bottom: calc(100% + 1rem);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1rem;
+            height: 0.3rem;
+            border-radius: 15px;
+            background: hsl(0, 0%, 90%);
+            }
+            /* have the heading expand to occupy the available space */
+            div.header h1 {
+            font-size: 1.5rem;
+            flex-grow: 1;
+            font-weight: 900;
+            }
+
+           .legend {
+            display: flex;
+            position:relative;
+            }
+            .namefont{
+                position: relative;
+                margin:5px;
+                display:inline-block;
+            }
+            /* display the screen and grid of seats in a column, horizontally centered */
+            .theater {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1.75rem 0;
+            }
+            /* style the _screen_ paragraph to have a rounded border and two lines protruding from each side */
+            .theater p {
+            text-align: center;
+            text-transform: uppercase;
+            padding: 0.3rem 1rem;
+            color: hsl(0, 0%, 80%);
+            border-radius: 20px;
+            border: 1px solid currentColor;
+            font-size: 0.5rem;
+            letter-spacing: 0.1rem;
+            background: #fff;
+            /* include lines outside of the rounded border with pseudo elements */
+            position: relative;
+            }
+            .theater p:before,
+            .theater p:after {
+            position: absolute;
+            content: "";
+            top: 50%;
+            transform: translate(0%, -50%);
+            width: 70px;
+            height: 1px;
+            background: currentColor;
+            }
+            .theater p:before {
+            right: 100%;
+            }
+            .theater p:after {
+            left: 100%;
+            }
+            .table{
+                position: fixed;
+                width:250px;
+                height:250px;
+            }
+            .clickbutton{
+                width:60px;
+                height:60px;
+                display:inline-block;
+                position: relative;
+                margin-top:10px;
+                margin-bottom:10px;
+                margin-left:30px;
+                margin-right:30px;
+            }
+            .clickbutton button{
+                width:50px;
+                height:50px;
+                background:#2dcff8;
+                border:none;
+                position: relative;
+                font-size:20px;
+            }
+            .button{
+                position:fixed;
+                width:250px;
+                height:40px;
+                top:calc(50% + 190px);
+            }
+            .button button{
+                height:100%;
+                width:80px;
+                margin-left:20px;
+                margin-right:20px;
+                border:none;
+                border-radius: 15px;
+                font-family: 'Nanum Gothic Coding', monospace;
+                background:lightpink;
+                color:black;
+            }
+        </style>
+    </head>
+
+    <body>
+        <main>
+            <div class="header">
+                <h1>예약하기</h1>
+            </div>
+
+            <div class="index">
+                <div class='namefont' style="color: #2dcff8;">Available </div>
+                <div class='namefont' style="color: gray;">Reserved</div>
+                <div class='namefont' style="color: #fd6d8e;">Selected</div>
+            </div>
+
+            <div class="theater">
+                <p>Counter</p>
+            </div>
+       
+            <div class='table'>
+                <div class='clickbutton'>
+                    <button id='table1'>1</button>
+                </div>
+                <div class='clickbutton'>
+                    <button id='table2'>2</button>
+                </div>
+                <div class='clickbutton'>
+                    <button id='table3'>3</button>
+                </div>
+                <div class='clickbutton'>
+                    <button id='table4'>4</button>
+                </div>
+                <div class='clickbutton'>
+                    <button id='table5'>5</button>
+                </div>
+                <div class='clickbutton'>
+                    <button id='table6'>6</button>
+                </div>      
+            </div>
+
+            <div class='button'>
+                <button onclick="aa()">다시설정</button>
+                <button id='book' onclick="bb()">예약하기</button>
+            </div>
+
+        </main>
+
+        <div class='start'>
+            <div class='restart'>
+                <a id='cursor' href='./' style="font-size:30px;">Restart</a>
+            </div>
+        </div>
+      
+
+        <script src="js/index.js"></script>
+
+        <script>
+            const button=new Array();
+
+            button[0]=document.getElementById("table1");
+            button[1]=document.getElementById("table2");
+            button[2]=document.getElementById("table3");
+            button[3]=document.getElementById("table4");
+            button[4]= document.getElementById("table5");
+            button[5]= document.getElementById("table6");
+
+
+            button[0].addEventListener("click", function () {
+                button[0].style.background = "#fd6d8e";
+            });
+            button[1].addEventListener("click", function () {
+                button[1].style.background = "#fd6d8e";
+            });
+            button[2].addEventListener("click", function () {
+                button[2].style.background = "#fd6d8e";
+            });
+            button[3].addEventListener("click", function () {
+                button[3].style.background = "#fd6d8e";
+            });
+            button[4].addEventListener("click", function () {
+                button[4].style.background = "#fd6d8e";
+            });
+            button[5].addEventListener("click", function () {
+                button[5].style.background = "#fd6d8e";
+            });
+       
+            // 다시설정
+            function aa(){
+                for(var i=0;i<6;i++){
+                    if(button[i].style.background=='rgb(253, 109, 142)')
+                    button[i].style.background = "#2dcff8";
+                }
+            }
+            // 예약하기
+            function bb(){
+                for(var i=0;i<6;i++){
+                    console.log(button[i].style.background)
+                    if(button[i].style.background == 'rgb(253, 109, 142)'){
+                        button[i].style.background = "gray";
+                    }
+                }
+                setTimeout(()=>{
+                    alert("예약완료.");
+                },500);
+            }
+        </script>
+
+    </body>
+</html>
