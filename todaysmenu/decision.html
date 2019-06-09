@@ -350,10 +350,6 @@ font-family: 'Gaegu', cursive; */
   </div>
   <div id=bottombar class=bottombar style="bottom:-75px;">
     <div onclick="anim_bottombar()">▼</div>
-    <div>1.민들레 68.32%</div>
-    <div>2.사천성 21.89%</div>
-    <div>3.산쪼메 20.33%</div>
-    <div class=tree id=tree>Tree</div>
   </div>
   <!-- Swiper -->
   <div class="swiper-container">
@@ -449,14 +445,14 @@ font-family: 'Gaegu', cursive; */
             background:"#ffc107"
         },
         { 
-            name:"사천성", 
-            color:"#ffffff",
-            background:"#f44336"
-        },
-        { 
             name:"산쪼메", 
             color:"#ffffff",
             background:"#795548"
+        },
+        { 
+            name:"사천성", 
+            color:"#ffffff",
+            background:"#f44336"
         },
         { 
             name:"롯데리아", 
@@ -483,6 +479,77 @@ font-family: 'Gaegu', cursive; */
           color:"#ffffff",
           background:"#f44336"
         },
+        {
+          name:"밥버거",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"대동국수",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"피자스쿨",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"라라코스트",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"치쿠린",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"김밥천국",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"부대통령",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"한갈비",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"후성식당",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"신촌돈까스",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"교동국수",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"와따국밥",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"군산순대국밥",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"신전떡볶이",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        
     ];
 
 
@@ -600,9 +667,9 @@ font-family: 'Gaegu', cursive; */
             };
           var decisionTree = new dt.DecisionTree(config);
           console.log({feel:feelCount,weather:weatherCount,gender:genderCount,date:dateCount});
-          var decisionTreePrediction = decisionTree.predict({feel:feelCount,weather:weatherCount,gender:genderCount,date:dateCount});
+          var decisionTreePrediction = decisionTree.predict(
+            {feel:feelCount,weather:weatherCount,gender:genderCount,date:dateCount});
           alert(decisionTreePrediction);
-          document.getElementById('tree').innerHTML = treeToHtml(decisionTree.root);
           for(var i=0;i<menu.length;i++){
             if(menu[i].name == decisionTreePrediction){
               anim_random_slide( i );
@@ -1046,7 +1113,7 @@ font-family: 'Gaegu', cursive; */
       
                   predicate = tree.predicate;
                   pivot = tree.pivot;
-      
+                  console.log("3 >= ",attr);
                   // move to one of subtrees
                   if (predicate(value, pivot)) {
                       tree = tree.match;
@@ -1055,7 +1122,39 @@ font-family: 'Gaegu', cursive; */
                   }
               }
           }
+          /**
+           * Classifying item, using decision tree with path
+           */
+           function predictAndPath(tree, item ,path) {
+              var attr,
+                  value,
+                  predicate,
+                  pivot;
+              
+
+
+              // Traversing tree from the root to leaf
+              while(true) {
+                
+                  if (tree.category) {
+                      // only leafs contains predicted category
+                      return tree.category;
+                  }
       
+                  attr = tree.attribute;
+                  value = item[attr];
+      
+                  predicate = tree.predicate;
+                  pivot = tree.pivot;
+                  console.log(item,pivot);
+                  // move to one of subtrees
+                  if (predicate(value, pivot)) {
+                      tree = tree.match;
+                  } else {
+                      tree = tree.notMatch;
+                  }
+              }
+          }
           /**
            * Building array of decision trees
            */

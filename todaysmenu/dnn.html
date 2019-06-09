@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>todays menu</title>
   <meta name="viewport" content="width=device-width, user-scalable=no">
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/brain/0.6.3/brain.min.js"></script>
   <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
@@ -350,10 +350,7 @@ font-family: 'Gaegu', cursive; */
   </div>
   <div id=bottombar class=bottombar style="bottom:-75px;">
     <div onclick="anim_bottombar()">▼</div>
-    <div>1.민들레 68.32%</div>
-    <div>2.사천성 21.89%</div>
-    <div>3.산쪼메 20.33%</div>
-    <div class=tree id=tree>Tree</div>
+    <div id=chart></div>
   </div>
   <!-- Swiper -->
   <div class="swiper-container">
@@ -442,6 +439,7 @@ font-family: 'Gaegu', cursive; */
         }
         return html;
     }
+
     const menu = [
         { 
             name:"민들레 국수",
@@ -449,14 +447,14 @@ font-family: 'Gaegu', cursive; */
             background:"#ffc107"
         },
         { 
-            name:"사천성", 
-            color:"#ffffff",
-            background:"#f44336"
-        },
-        { 
             name:"산쪼메", 
             color:"#ffffff",
             background:"#795548"
+        },
+        { 
+            name:"사천성", 
+            color:"#ffffff",
+            background:"#f44336"
         },
         { 
             name:"롯데리아", 
@@ -483,6 +481,77 @@ font-family: 'Gaegu', cursive; */
           color:"#ffffff",
           background:"#f44336"
         },
+        {
+          name:"밥버거",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"대동국수",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"피자스쿨",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"라라코스트",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"치쿠린",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"김밥천국",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"부대통령",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"한갈비",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"후성식당",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"신촌돈까스",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"교동국수",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"와따국밥",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"군산순대국밥",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        {
+          name:"신전떡볶이",
+          color:"#ffffff",
+          background:"#f44336"
+        },
+        
     ];
 
 
@@ -501,50 +570,7 @@ font-family: 'Gaegu', cursive; */
     //   ["라이스스토리","맑음","여","일"],
     //   ["맘스터치","바람","여","월"],
     // ]
-    var data = [
-      {name:"민들레국수",emotion:0,weather:0,gender:0,date:0},
-      {name:"산쪼메",emotion:1,weather:1,gender:1,date:1},
-      {name:"산쪼메",emotion:2,weather:0,gender:0,date:2},
-      {name:"산쪼메",emotion:3,weather:2,gender:0,date:3},
-      {name:"산쪼메",emotion:4,weather:4,gender:1,date:4},
-      {name:"사천성",emotion:1,weather:2,gender:0,date:2},
-      {name:"롯데리아",emotion:2,weather:4,gender:0,date:3},
-      {name:"본죽",emotion:3,weather:2,gender:1,date:4},
-      {name:"고래성",emotion:4,weather:0,gender:0,date:5},
-      {name:"라이스스토리",emotion:1,weather:1,gender:1,date:6},
-      {name:"맘스터치",emotion:2,weather:4,gender:1,date:0},
-      {name:"맘스터치",emotion:3,weather:1,gender:0,date:1},
-      {name:"맘스터치",emotion:4,weather:2,gender:1,date:2},
-      {name:"밥버거",emotion:1,weather:1,gender:0,date:1},
-      {name:"대동국수",emotion:2,weather:0,gender:1,date:2},
-      {name:"피자스쿨",emotion:3,weather:4,gender:0,date:3},
-      {name:"라라코스트",emotion:4,weather:4,gender:1,date:4},
-      {name:"라라코스트",emotion:1,weather:1,gender:0,date:6},
-      {name:"치쿠린",emotion:2,weather:3,gender:0,date:5},
-      {name:"치쿠린",emotion:3,weather:2,gender:1,date:6},
-      {name:"치쿠린",emotion:4,weather:1,gender:0,date:0},
-      {name:"치쿠린",emotion:1,weather:0,gender:1,date:1},
-      {name:"김밥천국",emotion:2,weather:3,gender:0,date:6},
-      {name:"김밥천국",emotion:3,weather:2,gender:1,date:0},
-      {name:"부대통령",emotion:4,weather:1,gender:1,date:0},
-      {name:"한갈비",emotion:1,weather:1,gender:0,date:1},
-      {name:"한갈비",emotion:2,weather:2,gender:1,date:2},
-      {name:"한갈비",emotion:3,weather:0,gender:1,date:3},
-      {name:"후성식당",emotion:1,weather:1,gender:1,date:2},
-      {name:"후성식당",emotion:2,weather:2,gender:0,date:3},
-      {name:"후성식당",emotion:3,weather:3,gender:0,date:4},
-      {name:"후성식당",emotion:4,weather:4,gender:1,date:6},
-      {name:"신촌돈까스",emotion:1,weather:2,gender:1,date:3},
-      {name:"신촌돈까스",emotion:2,weather:1,gender:0,date:2},
-      {name:"교동국수",emotion:1,weather:0,gender:0,date:4},
-      {name:"교동국수",emotion:2,weather:0,gender:1,date:3},
-      {name:"와따국밥",emotion:3,weather:0,gender:1,date:5},
-      {name:"군산순대국밥",emotion:1,weather:2,gender:0,date:6},
-      {name:"군산순대국밥",emotion:2,weather:1,gender:1,date:0},
-      {name:"군산순대국밥",emotion:3,weather:0,gender:1,date:1},
-      {name:"신전떡볶이",emotion:1,weather:2,gender:1,date:0},
-      {name:"신전떡볶이",emotion:2,weather:0,gender:0,date:1},
-    ]
+
   
     const anim_bottombar = ()=>{
       if(document.getElementById("bottombar").style.bottom == "-75px"){
@@ -590,27 +616,35 @@ font-family: 'Gaegu', cursive; */
         $("#cover").animate({
           top: window.outerHeight * -1 + "px"
         },1000,()=>{
-        //   let min = 0;
-        //   let max = menu.length;
+          console.log([feelCount-1,weatherCount-1,genderCount-1,dateCount-1])
+          var result = net.run([feelCount-1,weatherCount-1,genderCount-1,dateCount-1]);
           
-        //   var config = {
-        //       trainingSet : data,
-        //       categoryAttr : 'name',
-        //       ignoredAttributes : []
-        //     };
-        //   var decisionTree = new dt.DecisionTree(config);
-        //   console.log({feel:feelCount,weather:weatherCount,gender:genderCount,date:dateCount});
-        //   var decisionTreePrediction = decisionTree.predict({feel:feelCount,weather:weatherCount,gender:genderCount,date:dateCount});
-        //   alert(decisionTreePrediction);
-        //   document.getElementById('tree').innerHTML = treeToHtml(decisionTree.root);
-        //   for(var i=0;i<menu.length;i++){
-        //     if(menu[i].name == decisionTreePrediction){
-        //       anim_random_slide( i );
-        //     }
-              
-        //   }
-        alert("롯데리아")
-          anim_random_slide( 3 );
+          console.log(result);
+          var maxValue = -1;
+          var maxIndex = 0;
+          for(var k in result){
+            // console.log(result[k]);
+            if(result[k] > maxValue){
+              maxValue = result[k];
+              maxIndex = k;
+            }
+          }
+
+          var secValue = -1;
+          var secIndex = 0;
+          for(var k in result){
+            if(result[k] > secValue && maxValue != result[k] ){
+              secValue = result[k];
+              secIndex = k;
+            }
+          }
+          console.log(maxValue, maxIndex ,name2int[maxIndex], secValue, secIndex);
+          alert(secIndex);
+          document.getElementById("chart").innerHTML = `
+            ${maxIndex} : ${maxValue} </br>
+            ${secIndex} : ${secValue}
+          `;
+          anim_random_slide( name2int[secIndex] );
         });
       }
     
@@ -655,7 +689,151 @@ font-family: 'Gaegu', cursive; */
         swiper.slideTo(indexNo,80);
       },600);
     }
+    var data = [
+      {name:"민들레국수",emotion:0,weather:0,gender:0,date:0},
+      {name:"산쪼메",emotion:1,weather:1,gender:1,date:1},
+      {name:"산쪼메",emotion:2,weather:0,gender:0,date:2},
+      {name:"산쪼메",emotion:3,weather:2,gender:0,date:3},
+      {name:"산쪼메",emotion:4,weather:4,gender:1,date:4},
+      {name:"사천성",emotion:1,weather:2,gender:0,date:2},
+      {name:"롯데리아",emotion:2,weather:4,gender:0,date:3},
+      {name:"본죽",emotion:3,weather:2,gender:1,date:4},
+      {name:"고래성",emotion:4,weather:0,gender:0,date:5},
+      {name:"라이스스토리",emotion:1,weather:1,gender:1,date:6},
+      {name:"맘스터치",emotion:2,weather:4,gender:1,date:0},
+      {name:"맘스터치",emotion:3,weather:1,gender:0,date:1},
+      {name:"맘스터치",emotion:4,weather:2,gender:1,date:2},
+      {name:"밥버거",emotion:1,weather:1,gender:0,date:1},
+      {name:"대동국수",emotion:2,weather:0,gender:1,date:2},
+      {name:"피자스쿨",emotion:3,weather:4,gender:0,date:3},
+      {name:"라라코스트",emotion:4,weather:4,gender:1,date:4},
+      {name:"라라코스트",emotion:1,weather:1,gender:0,date:6},
+      {name:"치쿠린",emotion:2,weather:3,gender:0,date:5},
+      {name:"치쿠린",emotion:3,weather:2,gender:1,date:6},
+      {name:"치쿠린",emotion:4,weather:1,gender:0,date:0},
+      {name:"치쿠린",emotion:1,weather:0,gender:1,date:1},
+      {name:"김밥천국",emotion:2,weather:3,gender:0,date:6},
+      {name:"김밥천국",emotion:3,weather:2,gender:1,date:0},
+      {name:"부대통령",emotion:4,weather:1,gender:1,date:0},
+      {name:"한갈비",emotion:1,weather:1,gender:0,date:1},
+      {name:"한갈비",emotion:2,weather:2,gender:1,date:2},
+      {name:"한갈비",emotion:3,weather:0,gender:1,date:3},
+      {name:"후성식당",emotion:1,weather:1,gender:1,date:2},
+      {name:"후성식당",emotion:2,weather:2,gender:0,date:3},
+      {name:"후성식당",emotion:3,weather:3,gender:0,date:4},
+      {name:"후성식당",emotion:4,weather:4,gender:1,date:6},
+      {name:"신촌돈까스",emotion:1,weather:2,gender:1,date:3},
+      {name:"신촌돈까스",emotion:2,weather:1,gender:0,date:2},
+      {name:"교동국수",emotion:1,weather:0,gender:0,date:4},
+      {name:"교동국수",emotion:2,weather:0,gender:1,date:3},
+      {name:"와따국밥",emotion:3,weather:0,gender:1,date:5},
+      {name:"군산순대국밥",emotion:1,weather:2,gender:0,date:6},
+      {name:"군산순대국밥",emotion:2,weather:1,gender:1,date:0},
+      {name:"군산순대국밥",emotion:3,weather:0,gender:1,date:1},
+      {name:"신전떡볶이",emotion:1,weather:2,gender:1,date:0},
+      {name:"신전떡볶이",emotion:2,weather:0,gender:0,date:1},
+    ]
+    const name2int = {
+      "민들레국수":0,
+      "산쪼메":1,
+      "사천성":2,
+      "롯데리아":3,
+      "본죽":4,
+      "고래성":5,
+      "라이스스토리":6,
+      "맘스터치":7,
+      "밥버거":8,
+      "대동국수":9,
+      "피자스쿨":10,
+      "라라코스트":11,
+      "치쿠린":12,
+      "김밥천국":13,
+      "부대통령":14,
+      "한갈비":15,
+      "후성식당":16,
+      "신촌돈까스":17,
+      "교동국수":18,
+      "와따국밥":19,
+      "군산순대국밥":20,
+      "신전떡볶이":21
+    }
+    const int2name = {
+      0:"민들레국수",
+      1:"산쪼메",
+      2:"사천성",
+      3:"롯데리아",
+      4:"본죽",
+      5:"고래성",
+      6:"라이스스토리",
+      7:"맘스터치",
+      8:"밥버거",
+      9:"대동국수",
+      10:"피자스쿨",
+      11:"라라코스트",
+      12:"치쿠린",
+      13:"김밥천국",
+      14:"부대통령",
+      15:"한갈비",
+      16:"후성식당",
+      17:"신촌돈까스",
+      18:"교동국수",
+      19:"와따국밥",
+      20:"군산순대국밥",
+      21:"신전떡볶이"
+    }
+    
+    var data = [
+      {input:{emotion:0,weather:0,gender:0,date:0},output:{"민들레국수":1}},
+      {input:{emotion:1,weather:1,gender:1,date:1},output:{"산쪼메":1}},
+      {input:{emotion:2,weather:0,gender:0,date:2},output:{"산쪼메":1}},
+      {input:{emotion:3,weather:2,gender:0,date:3},output:{"산쪼메":1}},
+      {input:{emotion:4,weather:4,gender:1,date:4},output:{"산쪼메":1}},
+      {input:{emotion:1,weather:2,gender:0,date:2},output:{"사천성":1}},
+      {input:{emotion:2,weather:4,gender:0,date:3},output:{"롯데리아":1}},
+      {input:{emotion:3,weather:2,gender:1,date:4},output:{"본죽":1}},
+      {input:{emotion:4,weather:0,gender:0,date:5},output:{"고래성":1}},
+      {input:{emotion:1,weather:1,gender:1,date:6},output:{"라이스스토리":1}},
+      {input:{emotion:2,weather:4,gender:1,date:0},output:{"맘스터치":1}},
+      {input:{emotion:3,weather:1,gender:0,date:1},output:{"맘스터치":1}},
+      {input:{emotion:4,weather:2,gender:1,date:2},output:{"맘스터치":1}},
+      {input:{emotion:1,weather:1,gender:0,date:1},output:{"맘스터치":1}},
+      {input:{emotion:2,weather:0,gender:1,date:2},output:{"밥버거":1}},
+      {input:{emotion:3,weather:4,gender:0,date:3},output:{"대동국수":1}},
+      {input:{emotion:4,weather:4,gender:1,date:4},output:{"피자스쿨":1}},
+      {input:{emotion:1,weather:1,gender:0,date:6},output:{"라라코스트":1}},
+      {input:{emotion:2,weather:3,gender:0,date:5},output:{"라라코스트":1}},
+      {input:{emotion:3,weather:2,gender:1,date:6},output:{"치쿠린":1}},
+      {input:{emotion:4,weather:1,gender:0,date:0},output:{"치쿠린":1}},
+      {input:{emotion:1,weather:0,gender:1,date:1},output:{"치쿠린":1}},
+      {input:{emotion:2,weather:3,gender:0,date:6},output:{"치쿠린":1}},
+      {input:{emotion:3,weather:2,gender:1,date:0},output:{"김밥천국":1}},
+      {input:{emotion:4,weather:1,gender:1,date:0},output:{"김밥천국":1}},
+      {input:{emotion:1,weather:1,gender:0,date:1},output:{"부대통령":1}},
+      {input:{emotion:2,weather:2,gender:1,date:2},output:{"한갈비":1}},
+      {input:{emotion:3,weather:0,gender:1,date:3},output:{"한갈비":1}},
+      {input:{emotion:1,weather:1,gender:1,date:2},output:{"한갈비":1}},
+      {input:{emotion:2,weather:2,gender:0,date:3},output:{"후성식당":1}},
+      {input:{emotion:3,weather:3,gender:0,date:4},output:{"후성식당":1}},
+      {input:{emotion:4,weather:4,gender:1,date:6},output:{"후성식당":1}},
+      {input:{emotion:1,weather:2,gender:1,date:3},output:{"후성식당":1}},
+      {input:{emotion:2,weather:0,gender:1,date:3},output:{"신촌돈까스":1}},
+      {input:{emotion:3,weather:0,gender:1,date:5},output:{"신촌돈까스":1}},
+      {input:{emotion:1,weather:2,gender:0,date:6},output:{"교동국수":1}},
+      {input:{emotion:1,weather:2,gender:0,date:6},output:{"교동국수":1}},
+      {input:{emotion:2,weather:1,gender:1,date:0},output:{"와따국밥":1}},
+      {input:{emotion:3,weather:0,gender:1,date:1},output:{"군산순대국밥":1}},
+      {input:{emotion:1,weather:2,gender:1,date:0},output:{"군산순대국밥":1}},
+      {input:{emotion:2,weather:0,gender:0,date:1},output:{"신전떡볶이":1}}
+    ];
 
+    const config = {
+      binaryTresh:0.5,
+      hiddenLayers:[24,48,24],
+      activation:'sigmoid',
+      leakyReluAlpha:0.01
+    };
+    const net = new brain.NeuralNetwork(config);
+    net.train(data);
 
     window.onload= ()=>{
 
@@ -685,430 +863,8 @@ font-family: 'Gaegu', cursive; */
       // anim_random_slide(menuIndex);
 
     }
-    function treeToHtml(tree) {
-    // only leafs containing category
-    if (tree.category) {
-        return  ['<ul>',
-                    '<li>',
-                        '<a href="#">',
-                            '<b>', tree.category, '</b>',
-                        '</a>',
-                    '</li>',
-                 '</ul>'].join('');
-    }
     
-    return  ['<ul>',
-                '<li>',
-                    '<a href="#">',
-                        '<b>', tree.attribute, ' ', tree.predicateName, ' ', tree.pivot, ' ?</b>',
-                    '</a>',
-                    '<ul>',
-                        '<li>',
-                            '<a href="#">yes</a>',
-                            treeToHtml(tree.match),
-                        '</li>',
-                        '<li>', 
-                            '<a href="#">no</a>',
-                            treeToHtml(tree.notMatch),
-                        '</li>',
-                    '</ul>',
-                '</li>',
-             '</ul>'].join('');
-}
-    var dt = (function () {
-          
-          /**
-           * Creates an instance of DecisionTree
-           *
-           * @constructor
-           * @param builder - contains training set and
-           *                  some configuration parameters
-           */
-          function DecisionTree(builder) {        
-              this.root = buildDecisionTree({
-                  trainingSet: builder.trainingSet,
-                  ignoredAttributes: arrayToHashSet(builder.ignoredAttributes),
-                  categoryAttr: builder.categoryAttr || 'category',
-                  minItemsCount: builder.minItemsCount || 1,
-                  entropyThrehold: builder.entropyThrehold || 0.01,
-                  maxTreeDepth: builder.maxTreeDepth || 70
-              });
-          }
-                
-          DecisionTree.prototype.predict = function (item) {
-              return predict(this.root, item);
-          }
-      
-          /**
-           * Creates an instance of RandomForest
-           * with specific number of trees
-           *
-           * @constructor
-           * @param builder - contains training set and some
-           *                  configuration parameters for
-           *                  building decision trees
-           */
-          function RandomForest(builder, treesNumber) {
-              this.trees = buildRandomForest(builder, treesNumber);
-          }
-                
-          RandomForest.prototype.predict = function (item) {
-              return predictRandomForest(this.trees, item);
-          }
-          
-          /**
-           * Transforming array to object with such attributes 
-           * as elements of array (afterwards it can be used as HashSet)
-           */
-          function arrayToHashSet(array) {
-              var hashSet = {};
-              if (array) {
-                  for(var i in array) {
-                      var attr = array[i];
-                      hashSet[attr] = true;
-                  }
-              }
-              return hashSet;
-          }
-          
-          /**
-           * Calculating how many objects have the same 
-           * values of specific attribute.
-           *
-           * @param items - array of objects
-           *
-           * @param attr  - variable with name of attribute, 
-           *                which embedded in each object
-           */
-          function countUniqueValues(items, attr) {
-              var counter = {};
-      
-              // detecting different values of attribute
-              for (var i = items.length - 1; i >= 0; i--) {
-                  // items[i][attr] - value of attribute
-                  counter[items[i][attr]] = 0;
-              }
-                
-              // counting number of occurrences of each of values
-              // of attribute
-              for (var i = items.length - 1; i >= 0; i--) {
-                  counter[items[i][attr]] += 1;
-              }
-      
-              return counter;
-          }
-          
-          /**
-           * Calculating entropy of array of objects 
-           * by specific attribute.
-           *
-           * @param items - array of objects
-           *
-           * @param attr  - variable with name of attribute, 
-           *                which embedded in each object
-           */
-          function entropy(items, attr) {
-              // counting number of occurrences of each of values
-              // of attribute
-              var counter = countUniqueValues(items, attr);
-      
-              var entropy = 0;
-              var p;
-              for (var i in counter) {
-                  p = counter[i] / items.length;
-                  entropy += -p * Math.log(p);
-              }
-      
-              return entropy;
-          }
-                
-          /**
-           * Splitting array of objects by value of specific attribute, 
-           * using specific predicate and pivot.
-           *
-           * Items which matched by predicate will be copied to 
-           * the new array called 'match', and the rest of the items 
-           * will be copied to array with name 'notMatch'
-           *
-           * @param items - array of objects
-           *
-           * @param attr  - variable with name of attribute,
-           *                which embedded in each object
-           *
-           * @param predicate - function(x, y) 
-           *                    which returns 'true' or 'false'
-           *
-           * @param pivot - used as the second argument when 
-           *                calling predicate function:
-           *                e.g. predicate(item[attr], pivot)
-           */
-          function split(items, attr, predicate, pivot) {
-              var match = [];
-              var notMatch = [];
-      
-              var item,
-                  attrValue;
-                
-              for (var i = items.length - 1; i >= 0; i--) {
-                  item = items[i];
-                  attrValue = item[attr];
-      
-                  if (predicate(attrValue, pivot)) {
-                      match.push(item);
-                  } else {
-                      notMatch.push(item);
-                  }
-              };
-      
-              return {
-                  match: match,
-                  notMatch: notMatch
-              };
-          }
-      
-          /**
-           * Finding value of specific attribute which is most frequent
-           * in given array of objects.
-           *
-           * @param items - array of objects
-           *
-           * @param attr  - variable with name of attribute, 
-           *                which embedded in each object
-           */
-          function mostFrequentValue(items, attr) {
-              // counting number of occurrences of each of values
-              // of attribute
-              var counter = countUniqueValues(items, attr);
-      
-              var mostFrequentCount = 0;
-              var mostFrequentValue;
-      
-              for (var value in counter) {
-                  if (counter[value] > mostFrequentCount) {
-                      mostFrequentCount = counter[value];
-                      mostFrequentValue = value;
-                  }
-              };
-      
-              return mostFrequentValue;
-          }
-                
-          var predicates = {
-              '==': function (a, b) { return a == b },
-              '>=': function (a, b) { return a >= b }
-          };
-      
-          /**
-           * Function for building decision tree
-           */
-          function buildDecisionTree(builder) {
-      
-              var trainingSet = builder.trainingSet;
-              var minItemsCount = builder.minItemsCount;
-              var categoryAttr = builder.categoryAttr;
-              var entropyThrehold = builder.entropyThrehold;
-              var maxTreeDepth = builder.maxTreeDepth;
-              var ignoredAttributes = builder.ignoredAttributes;
-      
-              if ((maxTreeDepth == 0) || (trainingSet.length <= minItemsCount)) {
-                  // restriction by maximal depth of tree
-                  // or size of training set is to small
-                  // so we have to terminate process of building tree
-                  return {
-                      category: mostFrequentValue(trainingSet, categoryAttr)
-                  };
-              }
-      
-              var initialEntropy = entropy(trainingSet, categoryAttr);
-      
-              if (initialEntropy <= entropyThrehold) {
-                  // entropy of training set too small
-                  // (it means that training set is almost homogeneous),
-                  // so we have to terminate process of building tree
-                  return {
-                      category: mostFrequentValue(trainingSet, categoryAttr)
-                  };
-              }
-      
-              // used as hash-set for avoiding the checking of split by rules
-              // with the same 'attribute-predicate-pivot' more than once
-              var alreadyChecked = {};
-                
-              // this variable expected to contain rule, which splits training set
-              // into subsets with smaller values of entropy (produces informational gain)
-              var bestSplit = {gain: 0};
-      
-              for (var i = trainingSet.length - 1; i >= 0; i--) {
-                  var item = trainingSet[i];
-      
-                  // iterating over all attributes of item
-                  for (var attr in item) {
-                      if ((attr == categoryAttr) || ignoredAttributes[attr]) {
-                          continue;
-                      }
-      
-                      // let the value of current attribute be the pivot
-                      var pivot = item[attr];
-      
-                      // pick the predicate
-                      // depending on the type of the attribute value
-                      var predicateName;
-                      if (typeof pivot == 'number') {
-                          predicateName = '>=';
-                      } else {
-                          // there is no sense to compare non-numeric attributes
-                          // so we will check only equality of such attributes
-                          predicateName = '==';
-                      }
-      
-                      var attrPredPivot = attr + predicateName + pivot;
-                      if (alreadyChecked[attrPredPivot]) {
-                          // skip such pairs of 'attribute-predicate-pivot',
-                          // which been already checked
-                          continue;
-                      }
-                      alreadyChecked[attrPredPivot] = true;
-      
-                      var predicate = predicates[predicateName];
-                
-                      // splitting training set by given 'attribute-predicate-value'
-                      var currSplit = split(trainingSet, attr, predicate, pivot);
-      
-                      // calculating entropy of subsets
-                      var matchEntropy = entropy(currSplit.match, categoryAttr);
-                      var notMatchEntropy = entropy(currSplit.notMatch, categoryAttr);
-      
-                      // calculating informational gain
-                      var newEntropy = 0;
-                      newEntropy += matchEntropy * currSplit.match.length;
-                      newEntropy += notMatchEntropy * currSplit.notMatch.length;
-                      newEntropy /= trainingSet.length;
-                      var currGain = initialEntropy - newEntropy;
-      
-                      if (currGain > bestSplit.gain) {
-                          // remember pairs 'attribute-predicate-value'
-                          // which provides informational gain
-                          bestSplit = currSplit;
-                          bestSplit.predicateName = predicateName;
-                          bestSplit.predicate = predicate;
-                          bestSplit.attribute = attr;
-                          bestSplit.pivot = pivot;
-                          bestSplit.gain = currGain;
-                      }
-                  }
-              }
-      
-              if (!bestSplit.gain) {
-                  // can't find optimal split
-                  return { category: mostFrequentValue(trainingSet, categoryAttr) };
-              }
-      
-              // building subtrees
-                
-              builder.maxTreeDepth = maxTreeDepth - 1;
-      
-              builder.trainingSet = bestSplit.match;
-              var matchSubTree = buildDecisionTree(builder);
-      
-              builder.trainingSet = bestSplit.notMatch;
-              var notMatchSubTree = buildDecisionTree(builder);
-      
-              return {
-                  attribute: bestSplit.attribute,
-                  predicate: bestSplit.predicate,
-                  predicateName: bestSplit.predicateName,
-                  pivot: bestSplit.pivot,
-                  match: matchSubTree,
-                  notMatch: notMatchSubTree,
-                  matchedCount: bestSplit.match.length,
-                  notMatchedCount: bestSplit.notMatch.length
-              };
-          }
-      
-          /**
-           * Classifying item, using decision tree
-           */
-          function predict(tree, item) {
-              var attr,
-                  value,
-                  predicate,
-                  pivot;
-              
-              // Traversing tree from the root to leaf
-              while(true) {
-                
-                  if (tree.category) {
-                      // only leafs contains predicted category
-                      return tree.category;
-                  }
-      
-                  attr = tree.attribute;
-                  value = item[attr];
-      
-                  predicate = tree.predicate;
-                  pivot = tree.pivot;
-      
-                  // move to one of subtrees
-                  if (predicate(value, pivot)) {
-                      tree = tree.match;
-                  } else {
-                      tree = tree.notMatch;
-                  }
-              }
-          }
-      
-          /**
-           * Building array of decision trees
-           */
-          function buildRandomForest(builder, treesNumber) {
-              var items = builder.trainingSet;
-                
-              // creating training sets for each tree
-              var trainingSets = [];
-              for (var t = 0; t < treesNumber; t++) {
-                  trainingSets[t] = [];
-              }
-              for (var i = items.length - 1; i >= 0 ; i--) {
-                // assigning items to training sets of each tree
-                // using 'round-robin' strategy
-                var correspondingTree = i % treesNumber;
-                trainingSets[correspondingTree].push(items[i]);
-              }
-      
-              // building decision trees
-              var forest = [];
-              for (var t = 0; t < treesNumber; t++) {
-                  builder.trainingSet = trainingSets[t];
-      
-                  var tree = new DecisionTree(builder);
-                  forest.push(tree);
-              }
-              return forest;
-          }
-      
-          /**
-           * Each of decision tree classifying item
-           * ('voting' that item corresponds to some class).
-           *
-           * This function returns hash, which contains 
-           * all classifying results, and number of votes 
-           * which were given for each of classifying results
-           */
-          function predictRandomForest(forest, item) {
-              var result = {};
-              for (var i in forest) {
-                  var tree = forest[i];
-                  var prediction = tree.predict(item);
-                  result[prediction] = result[prediction] ? result[prediction] + 1 : 1;
-              }
-              return result;
-          }
-      
-          var exports = {};
-          exports.DecisionTree = DecisionTree;
-          exports.RandomForest = RandomForest;
-          return exports;
-      })();
-  </script>
+    </script>
+
 </body>
 </html>
