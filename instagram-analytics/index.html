@@ -8,13 +8,11 @@
   <script>
     window.fbAsyncInit = function() {
       FB.init({
-        appId            : 'your-app-id',
+        appId            : '671612049977533',
         autoLogAppEvents : true,
         xfbml            : true,
         version          : 'v3.3'
       });
-    };
-    function fbLogin(){
       FB.login(function(response) {
         if (response.authResponse) {
           console.log('Welcome!  Fetching your information.... ');
@@ -25,6 +23,9 @@
           console.log('User cancelled login or did not fully authorize.');
         }
       });
+    };
+    function fbLogin(){
+
     }
   </script>
   
