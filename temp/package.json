@@ -1,0 +1,11 @@
+{
+  "name": "cg-proxy-tor",
+  "version": "1.0.0",
+  "main": "manager.js",
+  "scripts": {
+    "test": "node manager.js"
+  },
+  "dependencies": {
+    "tor-request": "^3.1.0"
+  }
+}
