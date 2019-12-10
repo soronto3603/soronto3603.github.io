@@ -25,6 +25,10 @@
     function lineBox(tag) {
       return `<div>${tag}</div>`
     }
+
+    function indexBox(number) {
+      return `<div style="display:inline-block;position:relative;bottom:16px;width:10px;">${number}</div>`
+    }
     let lightSynergies;
     let count = 30;
     fetch('https://soronto3603.github.io/lolche/constances/light-synergies.json')
@@ -33,10 +37,11 @@
       })
       .then(function(json) {
         lightSynergies = json;
-        lightSynergies.slice(0, 100).forEach((a) => {
+        lightSynergies.forEach((a, index) => {
           setTimeout(() => {
             document.getElementById('champions').innerHTML += lineBox(
-              synergiesBox(Object.keys(a.synergies).map((name) => synergy(name.toLowerCase(), a.synergies[name])).join(''))
+              indexBox(index)
+              + synergiesBox(Object.keys(a.synergies).map((name) => synergy(name.toLowerCase(), a.synergies[name])).join(''))
               + a.champions.map((name) => portrait(name)).join('')
             );
           }, count)
