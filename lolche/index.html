@@ -2,17 +2,47 @@
   <div id='champions'></div>
   <script>
     function portrait(name) {
-      return `<img width=48 height=48 src=http://ddragon.leagueoflegends.com/cdn/9.22.1/img/champion/${name}.png />`
+      return `<img width=48 height=48 src=http://ddragon.leagueoflegends.com/cdn/9.22.1/img/champion/${name}.png />`;
+    }
+    function portraitBox(tag) {
+      return `<div style="display:inline-block">${tag}</div>`
+    }
+    function synergy(name, tier) {
+      let color = 'white'
+      if (tier === 2) {
+        color = '#ffb93b';
+      } else if (tier === 1) {
+        color = '#92b1bd';
+      } else {
+        color = '#ca9372';
+      }
+      return `<div style="background-color:${color};width:32px;height:32px;border-radius:16px;display:inline-block;margin:5px;"><img style="-webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);position: relative;left: 4px;top: 4px;" width=24 height=24 src=https://cdn.lolchess.gg/images/tft/traiticons-darken/trait_icon_${name}.png /></div>`;
+    }
+    function synergiesBox(tag) {
+      return `<div style="display:inline-block;position:relative;bottom:15px;">${tag}</div>`
+    }
+    function lineBox(tag) {
+      return `<div>${tag}</div>`
     }
     let lightSynergies;
-
+    let count = 30;
     fetch('https://soronto3603.github.io/lolche/constances/light-synergies.json')
       .then(function(response) {
         return response.json();
       })
       .then(function(json) {
         lightSynergies = json;
-        document.getElementById('champions').innerHTML = lightSynergies[0].champions.map((name) => portrait(name)).join('');
+        lightSynergies.forEach((a) => {
+          setTimeout(() => {
+            document.getElementById('champions').innerHTML += lineBox(
+              synergiesBox(Object.keys(a.synergies).map((name) => synergy(name.toLowerCase(), a.synergies[name])).join(''))
+              + a.champions.map((name) => portrait(name)).join('')
+            );
+          }, count)
+          count+=30;
+          
+        })
         
       });
   </script>
