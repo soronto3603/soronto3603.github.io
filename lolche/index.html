@@ -20,7 +20,7 @@
     filter: brightness(0) invert(1);position: relative;left: 4px;top: 4px;" width=24 height=24 src=https://cdn.lolchess.gg/images/tft/traiticons-darken/trait_icon_${name}.png /></div>`;
     }
     function synergiesBox(tag) {
-      return `<div style="display:inline-block;position:relative;bottom:15px;">${tag}</div>`
+      return `<div style="display:inline-block;position:relative;bottom:15px;width:200px;">${tag}</div>`
     }
     function lineBox(tag) {
       return `<div>${tag}</div>`
@@ -33,7 +33,7 @@
       })
       .then(function(json) {
         lightSynergies = json;
-        lightSynergies.forEach((a) => {
+        lightSynergies.slice(0, 100).forEach((a) => {
           setTimeout(() => {
             document.getElementById('champions').innerHTML += lineBox(
               synergiesBox(Object.keys(a.synergies).map((name) => synergy(name.toLowerCase(), a.synergies[name])).join(''))
