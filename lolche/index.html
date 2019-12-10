@@ -1,9 +1,19 @@
 <html>
-  123
+  <div id='champions'></div>
   <script>
-    fetch('constances/champions.json')
-      .then((d) => {
-        console.log(d)
+    function portrait(name) {
+      return `<img width=48 height=48 src=http://ddragon.leagueoflegends.com/cdn/9.22.1/img/champion/${name}.png />`
+    }
+    let lightSynergies;
+
+    fetch('https://soronto3603.github.io/lolche/constances/light-synergies.json')
+      .then(function(response) {
+        return response.json();
       })
+      .then(function(json) {
+        lightSynergies = json;
+        document.getElementById('champions').innerHTML = lightSynergies[0].champions.map((name) => portrait(name)).join('');
+        
+      });
   </script>
 </html>
