@@ -16,6 +16,9 @@
       } else {
         color = '#ca9372';
       }
+      if (name == 'woodland') {
+        name = 'forest';
+      }
       return `<div style="background-color:${color};width:32px;height:32px;border-radius:16px;display:inline-block;margin:5px;"><img style="-webkit-filter: brightness(0) invert(1);
     filter: brightness(0) invert(1);position: relative;left: 4px;top: 4px;" width=24 height=24 src=https://cdn.lolchess.gg/images/tft/traiticons-darken/trait_icon_${name}.png /></div>`;
     }
@@ -31,7 +34,8 @@
     }
     let lightSynergies;
     let count = 30;
-    fetch('https://soronto3603.github.io/lolche/constances/light-synergies.json')
+    window.onload = () => {
+      fetch('https://soronto3603.github.io/lolche/constances/light-synergies.json')
       .then(function(response) {
         return response.json();
       })
@@ -50,5 +54,7 @@
         })
         
       });
+    }
+    
   </script>
 </html>
