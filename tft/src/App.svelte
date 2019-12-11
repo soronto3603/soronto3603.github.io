@@ -8,7 +8,7 @@
 	let constSynergies
 
 	onMount(async () => {
-		const response = await fetch('https://soronto3603.github.io/lolche/constances/light-synergies.json')
+		const response = await fetch('../constances/light-synergies.json')
 		constSynergies = await response.json()
 		synergies = [...constSynergies]
 		synergies.sort((a, b) => Object.keys(b.synergies).length - Object.keys(a.synergies).length)
