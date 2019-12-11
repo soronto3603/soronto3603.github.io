@@ -1,19 +1,49 @@
 <script>
 	import { onMount } from 'svelte';
-	import SynergyBox from './SynergyBox.svelte';
-	import ChampionBox from './ChampionBox.svelte';
+	import SynergyBox from './components/SynergyBox.svelte';
+	import ChampionBox from './components/ChampionBox.svelte';
+	import FilterBox from './components/FilterBox.svelte';
 
 	export let synergies = [];
 	export let keyword;
+	export let synergyFilters = [];
 	let constSynergies
 
 	onMount(async () => {
-		const response = await fetch('../constances/light-synergies.json')
+		// const response = await fetch('../constances/light-synergies.json')
+		const response = await fetch('https://soronto3603.github.io/tft/constances/light-synergies.json')
 		constSynergies = await response.json()
 		synergies = [...constSynergies]
 		synergies.sort((a, b) => Object.keys(b.synergies).length - Object.keys(a.synergies).length)
+
+		synergyFilters = synergies.reduce((p, c) => {
+			for (const synergy of Object.keys(c.synergies)) {
+				if (!p.includes(synergy)) {
+					p.push(synergy)
+				}
+			}
+			return p
+		}, []).map((synergy) => ({
+			name: synergy,
+			isActive: false,
+		}))
 	})
 
+	function handleMessage(event) {
+		const target = synergyFilters.filter(synergy => synergy.name === event.detail.data)[0];
+		target.isActive = !target.isActive;
+		filteringSynergies()
+	}
+
+	function filteringSynergies() {
+		let tempSynergies = [...constSynergies]
+		synergyFilters.forEach(targetSynergy => {
+			if (targetSynergy.isActive) {
+				tempSynergies = tempSynergies.filter(synergy => Object.keys(synergy.synergies).includes(targetSynergy.name))
+			}
+		})
+		synergies = [...tempSynergies]
+	}
 	function search() {
 		synergies = synergies.filter(synergy => Object.keys(synergy.synergies).includes(keyword))
 	}
@@ -28,14 +58,12 @@
 <main>
 	<div class='title'>롤토체스 조합 검색기</div>
 	<div class='subtitle'>6빛 조합</div>
-	<div class='search'>
+	<!-- <div class='search'>
 		<input bind:value={keyword} />
 		<button on:click={search}>search</button>
 		<button on:click={searchInit}>init</button>
-	</div>
-	<div class='example'>
-		Light, Ocean, Shadow, Mystics, Avatar, Ranger, Blademaster, Wardner, Wind, Inferno, Poison, Glacial, Berserker, Electric
-	</div>
+	</div> -->
+	<FilterBox filters={synergyFilters} on:message={handleMessage} />
 	<div class='table'>
 		{#each synergies as synergy, index}
 		<div class='line'>

@@ -1,8 +1,5 @@
 <script>
   export let name;
-  if (name === 'Woodland') {
-    name = 'forest'
-  }
   export let tier;
 </script>
 
@@ -36,6 +33,11 @@
 
 
 <div class='synergy {tier === 3 ? 'tier3' : tier === 2 ? 'tier2' : 'tier1'}'>
-  <img alt={name} src='https://cdn.lolchess.gg/images/tft/traiticons-darken/trait_icon_{name.toLowerCase()}.png' />
+  {#if name.toLowerCase() === 'woodland'}
+    <img alt={name} src='https://cdn.lolchess.gg/images/tft/traiticons-darken/trait_icon_forest.png' />
+  {:else}
+    <img alt={name} src='https://cdn.lolchess.gg/images/tft/traiticons-darken/trait_icon_{name.toLowerCase()}.png' />
+  {/if}
+  
 </div>
 
