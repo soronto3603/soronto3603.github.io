@@ -16,6 +16,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "@rollup/plugin-url": "^4.0.0",
     "sirv-cli": "^0.4.4"
   }
 }
