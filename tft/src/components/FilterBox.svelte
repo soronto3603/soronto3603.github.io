@@ -20,10 +20,15 @@
 </script>
 
 <style>
-
+.filterBox {
+  width: 60%;
+  margin-left: 20%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
 </style>
 
-<div>
+<div class="filterBox">
   {#each filters as filter}
     <Filter name={filter.name} on:message={hello} />
   {/each}
