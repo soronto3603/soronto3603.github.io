@@ -23,7 +23,7 @@ export const DATA_URLS = {
   Warden: 'Light-Warden-synergies.json',
   Inferno: 'Light-Inferno-synergies.json',
   Wind: 'Light-Wind-synergies.json',
-  // Light: 'Light-Light-synergies.json',
+  Light: 'Light-Light-synergies.json',
   Woodland: 'Light-Woodland-synergies.json',
   Mage: 'Light-Mage-synergies.json',
   Mountain: 'Light-Mountain-synergies.json',
@@ -51,7 +51,7 @@ export const SYNERGIES = [
   'Warden',
   'Inferno',
   'Wind',
-  // 'Light',
+  'Light',
   'Woodland',
   'Mage',
   'Mountain',
@@ -90,6 +90,7 @@ export const store = {
 export async function loadData(synergy) {
   if (store[synergy] === null) {
     const combs = await (await fetch(BASE_URL + DATA_URLS[synergy])).json()
+    combs.sort((a, b) => Object.values(b.synergies).reduce((p, c) => p + c) - Object.values(a.synergies).reduce((p, c) => p + c))
     store[synergy] = combs
   }
   return store[synergy]
