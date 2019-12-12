@@ -1,1 +1,1242 @@
-[{"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Skarner", "Lux"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Ranger": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Skarner", "Ashe"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Skarner", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1, "Ranger": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Lux", "Ashe"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1, "Avatar": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Lux", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1, "Ranger": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Ashe", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 2, "Warden": 1, "Avatar": 1, "Ranger": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Skarner", "Lux", "Ashe", "Taric"], "length": 10}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Lux"], "length": 7}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Jax", "Skarner", "Lux"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Ranger": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Jax", "Skarner", "Ashe"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Jax", "Skarner", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1, "Ranger": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Jax", "Lux", "Ashe"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1, "Avatar": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Jax", "Lux", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1, "Ranger": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Jax", "Ashe", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 2, "Warden": 1, "Avatar": 1, "Ranger": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Jax", "Skarner", "Lux", "Ashe", "Taric"], "length": 10}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Jax", "Lux"], "length": 7}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Yorick", "Jax", "Skarner", "Lux"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Ranger": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Yorick", "Jax", "Skarner", "Ashe"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Yorick", "Jax", "Skarner", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1, "Ranger": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Yorick", "Jax", "Lux", "Ashe"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1, "Avatar": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Yorick", "Jax", "Lux", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1, "Ranger": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Yorick", "Jax", "Ashe", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 2, "Warden": 1, "Avatar": 1, "Ranger": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Yorick", "Jax", "Skarner", "Lux", "Ashe", "Taric"], "length": 10}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Yorick", "Jax", "Lux"], "length": 7}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Aatrox", "Yorick", "Jax", "Skarner", "Lux"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Ranger": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Aatrox", "Yorick", "Jax", "Skarner", "Ashe"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Aatrox", "Yorick", "Jax", "Skarner", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1, "Ranger": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Aatrox", "Yorick", "Jax", "Lux", "Ashe"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1, "Avatar": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Aatrox", "Yorick", "Jax", "Lux", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1, "Ranger": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Aatrox", "Yorick", "Jax", "Ashe", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 2, "Warden": 1, "Avatar": 1, "Ranger": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Aatrox", "Yorick", "Jax", "Skarner", "Lux", "Ashe", "Taric"], "length": 10}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Aatrox", "Yorick", "Jax", "Lux"], "length": 7}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1}, "champions": ["Lucian", "Nasus", "Soraka", "Aatrox", "Yorick", "Jax", "Skarner", "Lux"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1}, "champions": ["Lucian", "Nasus", "Soraka", "Aatrox", "Yorick", "Jax", "Skarner", "Ashe"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1}, "champions": ["Lucian", "Nasus", "Soraka", "Aatrox", "Yorick", "Jax", "Skarner", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1}, "champions": ["Lucian", "Nasus", "Soraka", "Aatrox", "Yorick", "Jax", "Lux", "Ashe"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1, "Avatar": 1}, "champions": ["Lucian", "Nasus", "Soraka", "Aatrox", "Yorick", "Jax", "Lux", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1}, "champions": ["Lucian", "Nasus", "Soraka", "Aatrox", "Yorick", "Jax", "Ashe", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 2, "Warden": 1, "Avatar": 1}, "champions": ["Lucian", "Nasus", "Soraka", "Aatrox", "Yorick", "Jax", "Skarner", "Lux", "Ashe", "Taric"], "length": 10}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1}, "champions": ["Lucian", "Nasus", "Soraka", "Aatrox", "Yorick", "Jax", "Lux"], "length": 7}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1}, "champions": ["Lucian", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Skarner", "Lux"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Ranger": 1}, "champions": ["Lucian", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Skarner", "Ashe"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1}, "champions": ["Lucian", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Skarner", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1, "Ranger": 1}, "champions": ["Lucian", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Lux", "Ashe"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1}, "champions": ["Lucian", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Lux", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Ranger": 1}, "champions": ["Lucian", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Ashe", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 2, "Avatar": 1, "Ranger": 1}, "champions": ["Lucian", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Skarner", "Lux", "Ashe", "Taric"], "length": 10}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1}, "champions": ["Lucian", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Lux"], "length": 7}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1}, "champions": ["Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Skarner", "Lux"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Ranger": 1}, "champions": ["Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Skarner", "Ashe"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1}, "champions": ["Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Skarner", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1, "Ranger": 1}, "champions": ["Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Lux", "Ashe"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1, "Avatar": 1}, "champions": ["Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Lux", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1, "Ranger": 1}, "champions": ["Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Ashe", "Taric"], "length": 8}, {"synergies": {"Light": 2, "Crystal": 2, "Warden": 1, "Avatar": 1, "Ranger": 1}, "champions": ["Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Skarner", "Lux", "Ashe", "Taric"], "length": 10}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1}, "champions": ["Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Lux"], "length": 7}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Skarner", "Lux"], "length": 9}, {"synergies": {"Light": 2, "Crystal": 1, "Ranger": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Skarner", "Ashe"], "length": 9}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Skarner", "Taric"], "length": 9}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1, "Ranger": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Lux", "Ashe"], "length": 9}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1, "Avatar": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Lux", "Taric"], "length": 9}, {"synergies": {"Light": 2, "Crystal": 1, "Warden": 1, "Ranger": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Ashe", "Taric"], "length": 9}, {"synergies": {"Light": 2, "Crystal": 1, "Avatar": 1}, "champions": ["Lucian", "Nasus", "Vayne", "Soraka", "Aatrox", "Yorick", "Jax", "Lux"], "length": 8}]
+[
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Skarner",
+      "Lux"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Skarner",
+      "Ashe"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Skarner",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Lux",
+      "Ashe"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Lux",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Ashe",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 2,
+      "Warden": 1,
+      "Avatar": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Skarner",
+      "Lux",
+      "Ashe",
+      "Taric"
+    ],
+    "length": 10
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 2,
+      "Warden": 1,
+      "Avatar": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Lux",
+      "Ashe",
+      "Taric"
+    ],
+    "length": 9
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 2,
+      "Warden": 1,
+      "Avatar": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Skarner",
+      "Lux",
+      "Taric"
+    ],
+    "length": 9
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 2,
+      "Warden": 1,
+      "Avatar": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Skarner",
+      "Lux",
+      "Ashe",
+    ],
+    "length": 10
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Lux"
+    ],
+    "length": 7
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Jax",
+      "Skarner",
+      "Lux"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Jax",
+      "Skarner",
+      "Ashe"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Jax",
+      "Skarner",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Jax",
+      "Lux",
+      "Ashe"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Jax",
+      "Lux",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Jax",
+      "Ashe",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 2,
+      "Warden": 1,
+      "Avatar": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Jax",
+      "Skarner",
+      "Lux",
+      "Ashe",
+      "Taric"
+    ],
+    "length": 10
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Jax",
+      "Lux"
+    ],
+    "length": 7
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Lux"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Ashe"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Yorick",
+      "Jax",
+      "Lux",
+      "Ashe"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Yorick",
+      "Jax",
+      "Lux",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Yorick",
+      "Jax",
+      "Ashe",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 2,
+      "Warden": 1,
+      "Avatar": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Lux",
+      "Ashe",
+      "Taric"
+    ],
+    "length": 10
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Yorick",
+      "Jax",
+      "Lux"
+    ],
+    "length": 7
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Lux"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Ashe"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Lux",
+      "Ashe"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Lux",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Ashe",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 2,
+      "Warden": 1,
+      "Avatar": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Lux",
+      "Ashe",
+      "Taric"
+    ],
+    "length": 10
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Lux"
+    ],
+    "length": 7
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Lux"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Ashe"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Lux",
+      "Ashe"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Lux",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Ashe",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 2,
+      "Warden": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Lux",
+      "Ashe",
+      "Taric"
+    ],
+    "length": 10
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Lux"
+    ],
+    "length": 7
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Lux"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Ashe"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1
+    },
+    "champions": [
+      "Lucian",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Lux",
+      "Ashe"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Lux",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Ashe",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 2,
+      "Avatar": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Lux",
+      "Ashe",
+      "Taric"
+    ],
+    "length": 10
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Lux"
+    ],
+    "length": 7
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Lux"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Ashe"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1
+    },
+    "champions": [
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Lux",
+      "Ashe"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Lux",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Ashe",
+      "Taric"
+    ],
+    "length": 8
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 2,
+      "Warden": 1,
+      "Avatar": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Lux",
+      "Ashe",
+      "Taric"
+    ],
+    "length": 10
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Lux"
+    ],
+    "length": 7
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Lux"
+    ],
+    "length": 9
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Ashe"
+    ],
+    "length": 9
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Skarner",
+      "Taric"
+    ],
+    "length": 9
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Lux",
+      "Ashe"
+    ],
+    "length": 9
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Lux",
+      "Taric"
+    ],
+    "length": 9
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Warden": 1,
+      "Ranger": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Ashe",
+      "Taric"
+    ],
+    "length": 9
+  },
+  {
+    "synergies": {
+      "Light": 2,
+      "Crystal": 1,
+      "Avatar": 1
+    },
+    "champions": [
+      "Lucian",
+      "Nasus",
+      "Vayne",
+      "Soraka",
+      "Aatrox",
+      "Yorick",
+      "Jax",
+      "Lux"
+    ],
+    "length": 8
+  }
+]
