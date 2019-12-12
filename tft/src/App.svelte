@@ -1,73 +1,59 @@
 <script>
 	import { onMount } from 'svelte';
+	import { loadData, SYNERGIES } from './utils/store';
 	import SynergyBox from './components/SynergyBox.svelte';
 	import ChampionBox from './components/ChampionBox.svelte';
 	import FilterBox from './components/FilterBox.svelte';
+	import Pagination from './components/Pagination.svelte';
 
-	export let synergies = [];
-	export let keyword;
-	export let synergyFilters = [];
-	let constSynergies
+	export let combinations = [];
+	export let currentCombinationsLength;
+	export let synergy;
+	export let page = 0;
+	
+	const banks = {}
+	const PRINCIPAL = 'Light'
 
 	onMount(async () => {
-		// const response = await fetch('../constances/light-synergies.json')
-		const response = await fetch('https://soronto3603.github.io/tft/constances/light-synergies.json')
-		constSynergies = await response.json()
-		synergies = [...constSynergies]
-		synergies.sort((a, b) => Object.keys(b.synergies).length - Object.keys(a.synergies).length)
-
-		synergyFilters = synergies.reduce((p, c) => {
-			for (const synergy of Object.keys(c.synergies)) {
-				if (!p.includes(synergy)) {
-					p.push(synergy)
-				}
-			}
-			return p
-		}, []).map((synergy) => ({
-			name: synergy,
-			isActive: false,
-		}))
+		synergy = 'Predator';
+		reload();
 	})
 
-	function handleMessage(event) {
-		const target = synergyFilters.filter(synergy => synergy.name === event.detail.data)[0];
-		target.isActive = !target.isActive;
-		filteringSynergies()
+	async function handleMessage(event) {
+		synergy = event.detail.data;
+		page = 0;
+		reload();
 	}
 
-	function filteringSynergies() {
-		let tempSynergies = [...constSynergies]
-		synergyFilters.forEach(targetSynergy => {
-			if (targetSynergy.isActive) {
-				tempSynergies = tempSynergies.filter(synergy => Object.keys(synergy.synergies).includes(targetSynergy.name))
-			}
-		})
-		synergies = [...tempSynergies]
+	async function nextPage() {
+		if ((page + 1) * 100 < currentCombinationsLength) {
+			page += 1;
+			reload();
+		}
 	}
-	function search() {
-		synergies = synergies.filter(synergy => Object.keys(synergy.synergies).includes(keyword))
+	async function prevPage() {
+		if (page !== 0) {
+			page -= 1;
+			reload();
+		}
 	}
-	function searchInit() {
-		synergies = [...constSynergies]
-		synergies.sort((a, b) => Object.keys(b.synergies).length - Object.keys(a.synergies).length)
+
+	async function reload() {
+		combinations = [...(await loadData(synergy)).slice(100 * page, 100 * page + 100)];
+		currentCombinationsLength = (await loadData(synergy)).length
 	}
 </script>
 
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 
 <main>
-	<div class='title'>롤토체스 조합 검색기</div>
-	<div class='subtitle'>6빛 조합</div>
-	<!-- <div class='search'>
-		<input bind:value={keyword} />
-		<button on:click={search}>search</button>
-		<button on:click={searchInit}>init</button>
-	</div> -->
-	<FilterBox filters={synergyFilters} on:message={handleMessage} />
+	<FilterBox names={SYNERGIES} on:message={handleMessage} />
+	<div class='synergyTitle'>6Light + {synergy}</div>
+	<div>총 {currentCombinationsLength}개</div>
 	<div class='table'>
-		{#each synergies as synergy, index}
+		{#each combinations as synergy, index}
 		<div class='line'>
-			<div class='index'>{index + 1}</div>
+			<div class='index'>{page * 100 + index + 1}</div>
 			<div class='synergy'>
 				<SynergyBox synergies={synergy.synergies} />
 			</div>
@@ -76,6 +62,8 @@
 			</div>
 		</div>
 		{/each}
+		<div class='arrow left' on:click={prevPage}>←</div>
+		<div class='arrow right' on:click={nextPage}>→</div>
 	</div>
 	<p>Contact : soronto3603@gmail.com</p>
 </main>
@@ -88,27 +76,38 @@
 		margin: 0 auto;
 		font-family: 'Noto Sans KR', sans-serif;
 	}
-
-	.title {
-		font-size: 24px;
-		font-weight: bolder;
+	.arrow {
+		display: inline-block;
+		width: 32px;
+		height: 32px;
+		border-radius: 16px;
+		background-color: black;
+		color: white;
+		line-height: 32px;
+    text-align: center;
+	}
+	
+	.arrow.left {
+		position: fixed;
+		left: 20%;
+		bottom: 40px;
+	}
+	.arrow.right {
+		position: fixed;
+		right: 20%;
+		bottom: 40px;
 	}
 
-	.subtitle {
+	.synergyTitle {
 		margin: 20px;
 		margin-top:5px;
-	}
-
-	.example {
-		font-size: 12px;
-		color: #e9e9e9;
 	}
 
 	.table .index {
 		width: 20px;
 	}
 	.table .synergy {
-		width: 300px;
+		width: 350px;
 	}
 	.table .champions {
 		width: 400px;

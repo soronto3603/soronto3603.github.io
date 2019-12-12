@@ -1,18 +1,13 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
+  export let nextFunc;
+  export let prevFunc;
+  export let page;
+  export let length;
 
-	const dispatch = createEventDispatcher();
-
-  export let name;
-  export let isFocus;
-
-  function message() {
-		dispatch('message', {
-      data: name,
-		});
-	}
+  function range(start, end) {
+    return (new Array(end - start + 1)).fill(undefined).map((_, i) => i + start);
+  }
 </script>
-
 <style>
   .filter {
     display: inline-block;
@@ -33,6 +28,8 @@
   }
 </style>
 
-<div class='filter {isFocus ? 'active' : ''}' on:click={message} >
-  {name}
+<div>
+  {#each range(1, (length || 1)) as n}
+    <div>{n}</div>
+  {/each}
 </div>

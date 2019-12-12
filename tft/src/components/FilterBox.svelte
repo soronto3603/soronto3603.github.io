@@ -4,18 +4,24 @@
 
 	const dispatch = createEventDispatcher();
 
-  export let filters;
+  export let names;
+  export const activeArray = names.reduce((p, c) => {
+    p[c] = false;
+    return p;
+  }, {})
 
-  function message() {
-		dispatch('message', {
-      data: name,
-		});
-  }
-
-  function hello(event) {
+  function sender(event) {
+    focus(event.detail.data);
     dispatch('message', {
       data: event.detail.data,
     });
+  }
+
+  function focus(focusName) {
+    for (const name of names) {
+      activeArray[name] = false;
+    }
+    activeArray[focusName] = true;
   }
 </script>
 
@@ -24,12 +30,11 @@
   width: 60%;
   margin-left: 20%;
   margin-bottom: 20px;
-  margin-top: 20px;
 }
 </style>
 
 <div class="filterBox">
-  {#each filters as filter}
-    <Filter name={filter.name} on:message={hello} />
+  {#each names as name}
+    <Filter name={name} isFocus={activeArray[name]} on:message={sender} />
   {/each}
 </div>
