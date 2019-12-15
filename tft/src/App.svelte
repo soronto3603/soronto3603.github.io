@@ -1,7 +1,12 @@
+<!-- @media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}. -->
+
 <svelte:head>
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Girassol&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 </svelte:head>
+
+
 
 <script>
 	import { onMount } from 'svelte';
@@ -15,6 +20,7 @@
 	export let currentCombinationsLength;
 	export let synergy;
 	export let page = 0;
+	const offset = 20;
 	
 	const banks = {}
 	const PRINCIPAL = 'Light'
@@ -31,7 +37,7 @@
 	}
 
 	async function nextPage() {
-		if ((page + 1) * 100 < currentCombinationsLength) {
+		if ((page + 1) * offset < currentCombinationsLength) {
 			page += 1;
 			reload();
 		}
@@ -44,20 +50,20 @@
 	}
 
 	async function reload() {
-		combinations = [...(await loadData(synergy)).slice(100 * page, 100 * page + 100)];
+		combinations = [...(await loadData(synergy)).slice(offset * page, offset * page + offset)];
 		currentCombinationsLength = (await loadData(synergy)).length
 	}
 </script>
 
 <main>
+	<div class='synergyTitle'>Light</div>
 	<FilterBox names={SYNERGIES} on:message={handleMessage} />
-	<div class='synergyTitle'>6Light + {synergy}</div>
-	<div>총 {currentCombinationsLength}개</div>
+	<div class='numberDescription'>총 {currentCombinationsLength}개</div>
 	<div class='table'>
 		{#each combinations as synergy, index}
 		<div class='line'>
-			<div class='index'>{page * 100 + index + 1}</div>
-			<div class='synergy'>
+			<!-- <div class='index'>{page * 100 + index + 1}</div> -->
+			<div class='synergy' style={Object.keys(synergy.synergies).length < 3? 'bottom:20px;' : ''}>
 				<SynergyBox synergies={synergy.synergies} />
 			</div>
 			<div class='champions'>
@@ -66,101 +72,51 @@
 		</div>
 		{/each}
 	</div>
-	<div class='arrow left' on:click={prevPage}>←</div>
-	<div class='arrow right' on:click={nextPage}>→</div>
+	<!-- <div class='arrow left' on:click={prevPage}>←</div>
+	<div class='arrow right' on:click={nextPage}>→</div> -->
 	<p>Contact : soronto3603@gmail.com</p>
 </main>
 
 <style>
+	:global(body) {
+		background-color: #333;
+		color: #fff8e8;
+	}
 	main {
 		text-align: center;
 		padding: 1em;
-		max-width: 240px;
 		margin: 0 auto;
 		font-family: 'Noto Sans KR', sans-serif;
 	}
-	.arrow {
-		display: inline-block;
-		width: 32px;
-		height: 32px;
-		border-radius: 16px;
-		background-color: black;
-		color: white;
-		line-height: 32px;
-    text-align: center;
-		position: fixed;
-		bottom: 60px;
-	}
-	
-	@media screen and (min-width: 300px) { 
-		.arrow.left {
-			left: 10%;
-		}
-		.arrow.right {
-			right: 10%;
-		}
-	}
-	@media screen and (min-width: 769px) {
-		.arrow.left {
-			left: 20%;
-		}
-		.arrow.right {
-			right: 20%;
-		}
-	}
 
-	
+	.numberDescription {
+		text-align: right;
+		font-size: 12px;
+		margin-bottom: 10px;
+		color: #a9a9a9;
+	}
 
 	.synergyTitle {
-		margin: 20px;
-		margin-top:5px;
+		background-color: #333;
+		z-index: 10;
+		margin-bottom: 40px;
 	}
 
-	.table .index {
-		width: 20px;
+	.line {
+		margin-bottom: 10px;
+		background-color: #222;
+		height: 95px;
 	}
 
-	@media screen and (min-width: 300px) { 
-		.table .synergy {
-			width: 80%;
-		}
-	}
-	@media screen and (min-width: 769px) {
-		.table .synergy {
-			width: 350px;
-		}
-	}
-	
-	@media screen and (min-width: 300px) { 
-		.table .champions {
-			display: block;
-		}
-	}
-	@media screen and (min-width: 769px) {
-		.table .champions {
-			width: 400px;
-		}
-	}
-	
-	@media screen and (min-width: 300px) { 
-		.table .line {
-			display: block;
-			height: 150px;
-		}
-	}
-	@media screen and (min-width: 769px) {
-		.table .line {
-			display: block;
-		}
-	}
-	
-	.table .line div {
+	.synergy {
+		width: 100px;
 		display: inline-block;
+		position: relative;
+    right: 10px;
 	}
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
+	.champions {
+		width: 160px;
+		display: inline-block;
 	}
 </style>

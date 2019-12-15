@@ -15,23 +15,24 @@
 
 <style>
   .filter {
+    width: 20vw;
     display: inline-block;
-    font-size : 8px;
-    color: #7d7d7d;
-    margin-left: 5px;
-    margin-right: 5px;
     cursor: pointer;
+
+    scroll-snap-align: start;
+    transition-timing-function: linear;
   }
-  .filter:hover {
-    color: blue;
-    font-size: 14px;
-  }
+  /* .filter:hover {
+    color: #ffc528;
+    font-size: 18px;
+  } */
   .active {
-    color: blue;
-    font-size: 14px;
+    color: #ffc528;
+    font-size: 18px;
+    font-family: 'Girassol', cursive;
   }
 </style>
 
-<div class='filter {isFocus ? 'active' : ''}' on:click={message} >
+<div class='filter {isFocus ? 'active' : ''}' >
   {name}
 </div>

@@ -20,5 +20,4 @@
   {#each champions as champion}
     <Champion name={champion} />
   {/each}
-  <div class='length'>{champions.length}개</div>
 </div>

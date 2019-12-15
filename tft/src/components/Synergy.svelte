@@ -5,8 +5,8 @@
 
 <style>
   .synergy {
-    width: 32px;
-    height: 32px;
+    width: 18px;
+    height: 18px;
     border-radius: 16px;
     display:inline-block;
     margin: 5px;
@@ -24,10 +24,10 @@
     -webkit-filter: brightness(0) invert(1);
     filter: brightness(0) invert(1);
 
-    width: 18px;
-    height: 18px;
+    width: 12px;
+    height: 12px;
     position: relative;
-    top: 7px;
+    top: -3.5px;
   }
 </style>
 

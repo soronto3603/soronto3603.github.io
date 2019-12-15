@@ -5,6 +5,7 @@
 <style>
   .champion {
     display: inline-block;
+    float: left;
   }
   .champion img {
     width: 32px;
