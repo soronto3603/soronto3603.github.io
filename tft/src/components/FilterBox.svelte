@@ -26,7 +26,7 @@
 </script>
 
 <style>
-@media screen and (min-width: 300px) { 
+@media screen and (min-width: 300px) {
   .filterBox {
     width: 90%;
     margin-left: 5%;
