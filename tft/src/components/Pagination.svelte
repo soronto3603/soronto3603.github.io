@@ -1,7 +1,4 @@
 <script>
-  export let nextFunc;
-  export let prevFunc;
-  export let page;
   export let length;
 
   function range(start, end) {

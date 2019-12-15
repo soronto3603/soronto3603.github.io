@@ -1,3 +1,8 @@
+<svelte:head>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+</svelte:head>
+
 <script>
 	import { onMount } from 'svelte';
 	import { loadData, SYNERGIES } from './utils/store';
@@ -44,8 +49,6 @@
 	}
 </script>
 
-<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-
 <main>
 	<FilterBox names={SYNERGIES} on:message={handleMessage} />
 	<div class='synergyTitle'>6Light + {synergy}</div>
@@ -62,9 +65,9 @@
 			</div>
 		</div>
 		{/each}
-		<div class='arrow left' on:click={prevPage}>←</div>
-		<div class='arrow right' on:click={nextPage}>→</div>
 	</div>
+	<div class='arrow left' on:click={prevPage}>←</div>
+	<div class='arrow right' on:click={nextPage}>→</div>
 	<p>Contact : soronto3603@gmail.com</p>
 </main>
 
@@ -85,18 +88,28 @@
 		color: white;
 		line-height: 32px;
     text-align: center;
+		position: fixed;
+		bottom: 60px;
 	}
 	
-	.arrow.left {
-		position: fixed;
-		left: 20%;
-		bottom: 40px;
+	@media screen and (min-width: 300px) { 
+		.arrow.left {
+			left: 10%;
+		}
+		.arrow.right {
+			right: 10%;
+		}
 	}
-	.arrow.right {
-		position: fixed;
-		right: 20%;
-		bottom: 40px;
+	@media screen and (min-width: 769px) {
+		.arrow.left {
+			left: 20%;
+		}
+		.arrow.right {
+			right: 20%;
+		}
 	}
+
+	
 
 	.synergyTitle {
 		margin: 20px;
@@ -106,16 +119,41 @@
 	.table .index {
 		width: 20px;
 	}
-	.table .synergy {
-		width: 350px;
-	}
-	.table .champions {
-		width: 400px;
-	}
-	.table .line {
-		display: block;
-	}
 
+	@media screen and (min-width: 300px) { 
+		.table .synergy {
+			width: 80%;
+		}
+	}
+	@media screen and (min-width: 769px) {
+		.table .synergy {
+			width: 350px;
+		}
+	}
+	
+	@media screen and (min-width: 300px) { 
+		.table .champions {
+			display: block;
+		}
+	}
+	@media screen and (min-width: 769px) {
+		.table .champions {
+			width: 400px;
+		}
+	}
+	
+	@media screen and (min-width: 300px) { 
+		.table .line {
+			display: block;
+			height: 150px;
+		}
+	}
+	@media screen and (min-width: 769px) {
+		.table .line {
+			display: block;
+		}
+	}
+	
 	.table .line div {
 		display: inline-block;
 	}

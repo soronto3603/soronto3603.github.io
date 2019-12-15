@@ -26,10 +26,19 @@
 </script>
 
 <style>
-.filterBox {
-  width: 60%;
-  margin-left: 20%;
-  margin-bottom: 20px;
+@media screen and (min-width: 300px) { 
+  .filterBox {
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (min-width: 769px) {
+  .filterBox {
+    width: 60%;
+    margin-left: 20%;
+    margin-bottom: 20px;
+  }
 }
 </style>
 

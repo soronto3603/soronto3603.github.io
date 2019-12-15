@@ -21,7 +21,6 @@
     margin-left: 5px;
     margin-right: 5px;
     cursor: pointer;
-    width: 70px;
   }
   .filter:hover {
     color: blue;
