@@ -9,15 +9,15 @@
   activeArray[2] = true;
 
   const offset = 75;
-  function sender(event) {
-    dispatch('message', {
-      data: event.detail.data,
-    });
-  }
+  // function sender(event) {
+  //   dispatch('message', {
+  //     data: event.detail.data,
+  //   });
+  // }
 
   function scrollHandler(event) {
     const w = document.getElementById('filterBox').clientWidth / 5;
-    const target = Math.round(event.target.scrollLeft / w) + 2
+    const target = Math.round(event.target.scrollLeft / w) + 2;
 
     if (!target) {
       return;
@@ -25,7 +25,7 @@
     activeArray = activeArray.map(x => false)
     activeArray[target] = true;
     dispatch('message', {
-      data: names[target],
+      data: names[Math.round(event.target.scrollLeft / w)],
     });
   }
   function mousedownHandler(a) {
@@ -50,6 +50,6 @@
 
 <div id='filterBox' class="box" on:scroll={scrollHandler} on:mousedown={mousedownHandler}>
   {#each ['', '', ...names, '', ''] as name, index}
-    <Filter name={name} bind:isFocus={activeArray[index]} on:message={sender} />
+    <Filter name={name} bind:isFocus={activeArray[index]} />
   {/each}
 </div>

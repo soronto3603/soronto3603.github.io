@@ -18,10 +18,16 @@
 	export let currentCombinationsLength;
 	export let synergy;
 	export let page = 0;
+
+	export let bases = [
+		{'name': 'Base', 'isActivated': true},
+		{'name': 'Light', 'isActivated': false},
+		{'name': 'Shadow', 'isActivated': false},
+	]
 	const offset = 20;
 
 	const banks = {}
-	const PRINCIPAL = 'Light'
+	let PRINCIPAL = 'Base'
 
 	onMount(async () => {
 		synergy = 'Alchemist';
@@ -49,8 +55,8 @@
 //
 	async function reload() {
 		// combinations = [...(await loadData(synergy)).slice(offset * page, offset * page + offset)];
-		combinations = [...(await loadData(PRINCIPAL + synergy)).slice(0, offset * page + offset)];
-		currentCombinationsLength = (await loadData(synergy)).length
+		combinations = [...(await loadData(PRINCIPAL, synergy)).slice(0, offset * page + offset)];
+		currentCombinationsLength = (await loadData(PRINCIPAL, synergy)).length
 	}
 	async function onScrollHandler (event){
 		const top = event.target.scrollingElement.scrollTop;
@@ -61,18 +67,28 @@
 			await reload()
 		}
 	}
+
+	function changeBase(name) {
+		bases = bases.map(x => ({'name': x.name, 'isActivated': x.name === this.innerHTML ? true : false}));
+		PRINCIPAL = this.innerHTML;
+		reload();
+	}
 </script>
 <!-- 2090 -->
 <svelte:window on:scroll={onScrollHandler}></svelte:window>
 <main>
-	<div class='synergyTitle'>Light</div>
+	<div class='synergyTitle'>
+		{#each bases as base}
+			<div class={base.isActivated ? 'sTitle active' : 'sTitle'} on:click={changeBase}>{base.name}</div>
+		{/each}
+	</div>
 	<FilterBox names={SYNERGIES} on:message={handleMessage} />
 	<div class='numberDescription'>총 {currentCombinationsLength}개</div>
 	<div class='table'>
 		{#each combinations as synergy, index}
 		<div class='line'>
 			<!-- <div class='index'>{page * 100 + index + 1}</div> -->
-			<div class='synergy' style={Object.keys(synergy.synergies).length < 3? 'bottom:20px;' : ''}>
+			<div class='synergy' style={Object.keys(synergy.synergies).length < 4? 'bottom:20px;' : ''}>
 				<SynergyBox synergies={synergy.synergies} />
 			</div>
 			<div class='champions'>
@@ -91,6 +107,11 @@
 		background-color: #333;
 		color: #fff8e8;
 	} */
+	.base {
+		position: fixed;
+		right: 25px;
+		bottom: 25px;
+	}
 	main {
 		background-color: #333;
 		color: #fff8e8;
@@ -113,8 +134,25 @@
 	.synergyTitle {
 		background-color: #333;
 		z-index: 10;
-		margin-bottom: 40px;
+		margin-bottom: 10px;
 	}
+	
+	.sTitle {
+		display: inline-block;
+		font-size: 12px;
+		color: #a9a9a9;
+		margin: 5px;
+		transition-timing-function: linear;
+	}
+
+	.active {
+		font-size: 20px;
+		color: #fff8e8;
+	}
+
+	
+
+	
 
 	.line {
 		margin-bottom: 10px;

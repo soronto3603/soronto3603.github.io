@@ -24,6 +24,9 @@ var app = (function () {
     function safe_not_equal(a, b) {
         return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
     }
+    function null_to_empty(value) {
+        return value == null ? '' : value;
+    }
 
     function append(target, node) {
         target.appendChild(node);
@@ -425,6 +428,32 @@ var app = (function () {
       ShadowWind: 'Shadow-Wind-synergies.json',
       ShadowWoodland: 'Shadow-Woodland-synergies.json',
       ShadowAlchemist: 'Shadow-Alchemist-synergies.json',
+      BaseAlchemist: 'base-Alchemist-synergies.json',
+      BaseMystic: 'base-Mystic-synergies.json',
+      BaseAssassin: 'base-Assassin-synergies.json',
+      BaseOcean: 'base-Ocean-synergies.json',
+      BaseAvatar: 'base-Avatar-synergies.json',
+      BasePoison: 'base-Poison-synergies.json',
+      BaseBerserker: 'base-Berserker-synergies.json',
+      BasePredator: 'base-Predator-synergies.json',
+      BaseBlademaster: 'base-Blademaster-synergies.json',
+      BaseRanger: 'base-Ranger-synergies.json',
+      BaseCrystal: 'base-Crystal-synergies.json',
+      BaseShadow: 'base-Shadow-synergies.json',
+      BaseDesert: 'base-Desert-synergies.json',
+      BaseSoulbound: 'base-Soulbound-synergies.json',
+      BaseDruid: 'base-Druid-synergies.json',
+      BaseSteel: 'base-Steel-synergies.json',
+      BaseElectric: 'base-Electric-synergies.json',
+      BaseSummoner: 'base-Summoner-synergies.json',
+      BaseGlacial: 'base-Glacial-synergies.json',
+      BaseWarden: 'base-Warden-synergies.json',
+      BaseInferno: 'base-Inferno-synergies.json',
+      BaseWind: 'base-Wind-synergies.json',
+      BaseLight: 'base-Light-synergies.json',
+      BaseWoodland: 'base-Woodland-synergies.json',
+      BaseMage: 'base-Mage-synergies.json',
+      BaseMountain: 'base-Mountain-synergies.json',
     };
 
     const SYNERGIES = [
@@ -457,42 +486,99 @@ var app = (function () {
     ];
 
     const store = {
-      Alchemist: null,
-      Alchemist: null,
-      Mystic: null,
-      Assassin: null,
-      Ocean: null,
-      Avatar: null,
-      Poison: null,
-      Berserker: null,
-      Predator: null,
-      Blademaster: null,
-      Ranger: null,
-      Crystal: null,
-      Shadow: null,
-      Desert: null,
-      Soulbound: null,
-      Druid: null,
-      Steel: null,
-      Electric: null,
-      Summoner: null,
-      Glacial: null,
-      Warden: null,
-      Inferno: null,
-      Wind: null,
-      Light: null,
-      Woodland: null,
-      Mage: null,
-      Mountain: null,
+      LightAlchemist: null,
+      LightMystic: null,
+      LightAssassin: null,
+      LightOcean: null,
+      LightAvatar: null,
+      LightPoison: null,
+      LightBerserker: null,
+      LightPredator: null,
+      LightBlademaster: null,
+      LightRanger: null,
+      LightCrystal: null,
+      LightShadow: null,
+      LightDesert: null,
+      LightSoulbound: null,
+      LightDruid: null,
+      LightSteel: null,
+      LightElectric: null,
+      LightSummoner: null,
+      LightGlacial: null,
+      LightWarden: null,
+      LightInferno: null,
+      LightWind: null,
+      LightLight: null,
+      LightWoodland: null,
+      LightMage: null,
+      LightMountain: null,
+      ShadowAssassin: null,
+      ShadowAvatar: null,
+      ShadowBerserker: null,
+      ShadowBlademaster: null,
+      ShadowCrystal: null,
+      ShadowDesert: null,
+      ShadowDruid: null,
+      ShadowElectric: null,
+      ShadowGlacial: null,
+      ShadowInferno: null,
+      ShadowLight: null,
+      ShadowMage: null,
+      ShadowMountain: null,
+      ShadowMystic: null,
+      ShadowOcean: null,
+      ShadowPoison: null,
+      ShadowPredator: null,
+      ShadowRanger: null,
+      Shadowahadow: null,
+      ShadowSoulbound: null,
+      ShadowSteel: null,
+      ShadowSummoner: null,
+      ShadowWarden: null,
+      ShadowWind: null,
+      ShadowWoodland: null,
+      ShadowAlchemist: null,
+      BaseAlchemist: null,
+      BaseMystic: null,
+      BaseAssassin: null,
+      BaseOcean: null,
+      BaseAvatar: null,
+      BasePoison: null,
+      BaseBerserker: null,
+      BasePredator: null,
+      BaseBlademaster: null,
+      BaseRanger: null,
+      BaseCrystal: null,
+      BaseShadow: null,
+      BaseDesert: null,
+      BaseSoulbound: null,
+      BaseDruid: null,
+      BaseSteel: null,
+      BaseElectric: null,
+      BaseSummoner: null,
+      BaseGlacial: null,
+      BaseWarden: null,
+      BaseInferno: null,
+      BaseWind: null,
+      BaseLight: null,
+      BaseWoodland: null,
+      BaseMage: null,
+      BaseMountain: null,
     };
 
-    async function loadData(synergy) {
-      if (store[synergy] === null) {
-        const combs = await (await fetch(BASE_URL + DATA_URLS[synergy])).json();
-        combs.sort((a, b) => Object.values(b.synergies).reduce((p, c) => p + c) - Object.values(a.synergies).reduce((p, c) => p + c));
-        store[synergy] = combs;
+    async function loadData(base, synergy) {
+      if (store[base + synergy] === null) {
+        const combs = await (await fetch(BASE_URL + DATA_URLS[base + synergy])).json();
+        combs.sort((a, b) => b.champions.length - a.champions.length);
+        combs.sort((a, b) => {
+          const bHasAvatar = b.synergies.Avatar;
+          const aHasAvatar = a.synergies.Avatar;
+          return Object.values(b.synergies).reduce((p, c) => p + c) - bHasAvatar - (Object.values(a.synergies).reduce((p, c) => p + c) - aHasAvatar)
+        });
+        store[base + synergy] = combs;
       }
-      return store[synergy]
+
+      return store[base + synergy]
     }
 
     /* src/components/Synergy.svelte generated by Svelte v3.16.3 */
@@ -1364,8 +1450,8 @@ var app = (function () {
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[6] = list[i];
-    	child_ctx[8] = i;
+    	child_ctx[5] = list[i];
+    	child_ctx[7] = i;
     	return child_ctx;
     }
 
@@ -1375,18 +1461,17 @@ var app = (function () {
     	let current;
 
     	function filter_isFocus_binding(value) {
-    		/*filter_isFocus_binding*/ ctx[5].call(null, value, /*index*/ ctx[8]);
+    		/*filter_isFocus_binding*/ ctx[4].call(null, value, /*index*/ ctx[7]);
     	}
 
-    	let filter_props = { name: /*name*/ ctx[6] };
+    	let filter_props = { name: /*name*/ ctx[5] };
 
-    	if (/*activeArray*/ ctx[0][/*index*/ ctx[8]] !== void 0) {
-    		filter_props.isFocus = /*activeArray*/ ctx[0][/*index*/ ctx[8]];
+    	if (/*activeArray*/ ctx[0][/*index*/ ctx[7]] !== void 0) {
+    		filter_props.isFocus = /*activeArray*/ ctx[0][/*index*/ ctx[7]];
     	}
 
     	const filter = new Filter({ props: filter_props, $$inline: true });
     	binding_callbacks.push(() => bind(filter, "isFocus", filter_isFocus_binding));
-    	filter.$on("message", /*sender*/ ctx[2]);
 
     	const block = {
     		c: function create() {
@@ -1399,11 +1484,11 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
     			const filter_changes = {};
-    			if (dirty & /*names*/ 2) filter_changes.name = /*name*/ ctx[6];
+    			if (dirty & /*names*/ 2) filter_changes.name = /*name*/ ctx[5];
 
     			if (!updating_isFocus && dirty & /*activeArray*/ 1) {
     				updating_isFocus = true;
-    				filter_changes.isFocus = /*activeArray*/ ctx[0][/*index*/ ctx[8]];
+    				filter_changes.isFocus = /*activeArray*/ ctx[0][/*index*/ ctx[7]];
     				add_flush_callback(() => updating_isFocus = false);
     			}
 
@@ -1459,10 +1544,10 @@ var app = (function () {
 
     			attr_dev(div, "id", "filterBox");
     			attr_dev(div, "class", "box svelte-167wy0i");
-    			add_location(div, file$5, 50, 0, 974);
+    			add_location(div, file$5, 50, 0, 1023);
 
     			dispose = [
-    				listen_dev(div, "scroll", /*scrollHandler*/ ctx[3], false, false, false),
+    				listen_dev(div, "scroll", /*scrollHandler*/ ctx[2], false, false, false),
     				listen_dev(div, "mousedown", mousedownHandler, false, false, false)
     			];
     		},
@@ -1479,7 +1564,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*names, activeArray, sender*/ 7) {
+    			if (dirty & /*names, activeArray*/ 3) {
     				each_value = ["", "", .../*names*/ ctx[1], "", ""];
     				let i;
 
@@ -1552,10 +1637,6 @@ var app = (function () {
     	let { activeArray = names.map(name => false) } = $$props;
     	activeArray[2] = true;
 
-    	function sender(event) {
-    		dispatch("message", { data: event.detail.data });
-    	}
-
     	function scrollHandler(event) {
     		const w = document.getElementById("filterBox").clientWidth / 5;
     		const target = Math.round(event.target.scrollLeft / w) + 2;
@@ -1566,7 +1647,10 @@ var app = (function () {
 
     		$$invalidate(0, activeArray = activeArray.map(x => false));
     		$$invalidate(0, activeArray[target] = true, activeArray);
-    		dispatch("message", { data: names[target] });
+
+    		dispatch("message", {
+    			data: names[Math.round(event.target.scrollLeft / w)]
+    		});
     	}
 
     	const writable_props = ["names", "activeArray"];
@@ -1594,7 +1678,7 @@ var app = (function () {
     		if ("activeArray" in $$props) $$invalidate(0, activeArray = $$props.activeArray);
     	};
 
-    	return [activeArray, names, sender, scrollHandler, dispatch, filter_isFocus_binding];
+    	return [activeArray, names, scrollHandler, dispatch, filter_isFocus_binding];
     }
 
     class FilterBox extends SvelteComponentDev {
@@ -1641,12 +1725,68 @@ var app = (function () {
 
     function get_each_context$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[2] = list[i];
-    	child_ctx[11] = i;
+    	child_ctx[3] = list[i];
+    	child_ctx[14] = i;
     	return child_ctx;
     }
 
-    // (72:2) {#each combinations as synergy, index}
+    function get_each_context_1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[15] = list[i];
+    	return child_ctx;
+    }
+
+    // (81:2) {#each bases as base}
+    function create_each_block_1(ctx) {
+    	let div;
+    	let t_value = /*base*/ ctx[15].name + "";
+    	let t;
+    	let div_class_value;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			t = text(t_value);
+
+    			attr_dev(div, "class", div_class_value = "" + (null_to_empty(/*base*/ ctx[15].isActivated
+    			? "sTitle active"
+    			: "sTitle") + " svelte-f3dg6x"));
+
+    			add_location(div, file$6, 81, 3, 2454);
+    			dispose = listen_dev(div, "click", /*changeBase*/ ctx[6], false, false, false);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*bases*/ 4 && t_value !== (t_value = /*base*/ ctx[15].name + "")) set_data_dev(t, t_value);
+
+    			if (dirty & /*bases*/ 4 && div_class_value !== (div_class_value = "" + (null_to_empty(/*base*/ ctx[15].isActivated
+    			? "sTitle active"
+    			: "sTitle") + " svelte-f3dg6x"))) {
+    				attr_dev(div, "class", div_class_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1.name,
+    		type: "each",
+    		source: "(81:2) {#each bases as base}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (88:2) {#each combinations as synergy, index}
     function create_each_block$3(ctx) {
     	let div2;
     	let div0;
@@ -1657,12 +1797,12 @@ var app = (function () {
     	let current;
 
     	const synergybox = new SynergyBox({
-    			props: { synergies: /*synergy*/ ctx[2].synergies },
+    			props: { synergies: /*synergy*/ ctx[3].synergies },
     			$$inline: true
     		});
 
     	const championbox = new ChampionBox({
-    			props: { champions: /*synergy*/ ctx[2].champions },
+    			props: { champions: /*synergy*/ ctx[3].champions },
     			$$inline: true
     		});
 
@@ -1675,17 +1815,17 @@ var app = (function () {
     			div1 = element("div");
     			create_component(championbox.$$.fragment);
     			t1 = space();
-    			attr_dev(div0, "class", "synergy svelte-pp7uqn");
+    			attr_dev(div0, "class", "synergy svelte-f3dg6x");
 
-    			attr_dev(div0, "style", div0_style_value = Object.keys(/*synergy*/ ctx[2].synergies).length < 3
+    			attr_dev(div0, "style", div0_style_value = Object.keys(/*synergy*/ ctx[3].synergies).length < 4
     			? "bottom:20px;"
     			: "");
 
-    			add_location(div0, file$6, 74, 3, 2376);
-    			attr_dev(div1, "class", "champions svelte-pp7uqn");
-    			add_location(div1, file$6, 77, 3, 2531);
-    			attr_dev(div2, "class", "line svelte-pp7uqn");
-    			add_location(div2, file$6, 72, 2, 2292);
+    			add_location(div0, file$6, 90, 3, 2848);
+    			attr_dev(div1, "class", "champions svelte-f3dg6x");
+    			add_location(div1, file$6, 93, 3, 3003);
+    			attr_dev(div2, "class", "line svelte-f3dg6x");
+    			add_location(div2, file$6, 88, 2, 2764);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -1699,17 +1839,17 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const synergybox_changes = {};
-    			if (dirty & /*combinations*/ 1) synergybox_changes.synergies = /*synergy*/ ctx[2].synergies;
+    			if (dirty & /*combinations*/ 1) synergybox_changes.synergies = /*synergy*/ ctx[3].synergies;
     			synergybox.$set(synergybox_changes);
 
-    			if (!current || dirty & /*combinations*/ 1 && div0_style_value !== (div0_style_value = Object.keys(/*synergy*/ ctx[2].synergies).length < 3
+    			if (!current || dirty & /*combinations*/ 1 && div0_style_value !== (div0_style_value = Object.keys(/*synergy*/ ctx[3].synergies).length < 4
     			? "bottom:20px;"
     			: "")) {
     				attr_dev(div0, "style", div0_style_value);
     			}
 
     			const championbox_changes = {};
-    			if (dirty & /*combinations*/ 1) championbox_changes.champions = /*synergy*/ ctx[2].champions;
+    			if (dirty & /*combinations*/ 1) championbox_changes.champions = /*synergy*/ ctx[3].champions;
     			championbox.$set(championbox_changes);
     		},
     		i: function intro(local) {
@@ -1734,7 +1874,7 @@ var app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(72:2) {#each combinations as synergy, index}",
+    		source: "(88:2) {#each combinations as synergy, index}",
     		ctx
     	});
 
@@ -1748,25 +1888,31 @@ var app = (function () {
     	let t0;
     	let main;
     	let div0;
+    	let t1;
     	let t2;
-    	let t3;
     	let div1;
+    	let t3;
     	let t4;
     	let t5;
     	let t6;
-    	let t7;
     	let div2;
-    	let t8;
+    	let t7;
     	let p;
     	let current;
     	let dispose;
+    	let each_value_1 = /*bases*/ ctx[2];
+    	let each_blocks_1 = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks_1[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+    	}
 
     	const filterbox = new FilterBox({
     			props: { names: SYNERGIES },
     			$$inline: true
     		});
 
-    	filterbox.$on("message", /*handleMessage*/ ctx[3]);
+    	filterbox.$on("message", /*handleMessage*/ ctx[4]);
     	let each_value = /*combinations*/ ctx[0];
     	let each_blocks = [];
 
@@ -1786,22 +1932,26 @@ var app = (function () {
     			t0 = space();
     			main = element("main");
     			div0 = element("div");
-    			div0.textContent = "Light";
-    			t2 = space();
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].c();
+    			}
+
+    			t1 = space();
     			create_component(filterbox.$$.fragment);
-    			t3 = space();
+    			t2 = space();
     			div1 = element("div");
-    			t4 = text("총 ");
-    			t5 = text(/*currentCombinationsLength*/ ctx[1]);
-    			t6 = text("개");
-    			t7 = space();
+    			t3 = text("총 ");
+    			t4 = text(/*currentCombinationsLength*/ ctx[1]);
+    			t5 = text("개");
+    			t6 = space();
     			div2 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t8 = space();
+    			t7 = space();
     			p = element("p");
     			p.textContent = "Contact : soronto3603@gmail.com";
     			attr_dev(link0, "href", "https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap");
@@ -1813,16 +1963,16 @@ var app = (function () {
     			attr_dev(meta, "name", "viewport");
     			attr_dev(meta, "content", "width=device-width, user-scalable=no");
     			add_location(meta, file$6, 5, 1, 433);
-    			attr_dev(div0, "class", "synergyTitle svelte-pp7uqn");
-    			add_location(div0, file$6, 67, 1, 2061);
-    			attr_dev(div1, "class", "numberDescription svelte-pp7uqn");
-    			add_location(div1, file$6, 69, 1, 2160);
+    			attr_dev(div0, "class", "synergyTitle svelte-f3dg6x");
+    			add_location(div0, file$6, 79, 1, 2400);
+    			attr_dev(div1, "class", "numberDescription svelte-f3dg6x");
+    			add_location(div1, file$6, 85, 1, 2632);
     			attr_dev(div2, "class", "table");
-    			add_location(div2, file$6, 70, 1, 2229);
-    			add_location(p, file$6, 85, 1, 2759);
-    			attr_dev(main, "class", "svelte-pp7uqn");
-    			add_location(main, file$6, 66, 0, 2053);
-    			dispose = listen_dev(window_1, "scroll", /*onScrollHandler*/ ctx[4], false, false, false);
+    			add_location(div2, file$6, 86, 1, 2701);
+    			add_location(p, file$6, 101, 1, 3231);
+    			attr_dev(main, "class", "svelte-f3dg6x");
+    			add_location(main, file$6, 78, 0, 2392);
+    			dispose = listen_dev(window_1, "scroll", /*onScrollHandler*/ ctx[5], false, false, false);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1834,26 +1984,54 @@ var app = (function () {
     			insert_dev(target, t0, anchor);
     			insert_dev(target, main, anchor);
     			append_dev(main, div0);
-    			append_dev(main, t2);
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].m(div0, null);
+    			}
+
+    			append_dev(main, t1);
     			mount_component(filterbox, main, null);
-    			append_dev(main, t3);
+    			append_dev(main, t2);
     			append_dev(main, div1);
+    			append_dev(div1, t3);
     			append_dev(div1, t4);
     			append_dev(div1, t5);
-    			append_dev(div1, t6);
-    			append_dev(main, t7);
+    			append_dev(main, t6);
     			append_dev(main, div2);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(div2, null);
     			}
 
-    			append_dev(main, t8);
+    			append_dev(main, t7);
     			append_dev(main, p);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (!current || dirty & /*currentCombinationsLength*/ 2) set_data_dev(t5, /*currentCombinationsLength*/ ctx[1]);
+    			if (dirty & /*bases, changeBase*/ 68) {
+    				each_value_1 = /*bases*/ ctx[2];
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+
+    					if (each_blocks_1[i]) {
+    						each_blocks_1[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks_1[i] = create_each_block_1(child_ctx);
+    						each_blocks_1[i].c();
+    						each_blocks_1[i].m(div0, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_1.length; i += 1) {
+    					each_blocks_1[i].d(1);
+    				}
+
+    				each_blocks_1.length = each_value_1.length;
+    			}
+
+    			if (!current || dirty & /*currentCombinationsLength*/ 2) set_data_dev(t4, /*currentCombinationsLength*/ ctx[1]);
 
     			if (dirty & /*combinations, Object*/ 1) {
     				each_value = /*combinations*/ ctx[0];
@@ -1908,6 +2086,7 @@ var app = (function () {
     			detach_dev(meta);
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(main);
+    			destroy_each(each_blocks_1, detaching);
     			destroy_component(filterbox);
     			destroy_each(each_blocks, detaching);
     			dispose();
@@ -1926,7 +2105,6 @@ var app = (function () {
     }
 
     const offset = 20;
-    const PRINCIPAL = "Light";
 
     function instance$6($$self, $$props, $$invalidate) {
     	let { combinations = [] } = $$props;
@@ -1934,20 +2112,27 @@ var app = (function () {
     	let { synergy } = $$props;
     	let { page = 0 } = $$props;
 
+    	let { bases = [
+    		{ "name": "Base", "isActivated": true },
+    		{ "name": "Light", "isActivated": false },
+    		{ "name": "Shadow", "isActivated": false }
+    	] } = $$props;
+    	let PRINCIPAL = "Base";
+
     	onMount(async () => {
-    		$$invalidate(2, synergy = "Alchemist");
+    		$$invalidate(3, synergy = "Alchemist");
     		reload();
     	});
 
     	async function handleMessage(event) {
-    		$$invalidate(2, synergy = event.detail.data);
-    		$$invalidate(5, page = 0);
+    		$$invalidate(3, synergy = event.detail.data);
+    		$$invalidate(7, page = 0);
     		reload();
     	}
 
     	async function reload() {
-    		$$invalidate(0, combinations = [...(await loadData(PRINCIPAL + synergy)).slice(0, offset * page + offset)]);
-    		$$invalidate(1, currentCombinationsLength = (await loadData(synergy)).length);
+    		$$invalidate(0, combinations = [...(await loadData(PRINCIPAL, synergy)).slice(0, offset * page + offset)]);
+    		$$invalidate(1, currentCombinationsLength = (await loadData(PRINCIPAL, synergy)).length);
     	}
 
     	async function onScrollHandler(event) {
@@ -1956,12 +2141,22 @@ var app = (function () {
     		const windowHeight = window.screen.height;
 
     		if ((top + windowHeight) / height > 0.9) {
-    			$$invalidate(5, page += 1);
+    			$$invalidate(7, page += 1);
     			await reload();
     		}
     	}
 
-    	const writable_props = ["combinations", "currentCombinationsLength", "synergy", "page"];
+    	function changeBase(name) {
+    		$$invalidate(2, bases = bases.map(x => ({
+    			"name": x.name,
+    			"isActivated": x.name === this.innerHTML ? true : false
+    		})));
+
+    		PRINCIPAL = this.innerHTML;
+    		reload();
+    	}
+
+    	const writable_props = ["combinations", "currentCombinationsLength", "synergy", "page", "bases"];
 
     	Object_1$1.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<App> was created with unknown prop '${key}'`);
@@ -1970,8 +2165,9 @@ var app = (function () {
     	$$self.$set = $$props => {
     		if ("combinations" in $$props) $$invalidate(0, combinations = $$props.combinations);
     		if ("currentCombinationsLength" in $$props) $$invalidate(1, currentCombinationsLength = $$props.currentCombinationsLength);
-    		if ("synergy" in $$props) $$invalidate(2, synergy = $$props.synergy);
-    		if ("page" in $$props) $$invalidate(5, page = $$props.page);
+    		if ("synergy" in $$props) $$invalidate(3, synergy = $$props.synergy);
+    		if ("page" in $$props) $$invalidate(7, page = $$props.page);
+    		if ("bases" in $$props) $$invalidate(2, bases = $$props.bases);
     	};
 
     	$$self.$capture_state = () => {
@@ -1979,23 +2175,29 @@ var app = (function () {
     			combinations,
     			currentCombinationsLength,
     			synergy,
-    			page
+    			page,
+    			bases,
+    			PRINCIPAL
     		};
     	};
 
     	$$self.$inject_state = $$props => {
     		if ("combinations" in $$props) $$invalidate(0, combinations = $$props.combinations);
     		if ("currentCombinationsLength" in $$props) $$invalidate(1, currentCombinationsLength = $$props.currentCombinationsLength);
-    		if ("synergy" in $$props) $$invalidate(2, synergy = $$props.synergy);
-    		if ("page" in $$props) $$invalidate(5, page = $$props.page);
+    		if ("synergy" in $$props) $$invalidate(3, synergy = $$props.synergy);
+    		if ("page" in $$props) $$invalidate(7, page = $$props.page);
+    		if ("bases" in $$props) $$invalidate(2, bases = $$props.bases);
+    		if ("PRINCIPAL" in $$props) PRINCIPAL = $$props.PRINCIPAL;
     	};
 
     	return [
     		combinations,
     		currentCombinationsLength,
+    		bases,
     		synergy,
     		handleMessage,
     		onScrollHandler,
+    		changeBase,
     		page
     	];
     }
@@ -2007,8 +2209,9 @@ var app = (function () {
     		init(this, options, instance$6, create_fragment$6, safe_not_equal, {
     			combinations: 0,
     			currentCombinationsLength: 1,
-    			synergy: 2,
-    			page: 5
+    			synergy: 3,
+    			page: 7,
+    			bases: 2
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {
@@ -2025,7 +2228,7 @@ var app = (function () {
     			console.warn("<App> was created without expected prop 'currentCombinationsLength'");
     		}
 
-    		if (/*synergy*/ ctx[2] === undefined && !("synergy" in props)) {
+    		if (/*synergy*/ ctx[3] === undefined && !("synergy" in props)) {
     			console.warn("<App> was created without expected prop 'synergy'");
     		}
     	}
@@ -2059,6 +2262,14 @@ var app = (function () {
     	}
 
     	set page(value) {
+    		throw new Error("<App>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get bases() {
+    		throw new Error("<App>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set bases(value) {
     		throw new Error("<App>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
