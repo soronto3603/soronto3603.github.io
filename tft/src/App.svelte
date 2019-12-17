@@ -87,15 +87,20 @@
 </main>
 
 <style>
-	:global(body) {
+	/* :global(body) {
 		background-color: #333;
 		color: #fff8e8;
-	}
+	} */
 	main {
+		background-color: #333;
+		color: #fff8e8;
+
 		text-align: center;
 		padding: 1em;
 		margin: 0 auto;
 		font-family: 'Noto Sans KR', sans-serif;
+
+		max-width: 375px;
 	}
 
 	.numberDescription {

@@ -15,7 +15,7 @@
 
 <style>
   .filter {
-    width: 20vw;
+    width: 20%;
     display: inline-block;
     cursor: pointer;
 

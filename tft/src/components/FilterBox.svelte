@@ -15,9 +15,10 @@
     });
   }
 
-  function scrollHandler(a) {
-    var w = window.innerWidth / 5;
-    const target = Math.round(a.target.scrollLeft / w) + 2
+  function scrollHandler(event) {
+    const w = document.getElementById('filterBox').clientWidth / 5;
+    const target = Math.round(event.target.scrollLeft / w) + 2
+
     if (!target) {
       return;
     }
@@ -36,11 +37,8 @@
   .box {
     overflow-x: auto;
     white-space: nowrap;
-    width: 100vw;
+    width: 100%;
 
-    position: absolute;
-    top: 50px;
-    left:0px;
     color: #7d7d7d;
 
     font-size: 8px;
@@ -48,23 +46,9 @@
 
     scroll-snap-type: x mandatory;
   }
-
-  .body * {
-    scroll-snap-align: start;
-  }
-
-  .box div{
-    display: inline-block;
-  }
-  .marginBox {
-    width: 20vw;
-  }
-  .marginBox2 {
-    width: 10vw;
-  }
 </style>
 
-<div class="box" on:scroll={scrollHandler} on:mousedown={mousedownHandler}>
+<div id='filterBox' class="box" on:scroll={scrollHandler} on:mousedown={mousedownHandler}>
   {#each ['', '', ...names, '', ''] as name, index}
     <Filter name={name} bind:isFocus={activeArray[index]} on:message={sender} />
   {/each}
