@@ -19,7 +19,7 @@
 	export let synergy;
 	export let page = 0;
 	const offset = 20;
-	
+
 	const banks = {}
 	const PRINCIPAL = 'Light'
 
@@ -49,7 +49,7 @@
 //
 	async function reload() {
 		// combinations = [...(await loadData(synergy)).slice(offset * page, offset * page + offset)];
-		combinations = [...(await loadData(synergy)).slice(0, offset * page + offset)];
+		combinations = [...(await loadData(PRINCIPAL + synergy)).slice(0, offset * page + offset)];
 		currentCombinationsLength = (await loadData(synergy)).length
 	}
 	async function onScrollHandler (event){
