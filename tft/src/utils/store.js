@@ -192,6 +192,7 @@ export const store = {
 }
 
 export async function loadData(base, synergy) {
+  console.log(base, synergy)
   if (store[base + synergy] === null) {
     const combs = await (await fetch(BASE_URL + DATA_URLS[base + synergy])).json()
     combs.sort((a, b) => b.champions.length - a.champions.length);

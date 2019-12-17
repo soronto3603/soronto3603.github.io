@@ -99,10 +99,13 @@
 	</div>
 	<!-- <div class='arrow left' on:click={prevPage}>←</div>
 	<div class='arrow right' on:click={nextPage}>→</div> -->
-	<p>Contact : soronto3603@gmail.com</p>
+	<div class='contact'>contact : soronto3603@gmail.com</div>
 </main>
 
 <style>
+	.contact {
+		font-size: 12px;
+	}
 	/* :global(body) {
 		background-color: #333;
 		color: #fff8e8;
@@ -150,10 +153,6 @@
 		color: #fff8e8;
 	}
 
-	
-
-	
-
 	.line {
 		margin-bottom: 10px;
 		background-color: #222;
@@ -170,5 +169,6 @@
 	.champions {
 		width: 160px;
 		display: inline-block;
+		height: 70px;
 	}
 </style>
