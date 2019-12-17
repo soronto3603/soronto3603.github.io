@@ -6,8 +6,6 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 </svelte:head>
 
-
-
 <script>
 	import { onMount } from 'svelte';
 	import { loadData, SYNERGIES } from './utils/store';
@@ -26,7 +24,7 @@
 	const PRINCIPAL = 'Light'
 
 	onMount(async () => {
-		synergy = 'Predator';
+		synergy = 'Alchemist';
 		reload();
 	})
 
@@ -50,11 +48,22 @@
 	}
 //
 	async function reload() {
-		combinations = [...(await loadData(synergy)).slice(offset * page, offset * page + offset)];
+		// combinations = [...(await loadData(synergy)).slice(offset * page, offset * page + offset)];
+		combinations = [...(await loadData(synergy)).slice(0, offset * page + offset)];
 		currentCombinationsLength = (await loadData(synergy)).length
 	}
+	async function onScrollHandler (event){
+		const top = event.target.scrollingElement.scrollTop;
+		const height = event.target.scrollingElement.scrollHeight;
+		const windowHeight = window.screen.height;
+		if ( (top + windowHeight) / height > 0.9 ) {
+			page+=1;
+			await reload()
+		}
+	}
 </script>
-
+<!-- 2090 -->
+<svelte:window on:scroll={onScrollHandler}></svelte:window>
 <main>
 	<div class='synergyTitle'>Light</div>
 	<FilterBox names={SYNERGIES} on:message={handleMessage} />

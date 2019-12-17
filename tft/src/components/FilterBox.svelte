@@ -16,7 +16,8 @@
   }
 
   function scrollHandler(a) {
-    const target = Math.round(a.target.scrollLeft / 75) + 2
+    var w = window.innerWidth / 5;
+    const target = Math.round(a.target.scrollLeft / w) + 2
     if (!target) {
       return;
     }
