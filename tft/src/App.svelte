@@ -48,7 +48,7 @@
 			reload();
 		}
 	}
-
+//
 	async function reload() {
 		combinations = [...(await loadData(synergy)).slice(offset * page, offset * page + offset)];
 		currentCombinationsLength = (await loadData(synergy)).length
