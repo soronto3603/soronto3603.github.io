@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>EJN</title>
+		<meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width, target-densitydpi=medium-dpi" />
+	<link href="bundle.css" rel="stylesheet"></head>
+	<body>
+		<div id="skipNav">
+			<ul>
+				<li><a href="#snContent">본문바로가기</a></li>
+				<li><a href="#snMenu">주메뉴 바로가기</a></li>
+			</ul>
+		</div>
+		<div id="app"></div>
+	<script type="text/javascript" src="bundle.js"></script></body>
+	<script>
+		window.onscroll = function() {myFunction()};
+		var header = document.getElementById("sHeader");
+		var sticky = header.offsetTop;
+		function myFunction() {
+			if (window.pageYOffset > sticky) {
+				header.classList.add("sticky");
+			} else {
+				header.classList.remove("sticky");
+			}
+		}
+	</script>
+</html>
