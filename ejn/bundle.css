@@ -585,3 +585,9 @@ button.swiper-pagination-bullet {
   }
 }
 
+
+.ie-tit-y-sticky {
+	 position: fixed;
+	 top: 120px;
+}
+
